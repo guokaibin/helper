@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.helper.dao.UserMapper" >
+    
+<insert id="insertRegisterUser" parameterType="com.helper.model.User" useGeneratedKeys="true" keyProperty="userId" >
+    <selectKey resultType="Integer" keyProperty="userId" order="AFTER">  
+        SELECT LAST_INSERT_ID()   
+    </selectKey>  
+    insert into helper_user(code,userEmail,authTime,createUser,createTime,updateUser,status) 
+    values(#{code},#{userEmail},#{authTime},#{createUser},#{createTime},#{updateUser},#{status})
+</insert>
+
+<update id="updateActivation" >
+     <![CDATA[  update helper_user SET `status` = '1' where userEmail = #{0} and code = #{1}  and  DATE_FORMAT(authTime,'%Y-%m-%d %h-%S-%i') >= DATE_FORMAT(NOW(),'%Y-%m-%d %h-%S-%i')  ]]> 
+</update>
+
+<update id="insertUserNamePassword" >
+	 update helper_user SET userName = #{userName} , password = #{password}  where userEmail = #{userEmail}  
+</update>
+
+<select id="loginUser" resultType="com.helper.model.User">
+    SELECT * from helper_user u where u.userEmail=#{email}  and u.`password`=${password};
+</select>
+
+</mapper>
