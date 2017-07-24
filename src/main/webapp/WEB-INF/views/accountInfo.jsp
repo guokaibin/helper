@@ -7,9 +7,9 @@
 	
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
- 	<link rel="stylesheet" href="../hlperStatic/bootstrap/css/bootstrap.min.css">
- 	<link rel="stylesheet" href="../hlperStatic/bootstrap/utilcss/ie10-viewport-bug-workaround.css" > 
- 	<script src="../hlperStatic/jquery/jquery-2.1.0.js"></script>
+ 	<link rel="stylesheet" href="../helper_Static/bootstrap/css/bootstrap.min.css">
+ 	<link rel="stylesheet" href="../helper_Static/bootstrap/utilcss/ie10-viewport-bug-workaround.css" > 
+ 	<script src="../helper_Static/jquery/jquery-2.1.0.js"></script>
  	
     <title>register</title>
     <style>
