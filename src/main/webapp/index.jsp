@@ -9,9 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--  这条记录无效 -->
     <!-- <link rel="icon" href="icon/log_r.ico" type="image/x-icon"> -->
- 	<link rel="stylesheet" href="hlperStatic/bootstrap/css/bootstrap.min.css">
- 	<link rel="stylesheet" href="hlperStatic/bootstrap/utilcss/ie10-viewport-bug-workaround.css" > 
- 	<script src="hlperStatic/jquery/jquery-2.1.0.js"></script>
+ 	<link rel="stylesheet" href="helper_Static/bootstrap/css/bootstrap.min.css">
+ 	<link rel="stylesheet" href="helper_Static/bootstrap/utilcss/ie10-viewport-bug-workaround.css" > 
+ 	<script src="helper_Static/jquery/jquery-2.1.0.js"></script>
  	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 	<!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 	<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
@@ -49,12 +49,12 @@
 		<div class="jumbotron row marketing">
 	        <div class="col-lg-6 " >
 	            <div style="height: 300px;width: auto">
-	                <img src="hlperStatic/img/images.png" alt="邮件助理" title="邮件助理" class="img-thumbnail img-responsive  " style="height: 300px;width: auto">
+	                <img src="helper_Static/img/images.png" alt="邮件助理" title="邮件助理" class="img-thumbnail img-responsive  " style="height: 300px;width: auto">
 	            </div>
 	        </div>
 	        <div class="col-lg-6 carousel" >
 	            <div style="height: 300px;width: auto">
-	                <img src="hlperStatic/img/customerService.jpg" alt="人工助理" title="人工助理" class="img-thumbnail img-responsive  " style="height: 300px;width: auto">
+	                <img src="helper_Static/img/customerService.jpg" alt="人工助理" title="人工助理" class="img-thumbnail img-responsive  " style="height: 300px;width: auto">
 	            </div>
 	        </div>
     	</div>

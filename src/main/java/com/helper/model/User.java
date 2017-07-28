@@ -1,5 +1,8 @@
 package com.helper.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 
 public class User {
@@ -24,6 +27,34 @@ public class User {
 	
 	private int status;
 	
+	private List<Long> roleIds; //拥有的角色列表
+	
+    private Boolean locked = Boolean.FALSE;
+	
+    private String salt;
+    
+    public String getCredentialsSalt() {
+        return userName + salt;
+    }
+
+    public List<Long> getRoleIds() {
+        if(roleIds == null) {
+            roleIds = new ArrayList<Long>();
+        }
+        return roleIds;
+    }
+
+    public void setRoleIds(List<Long> roleIds) {
+        this.roleIds = roleIds;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 	public Integer getUserId() {
 		return userId;
 	}
@@ -104,5 +135,21 @@ public class User {
 		this.password = password;
 	}
 
-	
+	public Boolean getLocked() {
+		return locked;
+	}
+
+	public void setLocked(Boolean locked) {
+		this.locked = locked;
+	}
+
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
+    
+    
 }

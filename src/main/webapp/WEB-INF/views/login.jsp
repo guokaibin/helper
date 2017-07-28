@@ -34,7 +34,7 @@
         </div>
 
         <div class="jumbotron" style="height: 600px">
-	        <form class="form-signin" action="loginUser.do" method="post">
+	        <form class="form-signin" action="loginController/loginUser.do" method="post">
 	            <div align="center" style="margin-top: 100px">
 	                <h3 class="form-signin-heading">密码登陆</h3>
 	                <div class="row" style="height: 50px;">
