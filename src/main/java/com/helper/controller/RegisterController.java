@@ -25,7 +25,6 @@ import com.helper.util.timeHandler.TimeUtil;
  * 注册控制Controller
  */
 @Controller
-@RequestMapping({"/registerController"})
 public class RegisterController {
 	
 	private static Logger log = Logger.getLogger(RegisterController.class);
@@ -59,14 +58,15 @@ public class RegisterController {
 		user.setCreateTime(System.currentTimeMillis());
 		user.setUpdateUser(userEmail);
 		user.setStatus(0);
-		
+		user.setLocked(Boolean.FALSE);
+		user.setSalt(keyCode);
 		
 		StringBuffer sb=new StringBuffer("点击下面链接激活账号，48小时生效，否则重新注册账号，链接只能使用一次，请尽快激活！</br>");  
-        sb.append("<a href=\"http://localhost:8080/helper/registerController/activation.do?userEmail=");  
+        sb.append("<a href=\"http://localhost:8080/helper/activation.do?userEmail=");  
         sb.append(userEmail);   
         sb.append("&code=");   
         sb.append(user.getCode());  
-        sb.append("\">http://localhost:8080/helper/registerController/activation.do?userEmail=");   
+        sb.append("\">http://localhost:8080/helper/activation.do?userEmail=");   
         sb.append(userEmail);  
         sb.append("&code=");  
         sb.append(user.getCode());  

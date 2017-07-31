@@ -4,7 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("pageController")
 public class PageController {
 
 	
@@ -18,4 +17,16 @@ public class PageController {
 		return "error";
 	}
 	
+	@RequestMapping(value="admin_chart.do")
+	public String admin_chart(){
+		return "admin_chart";
+	}
+	
+	
+	
+	
+	@RequestMapping("/")
+	public String index(){
+		return "admin/index";
+	}
 }

@@ -7,9 +7,9 @@
 	
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
- 	<link rel="stylesheet" href="../helper_Static/bootstrap/css/bootstrap.min.css">
- 	<link rel="stylesheet" href="../helper_Static/bootstrap/utilcss/ie10-viewport-bug-workaround.css" > 
- 	<script src="../helper_Static/jquery/jquery-2.1.0.js"></script>
+ 	<link rel="stylesheet" href="helper_Static/bootstrap/css/bootstrap.min.css">
+ 	<link rel="stylesheet" href="helper_Static/bootstrap/utilcss/ie10-viewport-bug-workaround.css" > 
+ 	<script src="helper_Static/jquery/jquery-2.1.0.js"></script>
  	
     <title>login</title>
     <style>
@@ -34,7 +34,7 @@
         </div>
 
         <div class="jumbotron" style="height: 600px">
-	        <form class="form-signin" action="loginController/loginUser.do" method="post">
+	        <form class="form-signin" action="loginUser.do" method="post">
 	            <div align="center" style="margin-top: 100px">
 	                <h3 class="form-signin-heading">密码登陆</h3>
 	                <div class="row" style="height: 50px;">

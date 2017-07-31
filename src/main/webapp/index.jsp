@@ -39,8 +39,8 @@
                 </div>
                 <div class="col-md-offset-2"  >
                     <ul class="nav nav-pills pull-right end-block">
-                        <li role="presentation"><a href="loginController/login.do">登陆</a></li>
-                        <li role="presentation"><a href="registerController/register.do">注册</a></li>
+                        <li role="presentation"><a href="login.do">登陆</a></li>
+                        <li role="presentation"><a href="register.do">注册</a></li>
                     </ul>
                 </div>
             </div>
@@ -81,6 +81,53 @@
                 <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
         </div>
+        
+        
+        <div class="sectionhead  row wow fadeInUp">
+            <span class="bigicon icon-cup "></span>
+            <h3>This is what I can do for you</h3>
+            <hr class="separetor">
+         </div><!--SERVICE SECTION HEADING END-->
+         
+        <!-- SERVICE ITEMS START -->
+        <div class="row">
+               <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-duration="3s">
+                   <img src="helper_Static/img/s1.png" alt="">
+                   <h4>Responsive Web Design</h4>
+                   <p>Grinder affogato, dark, sweet carajillo, flavour seasonal aroma single origin cream. Percolator. Eligendi impedit dolores nulla.</p>
+                </div> <!-- ITEM END -->
+
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-duration="3s">
+                   <img src="helper_Static/img/s2.png" alt="">
+                   <h4>Android App Design</h4>
+                   <p>Grinder affogato, dark, sweet carajillo, flavour seasonal aroma single origin cream. Percolator. Eligendi impedit dolores nulla.</p>
+                </div> <!-- ITEM END -->
+
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-duration="3s">
+                   <img src="helper_Static/img/s3.png" alt="">
+                   <h4>iOS App Design</h4>
+                   <p>Grinder affogato, dark, sweet carajillo, flavour seasonal aroma single origin cream. Percolator. Eligendi impedit dolores nulla.</p>
+                </div> <!-- ITEM END -->
+
+               <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-duration="3s">
+                   <img src="helper_Static/img/s4.png" alt="">
+                   <h4>Windows App Design</h4>
+                   <p>Grinder affogato, dark, sweet carajillo, flavour seasonal aroma single origin cream. Percolator. Eligendi impedit dolores nulla.</p>
+                </div> <!-- ITEM END -->
+
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-duration="3s">
+                   <img src="helper_Static/img/s5.png" alt="">
+                   <h4>Brand Identity Design</h4>
+                   <p>Grinder affogato, dark, sweet carajillo, flavour seasonal aroma single origin cream. Percolator. Eligendi impedit dolores nulla.</p>
+                </div> <!-- ITEM END -->
+
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-duration="3s">
+                   <img src="helper_Static/img/s6.png" alt="">
+                   <h4>CMYK Print Design</h4>
+                   <p>Grinder affogato, dark, sweet carajillo, flavour seasonal aroma single origin cream. Percolator. Eligendi impedit dolores nulla.</p>
+                </div> <!-- ITEM END -->
+        </div>
+        
         
         <footer class="footer">
             <p>&copy;  2016 Company, Inc.版权所有人:郭开斌</p>

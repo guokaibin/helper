@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping({"/loginController"})
 public class LoginController {
 	
 	@RequestMapping(value="/login.do",method=RequestMethod.GET)
@@ -23,7 +22,8 @@ public class LoginController {
 		}
 		
 		
-		return "home";
+		
+		return "admin_home";
 	}
 	
 }
