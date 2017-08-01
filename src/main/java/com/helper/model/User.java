@@ -13,7 +13,7 @@ public class User {
 	
 	private String userEmail;
 	
-	private String userName;
+	private String username;
 	
 	private String password;
 	
@@ -34,7 +34,7 @@ public class User {
     private String salt;
     
     public String getCredentialsSalt() {
-        return userName + salt;
+        return username + salt;
     }
 
     public List<Long> getRoleIds() {
@@ -119,12 +119,12 @@ public class User {
 		this.status = status;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {

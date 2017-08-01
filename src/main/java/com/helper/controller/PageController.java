@@ -2,6 +2,7 @@ package com.helper.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class PageController {
@@ -17,16 +18,9 @@ public class PageController {
 		return "error";
 	}
 	
-	@RequestMapping(value="admin_chart.do")
+	@RequestMapping(value="admin_chart.do",method=RequestMethod.GET)
 	public String admin_chart(){
 		return "admin_chart";
 	}
-	
-	
-	
-	
-	@RequestMapping("/")
-	public String index(){
-		return "admin/index";
-	}
+ 
 }

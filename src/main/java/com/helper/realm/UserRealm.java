@@ -23,13 +23,7 @@ public class UserRealm extends AuthorizingRealm{
 	
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection arg0) {
-		
-		String username = (String)arg0.getPrimaryPrincipal();
-		SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
-        authorizationInfo.setRoles(userService.findRoles(username));
-        authorizationInfo.setStringPermissions(userService.findPermissions(username));
-        return authorizationInfo;
-		
+		return null;
 	}
 
 	@Override
@@ -47,9 +41,11 @@ public class UserRealm extends AuthorizingRealm{
 			throw new LockedAccountException();
 		}
 		
-		SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(user.getUserName(),user.getPassword(),ByteSource.Util.bytes(user.getCredentialsSalt()),getName());
+		SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(user.getUsername(),user.getPassword(),ByteSource.Util.bytes(user.getCredentialsSalt()),getName());
 		return simpleAuthenticationInfo;
 	}
+	
+	
 	
 
 	public UserService getUserService() {

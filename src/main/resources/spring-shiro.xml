@@ -9,12 +9,12 @@
 
     <!-- Shiro's main business-tier object for web-enabled applications -->  
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">  
-        <property name="realm" ref="userRealm" />  
+        <property name="realm" ref="myShiroRealm" />  
         <property name="cacheManager" ref="cacheManager" />  
     </bean>  
 
     <!-- 項目自定义的Realm -->  
-    <bean id="userRealm" class="com.helper.realm.UserRealm">  
+    <bean id="myShiroRealm" class="com.helper.realm.UserRealm">  
         <property name="cacheManager" ref="cacheManager" />  
     </bean>  
 
@@ -22,16 +22,15 @@
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">  
         <property name="securityManager" ref="securityManager" />  
         <property name="loginUrl" value="/login.do" />  
-        <property name="successUrl" value="/loginsuccess.do" />  
-        <property name="unauthorizedUrl" value="/error.do" />  
+        <!-- <property name="successUrl" value="/loginsuccess.jhtml" />  
+        <property name="unauthorizedUrl" value="/error.jhtml" />   -->
         <property name="filterChainDefinitions">  
-            <value> 
-                /loginUser.do = anon
-                /register.do = anon
-                /submitEmail.do = anon
-                /loginsuccess.do = authc
-                /home.do = authc
-                /** = authc
+            <value>  
+             	/loginPage.do = anon
+             	/register.do  = anon
+                /login.do = authc
+                /logout.json = anon  
+                /** = authc  
             </value>  
         </property>  
     </bean>  

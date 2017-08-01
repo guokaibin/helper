@@ -13,10 +13,7 @@ public class LoginServiceImpl implements LoginService{
 	@Autowired
 	private UserMapper mapper;
 
-	@Override
-	public User loginUser(String email,String password) {
-		return mapper.loginUser(email, password);
-	}
+ 
 
 	public UserMapper getMapper() {
 		return mapper;

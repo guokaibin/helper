@@ -1,6 +1,10 @@
 package com.helper.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.ibatis.annotations.Param;
+import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.UnknownAccountException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -10,20 +14,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LoginController {
 	
-	@RequestMapping(value="/login.do",method=RequestMethod.GET)
-	public String login(){
+	@RequestMapping(value="/loginPage.do",method=RequestMethod.GET)
+	public String loginUser(){
 		return "login";
 	}
 	
-	@RequestMapping(value="/loginUser.do",method=RequestMethod.POST)
-	public String loginUser(@Param("email") String email,@Param("password") String password,Model model){
-		if(StringUtils.isEmpty(email)||StringUtils.isEmpty(password)){
-			return "error";
-		}
-		
-		
-		
-		return "admin_home";
+	
+	@RequestMapping(value="/login.do",method = RequestMethod.GET)
+	public String showLoginForm(HttpServletRequest req,Model model){
+	 return "admin_home";
 	}
+	
 	
 }

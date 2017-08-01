@@ -22,4 +22,8 @@
     SELECT * from t_user u where u.userEmail=#{email}  and u.`password`=${password};
 </select>
 
+<select id="findByUsername" resultType="com.helper.model.User">
+    SELECT * from t_user u where u.userEmail=#{username}  
+</select>
+
 </mapper>
