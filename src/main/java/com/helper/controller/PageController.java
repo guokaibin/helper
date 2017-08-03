@@ -18,6 +18,12 @@ public class PageController {
 		return "error";
 	}
 	
+	@RequestMapping(value="admin_home.do",method=RequestMethod.GET)
+	public String admin_home(){
+		return "admin_home";
+	}
+	
+	
 	@RequestMapping(value="admin_chart.do",method=RequestMethod.GET)
 	public String admin_chart(){
 		return "admin_chart";

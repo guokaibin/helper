@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.shiro.crypto.SecureRandomNumberGenerator;
+import org.apache.shiro.crypto.hash.SimpleHash;
+
 
 
 public class User implements Serializable{
@@ -176,6 +179,5 @@ public class User implements Serializable{
 	public void setSalt(String salt) {
 		this.salt = salt;
 	}
-    
-    
+	   
 }

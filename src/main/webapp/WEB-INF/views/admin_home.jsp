@@ -141,11 +141,7 @@
                 <li><a href="###" class="tpl-header-list-link"><span class="am-icon-sign-out tpl-header-list-ico-out-size"></span></a></li>
             </ul>
         </div>
-    </header>
-
-
-
-
+    </header>  
 
 
 
@@ -159,7 +155,7 @@
             <div class="tpl-left-nav-list">
                 <ul class="tpl-left-nav-menu">
                     <li class="tpl-left-nav-item">
-                        <a href="index.html" class="nav-link active">
+                        <a href="admin_home.do" class="nav-link active">
                             <i class="am-icon-home"></i>
                             <span>首页</span>
                         </a>
@@ -232,18 +228,17 @@
                         <a href="login.html" class="nav-link tpl-left-nav-link-list">
                             <i class="am-icon-key"></i>
                             <span>登录</span>
-
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
 
+		 <div class="tpl-content-wrapper">  
+			  <jsp:include page="admin_head.jsp" flush="false"></jsp:include>
+		 </div>  
 
-
-
-
-        <div class="tpl-content-wrapper">
+        <!-- <div class="tpl-content-wrapper">
             <div class="tpl-content-page-title">
                 Amaze UI 首页组件
             </div>
@@ -342,7 +337,7 @@
                             </div>
                         </div>
 
-                        <!--此部分数据请在 js文件夹下中的 app.js 中的 “百度图表A” 处修改数据 插件使用的是 百度echarts-->
+                        此部分数据请在 js文件夹下中的 app.js 中的 “百度图表A” 处修改数据 插件使用的是 百度echarts
                         <div class="tpl-echarts" id="tpl-echarts-A">
 
                         </div>
@@ -1020,7 +1015,7 @@
 
 
 
-        </div>
+        </div> -->
 
     </div>
 

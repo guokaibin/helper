@@ -11,7 +11,7 @@
 </insert>
 
 <update id="updateActivation" >
-     <![CDATA[  update t_user SET `status` = '1' where userEmail = #{0} and code = #{1}  and  DATE_FORMAT(authTime,'%Y-%m-%d %h-%S-%i') >= DATE_FORMAT(NOW(),'%Y-%m-%d %h-%S-%i')  ]]> 
+     <![CDATA[  update t_user SET `status` = '1' where userEmail = #{0} and code =0 #{1}  and  DATE_FORMAT(authTime,'%Y-%m-%d %h-%S-%i') >= DATE_FORMAT(NOW(),'%Y-%m-%d %h-%S-%i')  ]]> 
 </update>
 
 <update id="insertUserNamePassword" >
@@ -23,7 +23,7 @@
 </select>
 
 <select id="findByUsername" resultType="com.helper.model.User">
-    SELECT * from t_user u where u.userEmail=#{username}  
+    SELECT * from t_user  where username=#{username}
 </select>
 
 </mapper>

@@ -35,11 +35,11 @@
         <div class="page-header">
             <div class="row">
                 <div class="col-md-10">
-                    <h1>私人管家<small>&nbsp;&nbsp;&nbsp;当你醒了,就是梦开始的地方</small></h1>
+                    <h1>私人管家<small>&nbsp;&nbsp;&nbsp;</small></h1>
                 </div>
                 <div class="col-md-offset-2"  >
                     <ul class="nav nav-pills pull-right end-block">
-                        <li role="presentation"><a href="loginPage.do">登陆</a></li>
+                        <li role="presentation"><a href="login.do">登陆</a></li>
                         <li role="presentation"><a href="register.do">注册</a></li>
                     </ul>
                 </div>

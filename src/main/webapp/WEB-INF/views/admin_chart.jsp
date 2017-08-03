@@ -161,18 +161,16 @@
             <div class="tpl-left-nav-list">
                 <ul class="tpl-left-nav-menu">
                     <li class="tpl-left-nav-item">
-                        <a href="index.html" class="nav-link">
+                        <a href="admin_home.do" class="nav-link">
                             <i class="am-icon-home"></i>
                             <span>首页</span>
                         </a>
                     </li>
                     <li class="tpl-left-nav-item">
-                        <a href="chart.html" class="nav-link tpl-left-nav-link-list active">
+                        <a href="admin_chart.do" class="nav-link tpl-left-nav-link-list active">
                             <i class="am-icon-bar-chart"></i>
                             <span>数据表</span>
-                            <i class="tpl-left-nav-content tpl-badge-danger">
-               12
-             </i>
+                            <i class="tpl-left-nav-content tpl-badge-danger">12</i>
                         </a>
                     </li>
 
@@ -193,23 +191,17 @@
                                 <a href="table-images-list.html">
                                     <i class="am-icon-angle-right"></i>
                                     <span>图片表格</span>
-                                    <i class="tpl-left-nav-content tpl-badge-success">
-               18
-             </i>
+                                    <i class="tpl-left-nav-content tpl-badge-success">18</i>
 
                                     <a href="form-news.html">
                                         <i class="am-icon-angle-right"></i>
                                         <span>消息列表</span>
-                                        <i class="tpl-left-nav-content tpl-badge-primary">
-               5
-             </i>
-
-
-                                        <a href="form-news-list.html">
-                                            <i class="am-icon-angle-right"></i>
-                                            <span>文字列表</span>
-
+                                        <i class="tpl-left-nav-content tpl-badge-primary">5</i>
+                                        <a href="form-news-list.html" >
+                                            <i class="am-icon-angle-right"></i><span>文字列表</span>
                                         </a>
+                                     </a>
+                                  </a>      
                             </li>
                         </ul>
                     </li>
@@ -227,7 +219,6 @@
                                     <span>Amaze UI 表单</span>
                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                                 </a>
-
                                 <a href="form-line.html">
                                     <i class="am-icon-angle-right"></i>
                                     <span>线条表单</span>
@@ -240,18 +231,72 @@
                         <a href="login.html" class="nav-link tpl-left-nav-link-list">
                             <i class="am-icon-key"></i>
                             <span>登录</span>
-
                         </a>
                     </li>
+                    
                 </ul>
             </div>
         </div>
+        
+        <script type="text/javascript">
+	        var code = $(".tpl-left-nav-menu .tpl-left-nav-item").attr("data-code");
+	        $.ajax({
+	                url: code + ".html",
+	                type:"get",
+	                data:{
+	                        code:code
+	                },
+	               dataType:"html",
+	               success:function(data){
+	                               $("#content").html(data)
+	                }
+	
+	          })
+	
+	          $(".menulist li").click(function(){
+	
+	               if($(this).hasClass("selected")==false){
+	
+	                            $(".menulist li").removeClass("selected");
+	
+	                            $(".menulist li").animate({width:"80%"},200,"swing");
+	
+	                            $(this).addClass("selected");
+	
+	                            $(this).animate({width:"100%"},200,"linear");
+	
+	                            var code = $(this).attr("data-code");
+	
+	                             hideDetail();
+	
+	                                   $.ajax({
+	
+	                                          url:code + ".html",
+	
+	                                          type:"get",
+	
+	                                          dataType:"html",
+	
+	                                          success:function(data){
+	
+	                                                      $("#content").html(data);
+	
+	                                           }
+	
+	                                      })
+	
+	                                }
+	
+	                        });
+        </script>
+
+		<div class="tpl-content-wrapper" id="content">
+		
+		</div>
+		
 
 
-
-
-
-        <div class="tpl-content-wrapper">
+       <!--  <div class="tpl-content-wrapper">
             <div class="tpl-content-page-title">
                 Amaze UI 表单
             </div>
@@ -277,6 +322,7 @@
                 </div>
                 <div class="tpl-block">
                     <div class="am-g">
+                    
                         <div class="am-u-sm-12 am-u-md-6">
                             <div class="am-btn-toolbar">
                                 <div class="am-btn-group am-btn-group-xs">
@@ -287,31 +333,34 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="am-u-sm-12 am-u-md-3">
                             <div class="am-form-group">
                                 <select data-am-selected="{btnSize: 'sm'}">
-              <option value="option1">所有类别</option>
-              <option value="option2">IT业界</option>
-              <option value="option3">数码产品</option>
-              <option value="option3">笔记本电脑</option>
-              <option value="option3">平板电脑</option>
-              <option value="option3">只能手机</option>
-              <option value="option3">超极本</option>
-            </select>
-                            </div>
+					              <option value="option1">所有类别</option>
+					              <option value="option2">IT业界</option>
+					              <option value="option3">数码产品</option>
+					              <option value="option3">笔记本电脑</option>
+					              <option value="option3">平板电脑</option>
+					              <option value="option3">只能手机</option>
+					              <option value="option3">超极本</option>
+					            </select>
+                   			</div>
                         </div>
+                        
                         <div class="am-u-sm-12 am-u-md-3">
                             <div class="am-input-group am-input-group-sm">
                                 <input type="text" class="am-form-field">
                                 <span class="am-input-group-btn">
-            <button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search" type="button"></button>
-          </span>
+            						<button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search" type="button"></button>
+          						</span>
                             </div>
                         </div>
+                        
                     </div>
 
 
-                    <!--此部分数据请在 js文件夹下中的 app.js 中的 “百度图表A” 处修改数据 插件使用的是 百度echarts-->
+                    此部分数据请在 js文件夹下中的 app.js 中的 “百度图表A” 处修改数据 插件使用的是 百度echarts
                     <div class="tpl-echarts tpl-chart-mb" id="tpl-echarts-A">
 
                     </div>
@@ -333,11 +382,9 @@
 
                     </div>
                 </div>
-
             </div>
 
-
-        </div>
+        </div> -->
 
     </div>
 

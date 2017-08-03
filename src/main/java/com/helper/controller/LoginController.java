@@ -7,6 +7,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.ExcessiveAttemptsException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
@@ -28,7 +29,7 @@ public class LoginController {
 		
 		 Subject subject =	SecurityUtils.getSubject();
 		
-		 UsernamePasswordToken token = new UsernamePasswordToken(username.trim(),password.trim());
+		 UsernamePasswordToken token = new UsernamePasswordToken(username,password);
 		 
 		 String error = null;
 		 try {  
@@ -39,14 +40,16 @@ public class LoginController {
 	         error = "用户名/密码错误";  
 	     } catch (ExcessiveAttemptsException e) {  
 	         error = "登录失败多次，账户锁定10分钟";  
-	     } catch (AuthenticationException e) {  
+	     } catch(LockedAccountException e){
+	    	 error = "账户被锁定";
+	     }catch (AuthenticationException e) {  
 	         error = "其他错误：" + e.getMessage();  
 	     }  
 		 
 		 if (error != null) { 
 	         request.setAttribute("error", error);  
 	         return "login";  
-	     }   
+	     }  
 	         
 		 return "admin_home";
 	}

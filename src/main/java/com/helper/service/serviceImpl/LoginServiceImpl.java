@@ -10,8 +10,13 @@ import com.helper.service.LoginService;
 @Service
 public class LoginServiceImpl implements LoginService{
 	
-	@Autowired
+	@Autowired(required=true)
 	private UserMapper mapper;
+
+	@Override
+	public User findByUsername(String username) {
+		return mapper.findByUsername(username);
+	}
 
  
 
@@ -22,6 +27,5 @@ public class LoginServiceImpl implements LoginService{
 	public void setMapper(UserMapper mapper) {
 		this.mapper = mapper;
 	}
-	
 	
 }
