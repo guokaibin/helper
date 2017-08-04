@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-md-offset-2"  >
                     <ul class="nav nav-pills pull-right end-block">
-                        <li role="presentation"><a href="login.do">登陆</a></li>
+                        <li role="presentation"><a href="loginpage.do">登陆</a></li>
                         <li role="presentation"><a href="register.do">注册</a></li>
                     </ul>
                 </div>

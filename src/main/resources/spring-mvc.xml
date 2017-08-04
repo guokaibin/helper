@@ -60,4 +60,7 @@
     <!-- <context:component-scan base-package="com.saicmaxus.zhihu.zhihuBg"></context:component-scan> -->
     <task:annotation-driven/>
     <mvc:annotation-driven />  
+    
+    <mvc:view-controller path="/login.do" view-name="redirect:/admin_home" />  
+	<mvc:view-controller path="/admin_home" view-name="admin_home" />
 </beans>
