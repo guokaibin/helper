@@ -30,17 +30,24 @@
                 <div class="tpl-block ">
                     <div class="am-g tpl-amazeui-form">
                         <div class="am-u-sm-12 am-u-md-9">
+                        
                             <form class="am-form am-form-horizontal">
-                            
                                 <div class="am-form-group">
                                     <label for="user-name" class="am-u-sm-2 am-form-label">姓名</label>
                                     <div class="am-u-sm-4">
-                                        <input type="text" id="user-name" placeholder="姓名 / Name">
+                                        <input type="text" id="user-name"  minlength="5" placeholder="姓名 / Name" required/>
                                         <small>输入你的名字，让我们记住你。</small>
                                     </div>
                                     <label for="user-gender" class="am-u-sm-2 am-form-label">性别</label>
                                     <div class="am-u-sm-4">
-                                        <input type="text" id="user-gender" placeholder="性别/ Gender">
+                                        <select id="user-gender" required>
+                                         <option  value="">请选择性别</option>
+										  <option value="volvo">男性</option>
+										  <option value="saab">女性</option>
+										  <option value="opel">两性</option>
+										  <option value="audi">无性</option>
+										  <option value="audi">其他</option>
+										</select>
                                     </div>
                                 </div>
                                 
@@ -111,7 +118,7 @@
                                     </div>
 								</div>
 
-                                <div class="am-form-group  am-form am-padding-sm"  id="address1-form">
+                                <div class="am-form-group "  id="address1-form">
                                     <label for="user-intro" class="am-u-sm-2 am-form-label">目前在</label>
                                     <div class="am-u-sm-10">
                                     	<div class="row">
@@ -125,7 +132,7 @@
                                     			<input type="text" name="district" readonly>
                                     		</div>
                                     		<div class="am-u-sm-3">
-                                    			<button type="button" id="address1" class="am-btn am-btn-block am-margin-bottom-sm">
+                                    			<button type="button" id="addressChoose" class="am-btn am-btn-block am-margin-bottom-sm">
 													<i class="am-icon am-icon-home"></i> 
 												</button>
                                     		</div>
@@ -133,28 +140,30 @@
                                     </div>
                                 </div>
                                 
-                                 <div class="am-form-group">
+                                <div class="am-form-group">
                                     <label for="user-intro" class="am-u-sm-2 am-form-label">简介 / Intro</label>
                                     <div class="am-u-sm-10">
-                                        <textarea class="" rows="5" id="user-intro" placeholder="输入个人简介"></textarea>
+                                        <textarea class="" maxlength="5" rows="5" id="user-intro" placeholder="输入个人简介"></textarea>
                                         <small>250字以内写出你的一生...</small>
                                     </div>
-                                </div>
+                               </div>
                                 
-                                 <div class="am-form-group">
+                               <div class="am-form-group">
                                     <div class="am-u-sm-9 am-u-sm-push-3">
-                                        <button type="button" class="am-btn am-btn-primary">保存修改</button>
+                                        <button type="submit" class="am-btn am-btn-primary">保存修改</button>
                                     </div>
-                                </div>
+                               </div>
                             </form>
+                            
+                            
                         </div>
                     </div>
                 </div>
             </div>
 		</div>
 		
-		<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="assets/js/amazeui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script> 
+		<script src="assets/js/amazeui.min.js" type="text/javascript" charset="utf-8"></script>  
 		<script src="assets/js/address.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$(function() {
@@ -162,7 +171,7 @@
 					e.preventDefault();
 				}, false);
 				//	自定义输出
-				$("#address1").address({
+				$("#addressChoose").address({
 					customOutput: true,
 					selectEnd: function(json,address) {
 						for(var key in json) {

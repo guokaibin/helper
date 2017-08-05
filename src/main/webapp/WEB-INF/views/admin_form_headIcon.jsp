@@ -48,13 +48,14 @@
 
                     <div class="am-g">
                         <div class="tpl-form-body tpl-form-line">
+                        
                             <form class="am-form tpl-form-line-form">
                                 <div class="am-form-group">
                                     <label for="user-weibo" class="am-u-sm-3 am-form-label">封面图 <span class="tpl-form-line-small-title">Images</span></label>
                                     <div class="am-u-sm-9">
                                         <div class="am-form-group am-form-file">
                                             <div class="tpl-form-file-img">
-                                                <img src="assets/img/a5.png" alt="">
+                                                <img class="img-circle" src="assets/img/a5.png" alt="" >
                                             </div>
                                             <button type="button" class="am-btn am-btn-danger am-btn-sm">
     										<i class="am-icon-cloud-upload"></i> 添加封面图片</button>
@@ -73,6 +74,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
  
