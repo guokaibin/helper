@@ -6,6 +6,9 @@
 <head>
 	<title>VENUS</title>
  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 	<link rel="stylesheet" href="assets/css/amazeui.min.css"/> 
+ 	<link rel="stylesheet" href="assets/css/amazeui.address.min.css"/>
+	<script src="assets/js/address.min.js"></script>
 </head>
 <body>
 
@@ -61,22 +64,21 @@
                                         <input type="text" id="user-school" placeholder="学校/ School">
                                     </div>
                                     
-                                    <label for="user-where" class="am-u-sm-2 am-form-label">目前在</label>
-                                    <div class="am-u-sm-4">
-                                        <input type="text" id="user-where" placeholder="目前在/ Where i am">
-                                        <small>输入你目前在那座城市。格式：国家/城市/(区/县/镇)/街道</small>
-                                    </div>
-                                </div>
-
-								<div class="am-form-group">
                                     <label for="user-Company" class="am-u-sm-2 am-form-label">公司</label>
                                     <div class="am-u-sm-4">
                                         <input type="text" id="user-Company" placeholder="公司/ Company">
-                                    </div>
-                                    
+                                    </div> 
+                                </div>
+
+								<div class="am-form-group">
                                     <label for="user-career" class="am-u-sm-2 am-form-label">职业</label>
                                     <div class="am-u-sm-4">
                                         <input type="text" id="user-career" placeholder="职业/ Career">
+                                    </div>
+                                    
+                                    <label for="user-Company" class="am-u-sm-2 am-form-label">方向</label>
+                                    <div class="am-u-sm-4">
+                                        <input type="text" id="user-Company" placeholder="方向/ Working direction">
                                     </div>
                                 </div>
 
@@ -109,25 +111,70 @@
                                     </div>
 								</div>
 
-                                <div class="am-form-group">
+                                <div class="am-form-group  am-form am-padding-sm"  id="address1-form">
+                                    <label for="user-intro" class="am-u-sm-2 am-form-label">目前在</label>
+                                    <div class="am-u-sm-10">
+                                    	<div class="row">
+                                    		<div class="am-u-sm-3">
+                                    			<input type="text" name="prov" readonly>
+                                    		</div>
+                                    		<div class="am-u-sm-3">
+                                    			<input type="text" name="city" readonly>
+                                    		</div>
+                                    		<div class="am-u-sm-3">
+                                    			<input type="text" name="district" readonly>
+                                    		</div>
+                                    		<div class="am-u-sm-3">
+                                    			<button type="button" id="address1" class="am-btn am-btn-block am-margin-bottom-sm">
+													<i class="am-icon am-icon-home"></i> 
+												</button>
+                                    		</div>
+                                    	</div>
+                                    </div>
+                                </div>
+                                
+                                 <div class="am-form-group">
                                     <label for="user-intro" class="am-u-sm-2 am-form-label">简介 / Intro</label>
                                     <div class="am-u-sm-10">
                                         <textarea class="" rows="5" id="user-intro" placeholder="输入个人简介"></textarea>
                                         <small>250字以内写出你的一生...</small>
                                     </div>
                                 </div>
-
-                                <div class="am-form-group">
+                                
+                                 <div class="am-form-group">
                                     <div class="am-u-sm-9 am-u-sm-push-3">
                                         <button type="button" class="am-btn am-btn-primary">保存修改</button>
                                     </div>
                                 </div>
-                                
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
 		</div>
+		
+		<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/amazeui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/address.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				document.addEventListener('touchmove', function (e) {
+					e.preventDefault();
+				}, false);
+				//	自定义输出
+				$("#address1").address({
+					customOutput: true,
+					selectEnd: function(json,address) {
+						for(var key in json) {
+							$("#address1-form").find("input[name='" + key + "']").val(json[key]);
+						}
+					}
+				}).on("provTap",function(event,activeli){
+					console.log(activeli.text());
+				}).on("cityTap",function(event,activeli){
+					console.log(activeli.text());
+				})
+			});
+		</script>
 </body>
 </html>

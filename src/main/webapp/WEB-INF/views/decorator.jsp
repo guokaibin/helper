@@ -18,7 +18,9 @@
     <link rel="stylesheet" href="assets/css/amazeui.min.css" />
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
-    <script src="assets/js/echarts.min.js"></script>
+    <script src="assets/js/echarts.js"></script>
+    
+    <link rel="stylesheet" href="assets/css/amazeui.address.min.css"/> 
 </head>
 
 <body data-type="index">
@@ -256,9 +258,12 @@
 		 
 	</div>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/amazeui.min.js"></script>
-    <script src="assets/js/iscroll.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/amazeui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/iscroll.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
+    <!-- 地址信息js -->
+	<script src="assets/js/address.js" type="text/javascript" charset="utf-8"></script>  
+		  
 </body>
 </html>
