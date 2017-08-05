@@ -25,7 +25,7 @@
   </listener>
   
   <!-- css,jsp,jpg,png,PNG,gif文件不过滤 -->
-<!--   <servlet-mapping>
+  <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>*.jpg</url-pattern>
   </servlet-mapping>
@@ -39,14 +39,38 @@
   </servlet-mapping>
   <servlet-mapping>
         <servlet-name>default</servlet-name>
+        <url-pattern>*.png</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+        <servlet-name>default</servlet-name>
         <url-pattern>*.PNG</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>*.gif</url-pattern>
-  </servlet-mapping> -->
+  </servlet-mapping>
+  <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.eot</url-pattern>
+  </servlet-mapping> 
+  <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.ttf</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.woff</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.woff2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.otf</url-pattern>
+  </servlet-mapping>
   
-    <!-- sitemesh 装饰模板 -->
+  <!-- sitemesh 装饰模板 -->
   <filter>
        <filter-name>sitemesh</filter-name>
        <filter-class>org.sitemesh.config.ConfigurableSiteMeshFilter</filter-class>
@@ -85,7 +109,7 @@
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
   
-  
+  <!-- 字符编码 -->
   <filter>
     <filter-name>encodingFilter</filter-name>
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>

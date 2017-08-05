@@ -51,8 +51,11 @@ public class LoginController {
 	         return "login";  
 	     }  
 	         
-		 return "admin_home";
+		 return "redirect:admin_home.do";
 	}
 	
-	
+	@RequestMapping(value="admin_home.do")
+	public String admin_home(){
+		return "admin_home";
+	}
 }

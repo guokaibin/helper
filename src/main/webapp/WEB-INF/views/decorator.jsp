@@ -65,7 +65,7 @@
                                 <span class="tpl-dropdown-content-photo">
                       			<img src="assets/img/user02.png" alt=""> </span>
                                 <span class="tpl-dropdown-content-subject">
-                      			<span class="tpl-dropdown-content-from"> 禁言小张 </span>
+                      			<span class="tpl-dropdown-content-from"> ${sessionScope.currentUser} </span>
                                 <span class="tpl-dropdown-content-time">10分钟前 </span>
                                 </span>
                                 <span class="tpl-dropdown-content-font"> Amaze UI 的诞生，依托于 GitHub 及其他技术社区上一些优秀的资源；Amaze UI 的成长，则离不开用户的支持。 </span>
@@ -129,12 +129,12 @@
 
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                     <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                        <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
+                        <span class="tpl-header-list-user-nick">${sessionScope.currentUser.nickname}</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
                     </a>
                     <ul class="am-dropdown-content">
                         <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
                         <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
-                        <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+                        <li><a href="logout.do"><span class="am-icon-power-off"></span> 退出</a></li>
                     </ul>
                 </li>
                 <li><a href="###" class="tpl-header-list-link"><span class="am-icon-sign-out tpl-header-list-ico-out-size"></span></a></li>
@@ -160,41 +160,61 @@
                             <span>首页</span>
                         </a>
                     </li>
-                    <li class="tpl-left-nav-item">
-                        <a href="admin_chart.do" class="nav-link tpl-left-nav-link-list">
-                            <i class="am-icon-bar-chart"></i>
-                            <span>数据表</span>
-                            <i class="tpl-left-nav-content tpl-badge-danger"> 12 </i>
-                        </a>
-                    </li>
-
+                    
+                    
+                    
                     <li class="tpl-left-nav-item">
                         <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
                             <i class="am-icon-table"></i>
-                            <span>表格</span>
+                            <span>个人中心</span>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                        </a>
+                        <ul class="tpl-left-nav-sub-menu">
+                            <li>
+                                <a href="admin_form_myProfile.do">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>我的资料</span>
+                                    <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                                </a>
+                                <a href="admin_form_headIcon.do">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>我的头像</span>
+                                    <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                                </a>
+                                <a href="admin_chart.do">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>修改密码</span>
+                                    <i class="tpl-left-nav-content tpl-badge-success">18</i>
+								</a>
+								<a href="admin_chart.do">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>历史邮件</span>
+                                    <i class="tpl-left-nav-content tpl-badge-success">18</i>
+								</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    
+                    
+                    <li class="tpl-left-nav-item">
+                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                            <i class="am-icon-table"></i>
+                            <span>账户设置</span>
                             <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                         </a>
                         <ul class="tpl-left-nav-sub-menu">
                             <li>
                                 <a href="table-font-list.html">
                                     <i class="am-icon-angle-right"></i>
-                                    <span>文字表格</span>
+                                    <span>修改密码</span>
                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                                 </a>
                                 <a href="table-images-list.html">
                                     <i class="am-icon-angle-right"></i>
-                                    <span>图片表格</span>
+                                    <span>找回密码</span>
                                     <i class="tpl-left-nav-content tpl-badge-success">18</i>
 								</a>
-                                <a href="form-news.html">
-                                        <i class="am-icon-angle-right"></i>
-                                        <span>消息列表</span>
-                                        <i class="tpl-left-nav-content tpl-badge-primary">5</i>
-                                        <a href="form-news-list.html">
-                                            <i class="am-icon-angle-right"></i>
-                                            <span>文字列表</span>
-                                        </a>
-                                 </a>
                             </li>
                         </ul>
                     </li>

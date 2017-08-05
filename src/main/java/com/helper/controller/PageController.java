@@ -18,15 +18,20 @@ public class PageController {
 		return "error";
 	}
 	
+	//进入主页
 	@RequestMapping(value="admin_home.do",method=RequestMethod.GET)
 	public String admin_home(){
 		return "admin_home";
 	}
 	
-	
-	@RequestMapping(value="admin_chart.do",method=RequestMethod.GET)
-	public String admin_chart(){
-		return "admin_chart";
+	//进入我的资料
+	@RequestMapping(value="admin_form_myProfile.do",method=RequestMethod.GET)
+	public String admin_myProfile(){
+		return "admin_form_myProfile";
 	}
- 
+	
+	@RequestMapping(value="admin_form_headIcon.do")
+	public String admin_headIcon(){
+		return "admin_form_headIcon";
+	}
 }

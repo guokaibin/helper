@@ -196,6 +196,14 @@
 		    <artifactId>ehcache-core</artifactId>  
 		    <version>2.4.8</version>  
 		</dependency>
+		
+		<!-- sitemesh -->
+		<dependency>
+		    <groupId>org.sitemesh</groupId>
+		    <artifactId>sitemesh</artifactId>
+		    <version>3.0.0</version>
+		</dependency>
+		
   </dependencies>
   
   <build>

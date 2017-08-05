@@ -39,6 +39,8 @@ public class User implements Serializable{
 	
     private String salt;
     
+    private String nickname;
+    
     public String getCredentialsSalt() {
         return username + salt;
     }
@@ -179,5 +181,14 @@ public class User implements Serializable{
 	public void setSalt(String salt) {
 		this.salt = salt;
 	}
-	   
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	
+	
 }
