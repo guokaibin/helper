@@ -36,6 +36,12 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/css/amazeui.address.min.css"/> 
+    <style>
+        #clip {
+				width: 100%;
+				height: 400px;
+		}
+    </style> 
 </head>
 
 <body data-type="index">
@@ -82,7 +88,7 @@
                                 <span class="tpl-dropdown-content-photo">
                       			<img src="assets/img/user02.png" alt=""> </span>
                                 <span class="tpl-dropdown-content-subject">
-                      			<span class="tpl-dropdown-content-from"> ${sessionScope.currentUser} </span>
+                      			<span class="tpl-dropdown-content-from"> 禁言小张 </span>
                                 <span class="tpl-dropdown-content-time">10分钟前 </span>
                                 </span>
                                 <span class="tpl-dropdown-content-font"> Amaze UI 的诞生，依托于 GitHub 及其他技术社区上一些优秀的资源；Amaze UI 的成长，则离不开用户的支持。 </span>
@@ -146,7 +152,7 @@
 
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                     <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                        <span class="tpl-header-list-user-nick">${sessionScope.currentUser.nickname}</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
+                        <span class="tpl-header-list-user-nick">您好,${sessionScope.currentUser.nickname}</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
                     </a>
                     <ul class="am-dropdown-content">
                         <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
@@ -280,6 +286,9 @@
     <script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
     <!-- 地址信息js -->
 	<script src="assets/js/address.js" type="text/javascript" charset="utf-8"></script>  
-		  
+	
+	<script src="assets/js/iscroll-zoom.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/hammer.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/photoClip.min.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
