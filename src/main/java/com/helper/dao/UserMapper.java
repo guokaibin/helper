@@ -17,5 +17,7 @@ public interface UserMapper {
 	
 	public User findByUsername(String userName);
 	
+	public int updateUserAvatra(String avatarUrl,String username);
+	
 }
 	

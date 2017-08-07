@@ -25,7 +25,6 @@
                     <div class="tpl-portlet-input tpl-fz-ml">
                         <div class="portlet-input input-small input-inline">
                             <div class="input-icon right">
-                                
                             </div>
                         </div>
                     </div>
@@ -33,7 +32,7 @@
             <div class="tpl-block">
             	<div class="am-g">
             		 <div class="tpl-form-body tpl-form-line">
-            		 	 <form class="am-form tpl-form-line-form" >
+            		 	 <form class="am-form tpl-form-line-form" method="post" enctype="multipart/form-data" action="upload.do">
             		 	 	
 					        <div class="am-popup" id="my-popup">
 								<div class="am-popup-inner">
@@ -45,15 +44,15 @@
 										<!-- 裁剪显示区 -->
 										<div class="am-margin-bottom-sm" id="clip"></div>
 										<button type="button" class="am-btn am-btn-primary" id="clipBtn">裁剪 </button>
-										<input class="am-hide" type="file" id="file">
+										<input class="am-hide" type="file" id="file" name="headIconFile" />
 									</div>
 								</div>
 							</div>
 							<div class="am-form-group  am-u-sm-3 am-u-sm-push-3">
-								<img class="am-circle" alt="140*140" src="assets/img/a4.png" width="140" height="140" id="img-view" />
+								<img class="am-circle" alt="140*140" src="${sessionScope.currentUser.avatarUrl}" width="140" height="140" id="img-view" />
 								<br>
-								<button type="button" class="am-btn am-btn-primary" id="toggle-file">上传头像</button>
-								<button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
+								<button type="button" class="am-btn am-btn-primary am-icon-cloud-upload" id="toggle-file">上传头像</button>
+								<button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button><small>${returnModel.key }</small>
 							</div>
 							
 						</form>

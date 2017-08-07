@@ -41,6 +41,8 @@ public class User implements Serializable{
     
     private String nickname;
     
+    private String avatarUrl;
+    
     public String getCredentialsSalt() {
         return username + salt;
     }
@@ -188,6 +190,14 @@ public class User implements Serializable{
 
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
+	}
+
+	public String getAvatarUrl() {
+		return avatarUrl;
+	}
+
+	public void setAvatarUrl(String avatarUrl) {
+		this.avatarUrl = avatarUrl;
 	}
 	
 	

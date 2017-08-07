@@ -1,5 +1,6 @@
 package com.helper.controller;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class PageController {
 
+	private static Logger log = Logger.getLogger(RegisterController.class);
 	
 	@RequestMapping(value="/loginsuccess.do")
 	public String loginsuccess(){
@@ -31,7 +33,12 @@ public class PageController {
 	}
 	
 	@RequestMapping(value="admin_form_headIcon.do")
-	public String admin_headIcon(){
+	public String admin_from_headIcon(){
 		return "admin_form_headIcon";
+	}
+	
+	@RequestMapping(value="admin_form_bindPhone.do")
+	public String admin_form_bindPhone(){
+		return "admin_form_bindPhone";
 	}
 }

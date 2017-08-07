@@ -3,6 +3,7 @@ package com.helper.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.annotations.Param;
+import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.ExcessiveAttemptsException;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LoginController {
 	
+	private static Logger log = Logger.getLogger(RegisterController.class);
 	@RequestMapping(value="/loginpage.do",method=RequestMethod.GET)
 	public String loginUser(){
 		return "login";

@@ -152,7 +152,7 @@
 
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                     <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                        <span class="tpl-header-list-user-nick">您好,${sessionScope.currentUser.nickname}</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
+                        <span class="tpl-header-list-user-nick">您好,${sessionScope.currentUser.nickname}</span><span class="tpl-header-list-user-ico"> <img src="${sessionScope.currentUser.avatarUrl}"></span>
                     </a>
                     <ul class="am-dropdown-content">
                         <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
@@ -204,9 +204,9 @@
                                     <span>我的头像</span>
                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                                 </a>
-                                <a href="admin_chart.do">
+                                <a href="admin_form_bindPhone.do">
                                     <i class="am-icon-angle-right"></i>
-                                    <span>修改密码</span>
+                                    <span>绑定手机</span>
                                     <i class="tpl-left-nav-content tpl-badge-success">18</i>
 								</a>
 								<a href="admin_chart.do">

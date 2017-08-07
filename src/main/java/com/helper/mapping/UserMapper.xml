@@ -26,4 +26,9 @@
     SELECT * from t_user  where username=#{username}
 </select>
 
+<update id="updateUserAvatra">
+    update t_user SET avatarUrl = #{0}   where username = #{1}  
+</update>
+
+
 </mapper>

@@ -1,14 +1,16 @@
 package com.helper.realm;
 
-import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.SimpleHash;
-import org.apache.shiro.util.ByteSource;
 
 public class Constants {
 	public static String VALIDATE_CODE="_VALIDATE_CODE";
 	
+	public static final String AVATAR_URL="http://oub18pmk0.bkt.clouddn.com/";
 	
+	public static final String accessKey = "CTxzTRjtfg0cYzbpKUvLJnIswQQK1DsEz04ZVJmH";
+	public static final String secretKey = "_MaxW0H-jccNexOZGFctLUAVmZVBqXs7N3C7Wodh";
+	public static final String bucket = "avatar";
 
 	public static void main(String[] args) {  
 		  String algorithmName = "md5";  
