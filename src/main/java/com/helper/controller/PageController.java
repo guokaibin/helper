@@ -41,4 +41,10 @@ public class PageController {
 	public String admin_form_bindPhone(){
 		return "admin_form_bindPhone";
 	}
+	
+	@RequestMapping(value="errorpage.do")
+	public String errorpage(){
+		return "admin_404";
+	}
+	
 }

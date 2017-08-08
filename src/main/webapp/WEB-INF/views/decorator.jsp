@@ -152,7 +152,7 @@
 
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                     <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                        <span class="tpl-header-list-user-nick">您好,${sessionScope.currentUser.nickname}</span><span class="tpl-header-list-user-ico"> <img src="${sessionScope.currentUser.avatarUrl}"></span>
+                        <span class="tpl-header-list-user-nick">您好,${sessionScope.currentUser.nickname}</span><span class="tpl-header-list-user-ico"> <img src="${sessionScope.currentUser.avatarUrl}" width="40" height="40"></span>
                     </a>
                     <ul class="am-dropdown-content">
                         <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>

@@ -21,6 +21,7 @@ import com.helper.model.UploadHeanIconReturnModel;
 import com.helper.model.User;
 import com.helper.realm.Constants;
 import com.helper.service.HeadIconServcie;
+import com.helper.service.LoginService;
 import com.helper.util.shiroSessionUtil.SessionManager;
 import com.qiniu.common.QiniuException;
 import com.qiniu.common.Zone;
@@ -37,11 +38,14 @@ public class HeadIconController {
 	
 
 	@Autowired
-	HeadIconServcie service;
+	private HeadIconServcie service;
 	
+	@Autowired
+	private LoginService loginService;
 	
 	@RequestMapping(value="upload.do",method=RequestMethod.POST)
 	public String upload(HttpServletRequest request,@RequestParam("headIconFile") MultipartFile headIconFile) throws IOException{
+		String message ="上传头像失败";
 		Session session = SessionManager.getSession();
 		if(session instanceof ValidatingSession && !((ValidatingSession)session).isValid()) {  
 	        return "redirect:loginpage.do";  
@@ -76,7 +80,10 @@ public class HeadIconController {
 		        UploadHeanIconReturnModel returnModel = new  UploadHeanIconReturnModel();
 		        returnModel.setKey(putRet.key);
 		        returnModel.setHash(putRet.hash);
-		        request.setAttribute("returnModel", returnModel);
+		        if(putRet.key.equals(key)){
+		        	 message="上传头像成功";
+		        }
+		        request.setAttribute("message", message);
 		        
 		    } catch (QiniuException ex) {
 		        Response r = ex.response;
@@ -102,7 +109,9 @@ public class HeadIconController {
 		int updateAvatarUrlResult = service.updateUserAvatra(avatarUrl,username);
 		
 		if(updateAvatarUrlResult==1){
-			
+			session.removeAttribute("currentUser");
+			User currentUser = loginService.findByUsername(username); 
+			session.setAttribute("currentUser", currentUser);
 			return "admin_form_headIcon";
 		}
 

@@ -592,7 +592,7 @@
 		}
 
 		function createImg(src) {
-			if($img && 　$img.length) {
+			if($img && $img.length) {
 				// 删除旧的图片以释放内存，防止IOS设备的webview崩溃
 				$img.remove();
 				delete $img[0];

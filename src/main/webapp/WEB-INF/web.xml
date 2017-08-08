@@ -135,4 +135,9 @@
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
   
+  	<!--配置 无法找到页面时的跳转页面-->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/errorpage.do</location>
+	</error-page>
 </web-app>
