@@ -37,8 +37,26 @@ public class UserInfoController {
 			@Param(value="workingDirection") String workingDirection,@Param(value="hometown") String hometown,@Param(value="QQ") String QQ,
 			@Param(value="specialty") String specialty,@Param(value="level") String level,@Param(value="serviceItems") String serviceItems,@Param(value="serviceTime") String serviceTime,
 			@Param(value="serviceModel") String serviceModel,@Param(value="amount") String amount,@Param(value="accountsModel") String accountsModel,
-			@Param(value="prov") String prov,@Param(value="city") String city,@Param(value="district") String district,@Param(value="intro") String intro){
+			@Param(value="prov") String prov,@Param(value="city") String city,@Param(value="district") String district,@Param(value="intro") String intro,@Param(value="userid") String userid){
 		String message = null;
+		//判断session是否失效
+		Session session = SessionManager.getSession();
+		if(session instanceof ValidatingSession && !((ValidatingSession)session).isValid()) {  
+	        return "redirect:loginpage.do";  
+	    }
+		User user = (User)session.getAttribute("currentUser");
+		if(user==null){
+			return "redirect:loginpage.do";
+		}
+		// 判断userid不为空
+		if(!StringUtils.isEmpty(userid)){
+			if(user.getUserId()!=Integer.valueOf(userid).intValue()){
+				message = "非法操作";
+				request.setAttribute("message", message);
+				return "admin_form_myProfile";
+			}
+		}	
+		
 		
 		if(StringUtils.isEmpty(realName)){
 			message = "真实姓名不能为空";
@@ -302,14 +320,8 @@ public class UserInfoController {
 			}
 		}
 		
-		Session session = SessionManager.getSession();
-		if(session instanceof ValidatingSession && !((ValidatingSession)session).isValid()) {  
-	        return "redirect:loginpage.do";  
-	    }
-		User user = (User)session.getAttribute("currentUser");
-		if(user==null){
-			return "redirect:loginpage.do";
-		}
+		
+		
 		
 		UserInfo userInfo = new UserInfo();
 		userInfo.setUserId(user.getUserId());
@@ -327,8 +339,6 @@ public class UserInfoController {
 		userInfo.setCity(city.trim());
 		userInfo.setDistrict(district.trim());
 		userInfo.setIntro(introTrim);
-		userInfo.setCreateUser(user.getUsername());
-		userInfo.setCreateTime(System.currentTimeMillis());
 		userInfo.setSpecialty(specialty.trim());
 		userInfo.setLevel(Integer.valueOf(level.trim()).intValue());
 		userInfo.setServiceItems(serviceItems.trim());
@@ -337,14 +347,24 @@ public class UserInfoController {
 		userInfo.setAmount(Integer.valueOf(amount.trim()).intValue());
 		userInfo.setAccountsModel(Integer.valueOf(accountsModel.trim()).intValue());
 		
-		int num = userInfoService.addUserInfo(userInfo);
-		if(1==num){
-			message = "新增成功！";
-			request.setAttribute("message", message);
-			return "admin_form_myProfile";
+		if(StringUtils.isEmpty(userid)){
+			userInfo.setCreateUser(user.getUsername());
+			userInfo.setCreateTime(System.currentTimeMillis());
+			if(userInfoService.addUserInfo(userInfo)==1){
+				message = "新增成功！";
+				request.setAttribute("message", message);
+				return "admin_form_myProfile";
+			}
+		}else{
+			userInfo.setUpdateUser(user.getUsername());
+			if(1==userInfoService.updateUserInfo(userInfo)){
+				message = "修改成功！";
+				request.setAttribute("message", message);
+				return "admin_form_myProfile";
+			}
 		}
 		
-		message = "新增失败！未知错误";
+		message = "未知错误";
 		request.setAttribute("message", message);
 		return "admin_form_myProfile";
 	}

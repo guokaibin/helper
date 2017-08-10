@@ -46,6 +46,12 @@ public class HeadIconController {
 	@RequestMapping(value="upload.do",method=RequestMethod.POST)
 	public String upload(HttpServletRequest request,@RequestParam("headIconFile") MultipartFile headIconFile) throws IOException{
 		String message ="上传头像失败";
+		if(headIconFile.isEmpty()){
+			message ="请选择头像";
+			request.setAttribute("message", message);
+			return "admin_form_headIcon";
+		}
+		
 		Session session = SessionManager.getSession();
 		if(session instanceof ValidatingSession && !((ValidatingSession)session).isValid()) {  
 	        return "redirect:loginpage.do";  

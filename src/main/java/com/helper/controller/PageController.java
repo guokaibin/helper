@@ -1,9 +1,19 @@
 package com.helper.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.log4j.Logger;
+import org.apache.shiro.session.Session;
+import org.apache.shiro.session.mgt.ValidatingSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.helper.model.User;
+import com.helper.model.UserInfo;
+import com.helper.service.UserInfoService;
+import com.helper.util.shiroSessionUtil.SessionManager;
 
 @Controller
 public class PageController {
@@ -26,12 +36,6 @@ public class PageController {
 		return "admin_home";
 	}
 	
-	//进入我的资料
-	@RequestMapping(value="admin_form_myProfile.do",method=RequestMethod.GET)
-	public String admin_myProfile(){
-		return "admin_form_myProfile";
-	}
-	
 	@RequestMapping(value="admin_form_headIcon.do")
 	public String admin_from_headIcon(){
 		return "admin_form_headIcon";
@@ -46,5 +50,36 @@ public class PageController {
 	public String errorpage(){
 		return "admin_404";
 	}
+	
+	@Autowired
+	private UserInfoService userInfoService;
+	
+	//进入我的资料
+	@RequestMapping(value="admin_form_myProfile.do",method=RequestMethod.GET)
+	public String admin_myProfile(HttpServletRequest request){
+		Session session = SessionManager.getSession();
+		if(session instanceof ValidatingSession && !((ValidatingSession)session).isValid()) {  
+		    return "redirect:loginpage.do";  
+		 }
+		User user = (User)session.getAttribute("currentUser");
+		if(user==null){
+			return "redirect:loginpage.do";
+		}
+			
+		UserInfo userInfo = userInfoService.getUserInfo(user.getUserId());
+		request.setAttribute("userInfo", userInfo);	
+		
+		
+			return "admin_form_myProfile";
+	}
+
+	public UserInfoService getUserInfoService() {
+		return userInfoService;
+	}
+
+	public void setUserInfoService(UserInfoService userInfoService) {
+		this.userInfoService = userInfoService;
+	}
+	
 	
 }

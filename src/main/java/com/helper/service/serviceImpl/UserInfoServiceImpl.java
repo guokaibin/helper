@@ -19,6 +19,22 @@ public class UserInfoServiceImpl implements UserInfoService{
 		return mapper.addUserInfo(userInfo);
 	}
 
+	@Override
+	public UserInfo getUserInfo(Integer userid) {
+		return mapper.getUserInfo(userid);
+	}
+
+	@Override
+	public int updateUserInfo(UserInfo userInfo) {
+		return mapper.updateUserInfo(userInfo);
+	}
+	
+	
+	
+	
+	
+	
+	
 	public UserInfoMapper getMapper() {
 		return mapper;
 	}
@@ -26,5 +42,4 @@ public class UserInfoServiceImpl implements UserInfoService{
 	public void setMapper(UserInfoMapper mapper) {
 		this.mapper = mapper;
 	}
-	
 }
