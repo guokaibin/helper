@@ -13,6 +13,7 @@ import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -28,12 +29,19 @@ public class LoginController {
 	
 	@RequestMapping(value="/login.do",method = RequestMethod.POST)
 	public String showLoginForm(HttpServletRequest request,@Param(value="username") String username,@Param(value="password") String password){
-		
+		 String error = null;
+		 String uname = username.trim();
+		 String pwd = password.trim();
+		 if(StringUtils.isEmpty(uname)||StringUtils.isEmpty(pwd)){
+			 error="用户名或密码不能为空";
+			 request.setAttribute("error", error);  
+	         return "login";  
+		 }
+		 
 		 Subject subject =	SecurityUtils.getSubject();
 		
-		 UsernamePasswordToken token = new UsernamePasswordToken(username,password);
+		 UsernamePasswordToken token = new UsernamePasswordToken(uname,pwd);
 		 
-		 String error = null;
 		 try {  
 	         subject.login(token);  
 	     } catch (UnknownAccountException e) {  

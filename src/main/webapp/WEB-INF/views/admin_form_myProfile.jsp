@@ -31,22 +31,22 @@
                     <div class="am-g tpl-amazeui-form">
                         <div class="am-u-sm-12 am-u-md-9">
                         
-                            <form class="am-form am-form-horizontal">
+                            <form class="am-form am-form-horizontal" action="sendUserInfo.do" method="post">
                                 <div class="am-form-group">
                                     <label for="user-name" class="am-u-sm-2 am-form-label">姓名</label>
                                     <div class="am-u-sm-4">
-                                        <input type="text" id="user-name"  minlength="5" placeholder="姓名 / Name" required/>
+                                        <input type="text" id="user-name" name="realName" minlength="2" pattern="[a-zA-Z\u4e00-\u9fa5][a-zA-Z0-9\u4e00-\u9fa5]+" placeholder="必填且不能包含特殊字符" required/>
                                         <small>输入你的名字，让我们记住你。</small>
                                     </div>
                                     <label for="user-gender" class="am-u-sm-2 am-form-label">性别</label>
                                     <div class="am-u-sm-4">
-                                        <select id="user-gender" required>
-                                         <option  value="">请选择性别</option>
-										  <option value="volvo">男性</option>
-										  <option value="saab">女性</option>
-										  <option value="opel">两性</option>
-										  <option value="audi">无性</option>
-										  <option value="audi">其他</option>
+                                        <select id="user-gender" name="gender" required>
+                                         	<option  value="">请选择性别</option>
+										  	<option value="0">男性</option>
+										  	<option value="1">女性</option>
+										  	<option value="2">两性</option>
+										  	<option value="3">无性</option>
+										  	<option value="4">其他</option>
 										</select>
                                     </div>
                                 </div>
@@ -54,69 +54,127 @@
                                <div class="am-form-group">
                                     <label for="user-birthday" class="am-u-sm-2 am-form-label">生日</label>
                                     <div class="am-u-sm-4">
-                                        <!-- <input type="text" id="user-birthday" placeholder="生日 / Birthday"> -->
-                                        <input type="text" id="user-birthday" placeholder="生日 / Birthday" class="am-form-field tpl-form-no-bg" data-am-datepicker="" readonly/>
-                                        <small>生日为必填</small>
+                                        <input type="text" id="user-birthday" placeholder="必填"  name="birthday" class="am-form-field tpl-form-no-bg" data-am-datepicker=""   readonly/>
                                     </div>
                                     
-                                    <label for="user-hometown" class="am-u-sm-2 am-form-label">籍贯</label>
+                                    <label for="doc-vld-age-2" class="am-u-sm-2 am-form-label">年龄</label>
                                     <div class="am-u-sm-4">
-                                        <input type="text" id="user-hometown" placeholder="籍贯/ Hometown">
+                                        <input type="number" class="" name="age" id="doc-vld-age-2" placeholder="必填且年龄 在1-120之间" min="1" max="120" required/>
                                     </div>
                                 </div>
                                 
                                 <div class="am-form-group">
+                                  	<label for="user-hometown" class="am-u-sm-2 am-form-label">籍贯</label>
+                                    <div class="am-u-sm-4">
+                                        <input type="text" id="user-hometown" name="hometown" placeholder="必填" required>
+                                    </div>
+                                    
+                                    <label for="user-QQ" class="am-u-sm-2 am-form-label">QQ</label>
+                                    <div class="am-u-sm-4">
+                                        <input type="number" id="user-QQ" name="QQ" min="1000" placeholder="必填且在4位数字-12位数字之间" required>
+                                    </div>
+                                </div>  
+                                
+                                <div class="am-form-group">
                                     <label for="user-school" class="am-u-sm-2 am-form-label">学校</label>
                                     <div class="am-u-sm-4">
-                                        <input type="text" id="user-school" placeholder="学校/ School">
+                                        <input type="text" id="user-school" name="school" placeholder="必填不能包含特殊字符" required>
                                     </div>
                                     
                                     <label for="user-Company" class="am-u-sm-2 am-form-label">公司</label>
                                     <div class="am-u-sm-4">
-                                        <input type="text" id="user-Company" placeholder="公司/ Company">
+                                        <input type="text" id="user-Company" name="company" placeholder="不能包含特殊字符">
+                                        <small>非必填</small>
                                     </div> 
                                 </div>
 
 								<div class="am-form-group">
                                     <label for="user-career" class="am-u-sm-2 am-form-label">职业</label>
                                     <div class="am-u-sm-4">
-                                        <input type="text" id="user-career" placeholder="职业/ Career">
+                                        <input type="text" id="user-career" name="career" placeholder="不能包含特殊字符">
+                                        <small>非必填</small>
                                     </div>
                                     
-                                    <label for="user-Company" class="am-u-sm-2 am-form-label">方向</label>
+                                    <label for="user-Company" class="am-u-sm-2 am-form-label">从事方向</label>
                                     <div class="am-u-sm-4">
-                                        <input type="text" id="user-Company" placeholder="方向/ Working direction">
+                                        <input type="text" id="user-Company"  name="workingDirection" placeholder="不能包含特殊字符">
+                                        <small>非必填</small>
+                                    </div>
+                                </div>	
+                                
+                                <div class="am-form-group">
+                                    <label for="user-Specialty" class="am-u-sm-2 am-form-label">技能/爱好</label>
+                                    <div class="am-u-sm-4">
+                                        <input type="text" id="user-Specialty" name="specialty" placeholder="必填且不能包含特殊字符" required>
+                                    </div>
+                                    <label for="user-level" class="am-u-sm-2 am-form-label">程度</label>
+                                    <div class="am-u-sm-4">
+                                        <select id="user-level" name="level" required>
+                                         	<option  value="">请选择熟练程度</option>
+										  	<option value="0">一般</option>
+										  	<option value="1">良好</option>
+										  	<option value="2">熟练</option>
+										  	<option value="3">精通</option>
+										</select>
                                     </div>
                                 </div>
-
-								<div class="am-form-group">
-                                    <label for="user-email" class="am-u-sm-2 am-form-label">邮箱</label>
+                                
+                                <div class="am-form-group">
+                                    <label for="user-serviceItems" class="am-u-sm-2 am-form-label">服务项目</label>
                                     <div class="am-u-sm-4">
-                                        <input type="text" id="user-email" placeholder="邮箱/ Email">
+                                        <input type="text" id="user-serviceItems" name="serviceItems" placeholder="必填且不能包含特殊字符" required>
+                                    </div>
+                                    <label for="user-serviceTime" class="am-u-sm-2 am-form-label">服务时间</label>
+                                    <div class="am-u-sm-4">
+                                        <select id="user-serviceTime" name="serviceTime" required>
+                                         	<option  value="">请选择服务时间</option>
+										  	<option value="1">工作日</option>
+										  	<option value="11">工作日上午</option>
+										  	<option value="12">工作日下午</option>
+										  	<option value="13">工作日晚上</option>
+										  	<option value="2">周末</option>
+										  	<option value="21">周末上午</option>
+										  	<option value="22">周末下午</option>
+										  	<option value="23">周末晚上</option>
+										  	<option value="3">每天</option>
+										  	<option value="31">每天上午</option>
+										  	<option value="32">每天下午</option>
+										  	<option value="33">每天晚上</option>
+										</select>
+                                    </div>
+                                </div>
+                                
+                                <div class="am-form-group">
+                                    <label for="user-servicemodel" class="am-u-sm-2 am-form-label">服务方式</label>
+                                    <div class="am-u-sm-4">
+                                        <select id="user-servicemodel" name="serviceModel" required>
+                                         	<option  value="">请选择服务方式</option>
+										  	<option value="0">远程</option>
+										  	<option value="1">面对面</option>
+										</select>
                                     </div>
                                     
-                                    <label for="user-QQ" class="am-u-sm-2 am-form-label">QQ</label>
-                                    <div class="am-u-sm-4">
-                                        <input type="text" id="user-QQ" placeholder="QQ/ facebook">
-                                    </div>
-                                </div>  
-
-								<div class="am-form-group">
-                                    <label for="user-telephone" class="am-u-sm-2 am-form-label">手机</label>
-                                    <div class="am-u-sm-4">
-                                        <input type="text" id="user-telephone" placeholder="手机/ Phone">
-                                    </div>
-                                    
-                                    <label for="user-PhoneVerificationCode" class="am-u-sm-2 am-form-label">手机验证码</label>
-                                    <div class="am-u-sm-2">
-                                    		<div class="am-form-group">
-                                    			<input  type="text" for="getPhoneVerificationCode" class="am-u-sm-12" id="user-PhoneVerificationCode" placeholder="手机验证码/ Phone Verification Code" />
+                                    <label  class="am-u-sm-2 am-form-label" id="user-serviceTime">结算</label>
+                                    <div class="am-u-sm-4" >
+                                    	<div class="row" >
+                                    		<div class="am-u-sm-6">
+                                    			<input type="number" name="amount"  min="0"  required>
                                     		</div>
+                                    		<div class="am-u-sm-6">
+	                                    		<select  name="accountsModel"   required>
+		                                         	<option  value="">请选择结算方式</option>
+												  	<option value="0">小时/￥</option>
+												  	<option value="1">日/￥</option>
+												  	<option value="2">月/￥</option>
+												</select>
+                                    		</div>
+	                                        
+                                    	</div>
+                                    	
                                     </div>
-                                    <div class="am-u-sm-2">
-                                    				<button type="button" id="getPhoneVerificationCode" class=" am-btn am-btn-primary">获取手机验证码</button>
-                                    </div>
-								</div>
+                                </div> 
+                                
+                                
 
                                 <div class="am-form-group "  id="address1-form">
                                     <label for="user-intro" class="am-u-sm-2 am-form-label">目前在</label>
@@ -140,17 +198,20 @@
                                     </div>
                                 </div>
                                 
-                                <div class="am-form-group">
+                               
+                                
+                                
+                               <div class="am-form-group">
                                     <label for="user-intro" class="am-u-sm-2 am-form-label">简介 / Intro</label>
                                     <div class="am-u-sm-10">
-                                        <textarea class="" maxlength="5" rows="5" id="user-intro" placeholder="输入个人简介"></textarea>
-                                        <small>250字以内写出你的一生...</small>
+                                        <textarea class="" minlength="10" maxlength="250" name="intro" rows="5" id="user-intro" placeholder="250字以内写出你的一生..."></textarea>
+                                        <small>非必填</small>
                                     </div>
                                </div>
                                 
                                <div class="am-form-group">
                                     <div class="am-u-sm-9 am-u-sm-push-3">
-                                        <button type="submit" class="am-btn am-btn-primary">保存修改</button>
+                                        <button type="submit" class="am-btn am-btn-primary">保存修改</button><small>&nbsp;&nbsp;&nbsp;${message }</small>
                                     </div>
                                </div>
                             </form>

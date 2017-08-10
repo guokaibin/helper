@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.helper.dao.UserInfoMapper" >
+    
+<insert id="addUserInfo" parameterType="com.helper.model.UserInfo" useGeneratedKeys="true" keyProperty="userInfoId" >
+    <selectKey resultType="Integer" keyProperty="userInfoId" order="AFTER">  
+        SELECT LAST_INSERT_ID()   
+    </selectKey>  
+    insert into t_userinfo(userId,realName,gender,birthday,age,hometown,school,company,career,workingDirection,QQ,prov,city,district,createUser,createTime,specialty,level,serviceItems,serviceTime,serviceModel,amount,accountsModel) 
+    				values(#{userId},#{realName},#{gender},#{birthday},#{age},#{hometown},#{school},#{company},#{career},#{workingDirection},#{QQ},#{prov},#{city}
+    		,#{district},#{createUser},#{createTime},#{specialty},#{level},#{serviceItems},#{serviceTime},#{serviceModel},#{amount},#{accountsModel})
+</insert>
+
+
+
+
+</mapper>

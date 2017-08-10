@@ -8,7 +8,6 @@
  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  	<link rel="stylesheet" href="assets/css/amazeui.min.css"/> 
  	<link rel="stylesheet" href="assets/css/amazeui.address.min.css"/>
-	<script src="assets/js/address.min.js"></script>
 </head>
 <body>
 
@@ -36,7 +35,7 @@
 								<div class="am-form-group">
                                     <label for="user-telephone" class="am-u-sm-3 am-form-label">手机</label>
                                     <div class="am-u-sm-9">
-                                        <input type="text" id="user-telephone" placeholder="手机/ Phone">
+                                        <input type="text" id="user-telephone" class="js-pattern-mobile" placeholder="输入手机号" required/>
                                     </div>
 								</div>
                                 
@@ -66,29 +65,12 @@
                 </div>
             </div>
 		</div>
-		
-		<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script> 
-		<script src="assets/js/amazeui.min.js" type="text/javascript" charset="utf-8"></script>  
-		<script src="assets/js/address.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-			$(function() {
-				document.addEventListener('touchmove', function (e) {
-					e.preventDefault();
-				}, false);
-				//	自定义输出
-				$("#addressChoose").address({
-					customOutput: true,
-					selectEnd: function(json,address) {
-						for(var key in json) {
-							$("#address1-form").find("input[name='" + key + "']").val(json[key]);
-						}
-					}
-				}).on("provTap",function(event,activeli){
-					console.log(activeli.text());
-				}).on("cityTap",function(event,activeli){
-					console.log(activeli.text());
-				})
-			});
-		</script>
+	 
 </body>
+	<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script> 
+ 	<script>
+		  if ($.AMUI && $.AMUI.validator) {
+		    $.AMUI.validator.patterns.mobile = /^\s*1\d{10}\s*$/;
+		  }
+	</script>
 </html>
