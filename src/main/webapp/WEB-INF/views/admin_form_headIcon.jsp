@@ -49,7 +49,7 @@
 								</div>
 							</div>
 							<div class="am-form-group  am-u-sm-3 am-u-sm-push-3">
-								<img class="am-circle" alt="140*140" src="${sessionScope.currentUser.avatarUrl}" width="140" height="140" id="img-view" />
+								<img class="am-img-thumbnail am-circle" alt="140*140" src="${sessionScope.currentUser.avatarUrl}" width="140" height="140" id="img-view" />
 								<br>
 								<button type="button" class="am-btn am-btn-primary am-icon-cloud-upload" id="toggle-file">上传头像</button>
 								<!-- <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button> -->

@@ -394,18 +394,7 @@ public class RegexUtil {
     }
     
     public static boolean isValidDate(String str) {
-    	boolean convertSuccess=true;
-    	// 指定日期格式为四位年/两位月份/两位日期，注意yyyy/MM/dd区分大小写；
-    	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-    	try {
-    		// 设置lenient为false. 否则SimpleDateFormat会比较宽松地验证日期，比如2007/02/29会被接受，并转换成2007/03/01
-    	    format.setLenient(false);
-    	    format.parse(str);
-    	} catch (ParseException e) {
-    		// 如果throw java.text.ParseException或者NullPointerException，就说明格式不对
-    	    convertSuccess=false;
-    	} 
-    	    return convertSuccess;
+    	    return str.matches("^((?!0000)[0-9]{4}-((0[1-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-8])|(0[13-9]|1[0-2])-(29|30)|(0[13578]|1[02])-31)|([0-9]{2}(0[48]|[2468][048]|[13579][26])|(0[48]|[2468][048]|[13579][26])00)-02-29)$");
    }
     
     //判断字符串是否在区间内 
@@ -428,7 +417,7 @@ public class RegexUtil {
      * @return
      * @author gkb
      */
-    private final static boolean match(String text, String reg) {
+    public final static boolean match(String text, String reg) {
         if (StringUtils.isEmpty(text) || StringUtils.isEmpty(reg))
             return false;
         return Pattern.compile(reg).matcher(text).matches();
