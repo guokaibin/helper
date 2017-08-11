@@ -51,6 +51,12 @@ public class PageController {
 		return "admin_404";
 	}
 	
+	@RequestMapping(value="admin_form_sellSkill.do")
+	public String admin_form_sellSkill(){
+		return "admin_form_sellSkill";
+	}
+	
+	
 	@Autowired
 	private UserInfoService userInfoService;
 	
@@ -72,6 +78,9 @@ public class PageController {
 		
 			return "admin_form_myProfile";
 	}
+	
+	
+	
 
 	public UserInfoService getUserInfoService() {
 		return userInfoService;

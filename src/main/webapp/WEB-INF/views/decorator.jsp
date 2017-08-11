@@ -36,11 +36,17 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/css/amazeui.address.min.css"/> 
-    <style>
+    <style type="text/css">
         #clip {
 				width: 100%;
 				height: 400px;
 		}
+		
+		/* a{ font-size: 14px; color: #555;;} */
+	    /* .wordCount{ position:relative;width: 600px; } */
+	    .wordCount textarea{ width: 100%; height: 100px;}
+	    .wordCount .wordwrap{ position:absolute; right: 6px; bottom: 6px;}
+	    .wordCount .word{ color: red; padding: 0 4px;}
     </style> 
 </head>
 
@@ -194,24 +200,24 @@
                         </a>
                         <ul class="tpl-left-nav-sub-menu">
                             <li>
-                                <a href="admin_form_myProfile.do">
+                                <a href="#" onclick="openwin()">
                                     <i class="am-icon-angle-right"></i>
-                                    <span>我的资料</span>
-                                    <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
+                                    <span>头像裁剪</span>
+                                    <i class="tpl-left-nav-content tpl-badge-success">18</i>
+								</a>
                                 <a href="admin_form_headIcon.do">
                                     <i class="am-icon-angle-right"></i>
                                     <span>我的头像</span>
                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                                 </a>
+                                <a href="admin_form_myProfile.do">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>我的资料</span>
+                                    <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                                </a>
                                 <a href="admin_form_bindPhone.do">
                                     <i class="am-icon-angle-right"></i>
                                     <span>绑定手机</span>
-                                    <i class="tpl-left-nav-content tpl-badge-success">18</i>
-								</a>
-								<a href="admin_chart.do">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>历史邮件</span>
                                     <i class="tpl-left-nav-content tpl-badge-success">18</i>
 								</a>
                             </li>
@@ -263,6 +269,16 @@
                             </li>
                         </ul>
                     </li>
+                    
+                    <li class="tpl-left-nav-item">
+                        <a href="admin_form_sellSkill.do" class="nav-link tpl-left-nav-link-list">
+                            <i class="am-icon-wpforms"></i>
+                            <span>出售技能</span>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                        </a>
+                    </li>
+                    
+                    
                     <li class="tpl-left-nav-item">
                         <a href="login.html" class="nav-link tpl-left-nav-link-list">
                             <i class="am-icon-key"></i>
@@ -290,5 +306,12 @@
 	<script src="assets/js/iscroll-zoom.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="assets/js/hammer.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="assets/js/photoClip.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script>
+	function openwin(){ 
+		window.open("https://stevenyuysy.github.io/Cropper/","newwindow","height=800,width=900,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no"); 
+	}
+	
+	</script>
 </body>
 </html>

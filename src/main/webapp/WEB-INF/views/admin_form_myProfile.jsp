@@ -206,7 +206,7 @@
                                 
                                <div class="am-form-group">
                                     <label for="user-intro" class="am-u-sm-2 am-form-label">简介 / Intro</label>
-                                    <div class="am-u-sm-10" id="wordCount">
+                                    <div class="am-u-sm-10 wordCount" id="wordCount">
                                         <textarea class="" minlength="10" maxlength="200" name="intro" rows="5" id="user-intro" value="${userInfo.intro }" placeholder="200字以内写出你的一生..."></textarea>
                                         <span class="wordwrap"><var class="word">200</var>/200</span>
                                     </div>
