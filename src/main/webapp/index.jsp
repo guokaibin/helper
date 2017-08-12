@@ -29,6 +29,7 @@
             border-top: 1px solid #e5e5e5;
         }
     </style>
+    
 </head>
 <body>
     <div class="container">
@@ -129,10 +130,12 @@
         </div>
         
         
-        <footer class="footer">
+         <footer class="footer">
             <p>&copy;  2016 Company, Inc.版权所有人:郭开斌</p>
-        </footer>
+        </footer>  
     </div>
+    
+ 
 
 </body>
 </html>

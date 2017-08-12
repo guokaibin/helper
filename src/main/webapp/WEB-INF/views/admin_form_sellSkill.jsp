@@ -8,9 +8,12 @@
  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  	<link rel="stylesheet" href="assets/css/amazeui.min.css"/>
  	<!-- webupload 插件cdn -->
- 	<!-- <link rel="stylesheet" href="http://cdn.staticfile.org/webuploader/0.1.0/Uploader.swf" >
- 	<link rel="stylesheet" href="http://cdn.staticfile.org/webuploader/0.1.0/webuploader.js" >
- 	<link rel="stylesheet" href="http://cdn.staticfile.org/webuploader/0.1.0/webuploader.min.js" > -->
+  	<link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/webUploaderCss/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/webUploaderCss/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/webUploaderCss/demo.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/webUploaderCss/webuploader.css">
+     
 </head>
 <body>
 
@@ -23,8 +26,6 @@
                 <li><a href="#">表单</a></li>
                 <li class="am-active">Amaze UI 表单</li>
             </ol>
-            
-            
             <div class="tpl-portlet-components">
                 <div class="portlet-title">
                     <div class="caption font-green bold">
@@ -32,55 +33,26 @@
                     </div>
                 </div>
                 <div class="tpl-block ">
-                    <div class="am-g tpl-amazeui-form">
-                        <div class="am-u-sm-12 am-u-md-9">
-                        
-                            <form class="am-form am-form-horizontal">
-								<div class="am-form-group">
-                                    <label for="user-telephone" class="am-u-sm-3 am-form-label">预约技能</label>
-                                    <div class="am-u-sm-9">
-                                        <input type="text" id="user-telephone" class="js-pattern-mobile" placeholder="输入手机号" required/>
-                                    </div>
-								</div>
-                               <div class="am-form-group">
-                                    <label for="user-intro" class="am-u-sm-3 am-form-label">技能详情</label>
-                                    <div class="am-u-sm-9 wordCount" id="wordCount">
-                                        <textarea class="" minlength="3" maxlength="32" name="intro" rows="5" id="user-intro"  placeholder="此技能又多优秀？比如多少年经验，取得了什么成绩，获得多说好评...字数在32字以内"></textarea>
-                                        <span class="wordwrap"><var class="word">32</var>/32</span>
-                                    </div>  
-                               </div>
-                               <div class="am-form-group">
-                                    <div class="am-u-sm-9 am-u-sm-push-3">
-                                        <button type="submit" class="am-btn am-btn-primary">发布</button>
-                                    </div>
-                               </div>
-                               
-                               
-                               
-                               
-                               
-                               
-                               
-                            </form>
-                            
-                        </div>
-                    </div>
+	                <div id="wrapper">
+	                	<iframe src="admin_form_webUploaderView.do" width="100%" height="680">
+	                	
+	                	</iframe>
+	                </div>
                 </div>
             </div>
-            
-            
-            
-            
 		</div>
 		
 		
-	<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script> 
+	<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/webUploaderJs/webuploader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/webUploaderJs/extend-webuploader.js" type="text/javascript" charset="utf-8"></script>
+    
  	<script>
 	    $(function(){
 	        //先选出 textarea 和 统计字数 dom 节点
 	        var wordCount = $("#wordCount"),
-	            textArea = wordCount.find("textarea"),
-	            word = wordCount.find(".word");
+	        textArea = wordCount.find("textarea"),
+	        word = wordCount.find(".word");
 	        //调用
 	        statInputNum(textArea,word);
 	    });

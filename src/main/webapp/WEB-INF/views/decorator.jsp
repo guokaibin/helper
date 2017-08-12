@@ -41,13 +41,12 @@
 				width: 100%;
 				height: 400px;
 		}
-		
-		/* a{ font-size: 14px; color: #555;;} */
 	    /* .wordCount{ position:relative;width: 600px; } */
 	    .wordCount textarea{ width: 100%; height: 100px;}
 	    .wordCount .wordwrap{ position:absolute; right: 6px; bottom: 6px;}
 	    .wordCount .word{ color: red; padding: 0 4px;}
     </style> 
+    
 </head>
 
 <body data-type="index">
@@ -306,12 +305,10 @@
 	<script src="assets/js/iscroll-zoom.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="assets/js/hammer.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="assets/js/photoClip.min.js" type="text/javascript" charset="utf-8"></script>
-	
 	<script>
 	function openwin(){ 
 		window.open("https://stevenyuysy.github.io/Cropper/","newwindow","height=800,width=900,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no"); 
 	}
-	
 	</script>
 </body>
 </html>

@@ -78,8 +78,11 @@ public class PageController {
 		
 			return "admin_form_myProfile";
 	}
-	
-	
+
+	@RequestMapping(value="admin_form_webUploaderView.do")
+	public String admin_from_webUploaderView(){
+		return "admin_form_webUploaderView";
+	}
 	
 
 	public UserInfoService getUserInfoService() {
