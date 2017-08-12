@@ -7,9 +7,10 @@
 	<title>VENUS</title>
  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  	<link rel="stylesheet" href="assets/css/amazeui.min.css"/>
- 	<link rel="stylesheet" href="http://cdn.staticfile.org/webuploader/0.1.0/Uploader.swf" >
+ 	<!-- webupload 插件cdn -->
+ 	<!-- <link rel="stylesheet" href="http://cdn.staticfile.org/webuploader/0.1.0/Uploader.swf" >
  	<link rel="stylesheet" href="http://cdn.staticfile.org/webuploader/0.1.0/webuploader.js" >
- 	<link rel="stylesheet" href="http://cdn.staticfile.org/webuploader/0.1.0/webuploader.min.js" >
+ 	<link rel="stylesheet" href="http://cdn.staticfile.org/webuploader/0.1.0/webuploader.min.js" > -->
 </head>
 <body>
 
@@ -60,7 +61,6 @@
                                
                                
                                
-                               
                             </form>
                             
                         </div>
@@ -75,7 +75,6 @@
 		
 		
 	<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script> 
-	<script src="assets/js/amazeui.min.js" type="text/javascript" charset="utf-8"></script>  
  	<script>
 	    $(function(){
 	        //先选出 textarea 和 统计字数 dom 节点

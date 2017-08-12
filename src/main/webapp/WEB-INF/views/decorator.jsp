@@ -272,7 +272,7 @@
                     
                     <li class="tpl-left-nav-item">
                         <a href="admin_form_sellSkill.do" class="nav-link tpl-left-nav-link-list">
-                            <i class="am-icon-wpforms"></i>
+                            <i class="am-icon-key"></i>
                             <span>出售技能</span>
                             <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                         </a>
