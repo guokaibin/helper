@@ -1,4 +1,4 @@
-body { margin-top: 50px; font-size: 16px; font-family: "Myriad Pro", "Hiragino Sans GB", "Microsoft YaHei", "Œ¢»Ì—≈∫⁄", Calibri, Helvetica, tahoma, arial, simsun, "ÀŒÃÂ", sans-serif; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+/* body { margin-top: 50px; font-size: 16px; font-family: "Myriad Pro", "Hiragino Sans GB", "Microsoft YaHei", "Œ¢»Ì—≈∫⁄", Calibri, Helvetica, tahoma, arial, simsun, "ÀŒÃÂ", sans-serif; line-height: 1.5; -webkit-font-smoothing: antialiased; }*/
 .jumbotron { background: transparent url(assets/img/webUploaderImg/banner.jpg) repeat-x 50% 0%; color: #fff; text-shadow: 1px 1px 1px #3b3262; margin-bottom: 0; }
 .jumbotron .container { position: relative; }
 .jumbotron .github-btns { position: absolute; bottom: 0; right: 0; }
@@ -17,8 +17,8 @@ body { margin-top: 50px; font-size: 16px; font-family: "Myriad Pro", "Hiragino S
 .footer-fixed-bottom { position: fixed; bottom: 0; }
 .footer a { color: #f2f2f2; }
 .footer .footer-inner { margin: 15px; }
-.wu-example { position: relative; padding: 45px 15px 15px; margin: 15px 0; background-color: #fafafa; box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05); border-color: #e5e5e5 #eee #eee; border-style: solid; border-width: 1px 0; }
-.wu-example:after { content: "’’∆¨"; position: absolute; top: 15px; left: 15px; font-size: 12px; font-weight: bold; color: #bbb; text-transform: uppercase; letter-spacing: 1px; }
+.wu-example { position: relative; padding: 45px 15px 15px; margin: 0px 0; background-color: #fafafa; box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05); border-color: #e5e5e5 #eee #eee; border-style: solid; border-width: 1px 0; }
+.wu-example:after { content: "image"; position: absolute; top: 15px; left: 15px; font-size: 12px; font-weight: bold; color: #bbb; text-transform: uppercase; letter-spacing: 1px; }
 
 @media (min-width: 768px) {
 .bs-example { margin-left: 0; margin-right: 0; background-color: #fff; border-width: 1px; border-color: #ddd; border-radius: 4px 4px 0 0; box-shadow: none; }

@@ -12,30 +12,48 @@
     <link rel="stylesheet" type="text/css" href="assets/css/webUploaderCss/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/webUploaderCss/demo.css">
     <link rel="stylesheet" type="text/css" href="assets/css/webUploaderCss/webuploader.css">
-     
+    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
 </head>
 <body>
 
        <div class="page-container">
-            <div id="uploader" class="wu-example">
-                <div class="queueList">
-                    <div id="dndArea" class="placeholder">
-                        <div id="filePicker"></div>
-                        <p>或将照片拖到这里</p>
-                    </div>
+	        <form class="am-form am-form-horizontal">
+	            <div id="uploader" >
+	                <div class="queueList">
+	                    <div id="dndArea" class="placeholder">
+	                        <div id="filePicker"></div>
+	                        <p>或将照片拖到这里</p>
+	                    </div>
+	                </div>
+	                <div class="statusBar" style="display:none">
+	                    <div class="progress">
+	                        <span class="text">0%</span>
+	                        <span class="percentage"></span>
+	                    </div>    
+	                    <div class="info"></div>
+	                    <div class="btns">
+	                        <div id="filePicker2"></div>
+	                        <div class="uploadBtn">开始上传</div>
+	                    </div>
+	                </div>
+	            </div>
+            
+            	<div style="margin:10px">
+                      <div class="am-u-sm-12">
+                              <input type="text" id="user-telephone" class="js-pattern-mobile" placeholder="输入手机号" required/>
+                      </div>
+			  	 </div>
+                                
+                <div class="am-form-group">
+                       <div class="am-u-sm-9 am-u-sm-push-3">
+                            <button type="submit" class="am-btn am-btn-primary">保存修改</button>
+                       </div>
                 </div>
-                <div class="statusBar" style="display:none">
-                    <div class="progress">
-                        <span class="text">0%</span>
-                        <span class="percentage"></span>
-                    </div>    
-                    <div class="info"></div>
-                    <div class="btns">
-                        <div id="filePicker2"></div>
-                        <div class="uploadBtn">开始上传</div>
-                    </div>
-                </div>
-            </div>
+                               
+                               
+                </form>
+            
+            
         </div>
 		
 		

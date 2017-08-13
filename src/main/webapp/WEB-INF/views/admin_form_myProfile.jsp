@@ -33,7 +33,7 @@
                         
                             <form class="am-form am-form-horizontal" action="sendUserInfo.do" id="userInfoform" method="post">
                                 <div class="am-form-group">
-                                	<input type="text" name="userid" value="${userInfo.userId }" />
+                                	<input type="hidden" name="userid" value="${userInfo.userId }" />
                                     <label for="user-name" class="am-u-sm-2 am-form-label">姓名<small style="color:red">*</small></label>
                                     <div class="am-u-sm-4">
                                         <input type="text" id="user-name" name="realName" minlength="2" maxlength="10" value="${userInfo.realName }" pattern="[a-zA-Z\u4e00-\u9fa5][a-zA-Z0-9\u4e00-\u9fa5]+" placeholder="必填且不能包含特殊字符,字数在2-10位之间" required/>

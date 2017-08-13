@@ -13,7 +13,6 @@
     <link rel="stylesheet" type="text/css" href="assets/css/webUploaderCss/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/webUploaderCss/demo.css">
     <link rel="stylesheet" type="text/css" href="assets/css/webUploaderCss/webuploader.css">
-     
 </head>
 <body>
 
@@ -34,9 +33,7 @@
                 </div>
                 <div class="tpl-block ">
 	                <div id="wrapper">
-	                	<iframe src="admin_form_webUploaderView.do" width="100%" height="680">
-	                	
-	                	</iframe>
+	                	<iframe src="admin_form_webUploaderView.do" width="100%" height="850px" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 	                </div>
                 </div>
             </div>
