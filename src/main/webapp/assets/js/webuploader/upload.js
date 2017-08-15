@@ -154,11 +154,11 @@
             server: '../../server/fileupload.php',
             // runtimeOrder: 'flash',
 
-            // accept: {
-            //     title: 'Images',
-            //     extensions: 'gif,jpg,jpeg,bmp,png',
-            //     mimeTypes: 'image/*'
-            // },
+             accept: {
+                 title: 'Images',
+                 extensions: 'gif,jpg,jpeg,bmp,png',
+                 mimeTypes: 'image/*'
+             },
 
             // 禁掉全局的拖拽功能。这样不会出现图片拖进页面的时候，把图片打开。
             disableGlobalDnd: true,
@@ -190,15 +190,15 @@
             console.log('here');
         });
 
-        // uploader.on('filesQueued', function() {
-        //     uploader.sort(function( a, b ) {
-        //         if ( a.name < b.name )
-        //           return -1;
-        //         if ( a.name > b.name )
-        //           return 1;
-        //         return 0;
-        //     });
-        // });
+         uploader.on('filesQueued', function() {
+             uploader.sort(function( a, b ) {
+                 if ( a.name < b.name )
+                   return -1;
+                 if ( a.name > b.name )
+                   return 1;
+                 return 0;
+             });
+         });
 
         // 添加“添加文件”的按钮，
         uploader.addButton({

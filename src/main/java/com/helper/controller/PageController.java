@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.helper.model.User;
 import com.helper.model.UserInfo;
 import com.helper.service.UserInfoService;
-import com.helper.util.shiroSessionUtil.SessionManager;
+import com.helper.util.shiroSessionUtil.SessionUserManager;
 
 @Controller
 public class PageController {
@@ -63,7 +63,7 @@ public class PageController {
 	//进入我的资料
 	@RequestMapping(value="admin_form_myProfile.do",method=RequestMethod.GET)
 	public String admin_myProfile(HttpServletRequest request){
-		Session session = SessionManager.getSession();
+		Session session = SessionUserManager.getSession();
 		if(session instanceof ValidatingSession && !((ValidatingSession)session).isValid()) {  
 		    return "redirect:loginpage.do";  
 		 }

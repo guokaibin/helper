@@ -16,7 +16,7 @@ import com.helper.model.User;
 import com.helper.model.UserInfo;
 import com.helper.service.UserInfoService;
 import com.helper.util.RegexUtils.RegexUtil;
-import com.helper.util.shiroSessionUtil.SessionManager;
+import com.helper.util.shiroSessionUtil.SessionUserManager;
 
 /**
  * 2017/8/09
@@ -39,12 +39,11 @@ public class UserInfoController {
 			@Param(value="serviceModel") String serviceModel,@Param(value="amount") String amount,@Param(value="accountsModel") String accountsModel,
 			@Param(value="prov") String prov,@Param(value="city") String city,@Param(value="district") String district,@Param(value="intro") String intro,@Param(value="userid") String userid){
 		String message = null;
-		//判断session是否失效
-		Session session = SessionManager.getSession();
-		if(session instanceof ValidatingSession && !((ValidatingSession)session).isValid()) {  
+		 
+		if(SessionUserManager.isSessionOuttime()) {  
 	        return "redirect:loginpage.do";  
 	    }
-		User user = (User)session.getAttribute("currentUser");
+		User user = (User)SessionUserManager.getSession().getAttribute("currentUser");
 		if(user==null){
 			return "redirect:loginpage.do";
 		}

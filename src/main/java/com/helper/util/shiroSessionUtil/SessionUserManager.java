@@ -4,13 +4,17 @@ import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.InvalidSessionException;
 import org.apache.shiro.session.Session;
+import org.apache.shiro.session.mgt.ValidatingSession;
 import org.apache.shiro.subject.Subject;
 
+import com.alibaba.druid.util.StringUtils;
 import com.helper.controller.RegisterController;
+import com.helper.model.User;
 
-public class SessionManager {
+public class SessionUserManager {
 
 	 private static Logger log = Logger.getLogger(RegisterController.class);
+	 
 	 public static void setSession(Object key, Object value){  
 	        Session session = getSession();  
 	        log.info("Session默认超时时间为[" + session.getTimeout() + "]毫秒");  
@@ -35,4 +39,22 @@ public class SessionManager {
 	        return null;  
 	} 
 	
+	
+	 public static User getUserbySession(){
+		 User user = (User)getSession().getAttribute("currentUser");
+		 return user;
+	 }
+	 
+	 public static String getUsernamebySession(){
+		 User user = (User)getSession().getAttribute("currentUser");
+		 return user.getUsername();
+	 }
+	 
+			
+	 public static boolean isSessionOuttime(){
+		 if(getSession() instanceof ValidatingSession && !((ValidatingSession)getSession()).isValid()) {  
+		        return true;  
+		 }
+		 return false;
+	 }
 }

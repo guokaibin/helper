@@ -22,7 +22,7 @@ import com.helper.model.User;
 import com.helper.realm.Constants;
 import com.helper.service.HeadIconServcie;
 import com.helper.service.LoginService;
-import com.helper.util.shiroSessionUtil.SessionManager;
+import com.helper.util.shiroSessionUtil.SessionUserManager;
 import com.qiniu.common.QiniuException;
 import com.qiniu.common.Zone;
 import com.qiniu.http.Response;
@@ -52,7 +52,7 @@ public class HeadIconController {
 			return "admin_form_headIcon";
 		}
 		
-		Session session = SessionManager.getSession();
+		Session session = SessionUserManager.getSession();
 		if(session instanceof ValidatingSession && !((ValidatingSession)session).isValid()) {  
 	        return "redirect:loginpage.do";  
 	    } 
