@@ -27,10 +27,12 @@
     </style>
 </head>
 <body>
-
-       <div class="page-container">
-   
+    
+              	 
+	    <div class="page-container">
 	        <form class="am-form am-form-horizontal">
+	        
+	        
 	            <div id="uploader" class="am-form-group">
 	                <div class="queueList">
 	                    <div id="dndArea" class="placeholder">
@@ -50,7 +52,8 @@
 	                    </div>
 	                </div>
 	            </div>
-            
+	            
+	            
             	<div class="am-form-group"  >
             		  <label for="user-reservationSkill" class="am-u-sm-2 am-form-label am-text-secondary">预约技能</label>
                       <div class="am-u-sm-10">
@@ -59,8 +62,7 @@
                               <!-- <input type="text" id="user-reservationSkill" class="js-pattern-mobile" placeholder="选择你可以赚钱的技能" required/> -->
                       </div>
 			  	</div>
-                 
-                 <div  class="am-form-group">
+                <div  class="am-form-group">
                  	 <label for="user-servicemodel" class="am-u-sm-2 am-form-label am-text-secondary">服务方式</label>
                      <div class="am-u-sm-10">
                           <input type="hidden" id="serviceModelForSelectCheck" />
@@ -71,7 +73,6 @@
 						  </select>
                      </div>
                 </div>
-                 
                 <div class="am-form-group ">
                      <label  class="am-u-sm-2 am-form-label am-text-secondary" >均价</label>
                      <div class="am-u-sm-10" >
@@ -90,7 +91,6 @@
                            </div>
                       </div>
                 </div>  
-                 
                 <div class="am-form-group">
                      <label for="user-intro" class="am-u-sm-2 am-form-label am-text-secondary ">技能详情</label>
                      <div class="am-u-sm-10 wordCount" id="wordCount">
@@ -98,17 +98,21 @@
                             <span class="wordwrap"><var class="word">64</var>/64</span>
                      </div>
                	</div> 
-                
                 <div  class="am-form-group" >
                        <div class="am-u-sm-9 am-u-sm-push-3" >
                             <button type="submit" class="am-btn am-btn-primary">发布</button>
                        </div>
                 </div>
-                               
+                
+               
            </form>
-            
         </div>
-		
+	                	 
+	                	 
+	                	 
+	               
+
+    
 		
 	<script src="assets/js/jquery.min.js" 						     type="text/javascript" charset="utf-8"></script>
 	<script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"		 type="text/javascript" charset="utf-8"></script>

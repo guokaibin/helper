@@ -6,7 +6,7 @@
       <mime-type>width=device-width</mime-type>
       
       <!-- 指明满足“/*”的页面，将被“/WEB-INF/views/decorators/decorator.html”所装饰 -->
-      <mapping path="/*" decorator="/WEB-INF/views/decorator.jsp" />
+      <mapping path="/*.do" decorator="/WEB-INF/views/decorator.jsp" />
   
       <!-- 指明满足“/exclude.jsp*”的页面，将被排除，不被装饰 -->
       <mapping path="/index.jsp" exclue="true" />
@@ -15,4 +15,8 @@
       <mapping path="/loginpage.do" exclue="true"/>
       <mapping path="/admin_form_webUploaderView.do" exclue="true"/>
       <mapping path="/admin_form_webUploaderView.jsp" exclue="true" />
+      <mapping path="/Uploader.swf" exclue="true" />
+      <mapping path="/webuploader.js" exclue="true" />
+      <mapping path="/webuploader.css" exclue="true" />
+      <mapping path="/*.png" exclue="true" />
 </sitemesh>

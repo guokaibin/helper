@@ -10,7 +10,6 @@
     <meta name="description" content="后台主页">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
     <title>VENUS</title>
     
     <!-- Set render engine for 360 browser -->
@@ -18,7 +17,7 @@
     <!-- No Baidu Siteapp-->
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <!-- seting icon -->
-    <link rel="icon" type="image/png" href="assets/i/favicon_6.png">
+    <link rel="icon" type="image/png" href="assets/img/book_logo.png">
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
@@ -36,7 +35,9 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/css/amazeui.address.min.css"/> 
-    <style type="text/css">
+    <link rel="stylesheet" type="text/css" href="assets/css/webuploader/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/webuploader/webuploader.css" />
+      <style type="text/css">
         #clip {
 				width: 100%;
 				height: 400px;
@@ -45,22 +46,88 @@
 	    .wordCount textarea{ width: 100%; height: 100px;}
 	    .wordCount .wordwrap{ position:absolute; right: 6px; bottom: 6px;}
 	    .wordCount .word{ color: red; padding: 0 4px;}
+	    
+	    #uploader .filelist li {
+		    width: 110px;
+		    height: 110px;
+		    background: url(assets/img/webUploaderImg/bg.png) no-repeat;
+		    text-align: center;
+		    margin: 0 8px 20px 0;
+		    position: relative;
+		    display: inline;
+		    float: left;
+		    overflow: hidden;
+		    font-size: 12px;
+		}
+	    
+	    #uploader .placeholder {
+		    border: 3px dashed #e6e6e6;
+		    min-height: 238px;
+		    padding-top: 158px;
+		    text-align: center;
+		    background: url(assets/img/webUploaderImg/image.png) center 93px no-repeat;
+		    color: #cccccc;
+		    font-size: 18px;
+		    position: relative;
+		}
+		
+		#uploader .filelist li .success {
+		    display: block;
+		    position: absolute;
+		    left: 0;
+		    bottom: 0;
+		    height: 40px;
+		    width: 100%;
+		    z-index: 200;
+		    background: url(assets/img/webUploaderImg/success.png) no-repeat right bottom;
+		}
+		
+		#uploader .filelist div.file-panel span {
+		    width: 24px;
+		    height: 24px;
+		    display: inline;
+		    float: right;
+		    text-indent: -9999px;
+		    overflow: hidden;
+		    background: url(assets/img/webUploaderImg/icons.png) no-repeat;
+		    margin: 5px 1px 1px;
+		    cursor: pointer;
+		}
+		
+		#uploader .filelist li p.progress span {
+		    display: none;
+		    overflow: hidden;
+		    width: 0;
+		    height: 100%;
+		    background: #1483d8 url(assets/img/webUploaderImg/progress.png) repeat-x;
+		
+		    -webit-transition: width 200ms linear;
+		    -moz-transition: width 200ms linear;
+		    -o-transition: width 200ms linear;
+		    -ms-transition: width 200ms linear;
+		    transition: width 200ms linear;
+		
+		    -webkit-animation: progressmove 2s linear infinite;
+		    -moz-animation: progressmove 2s linear infinite;
+		    -o-animation: progressmove 2s linear infinite;
+		    -ms-animation: progressmove 2s linear infinite;
+		    animation: progressmove 2s linear infinite;
+		
+		    -webkit-transform: translateZ(0);
+		}
     </style> 
-    
 </head>
 
 <body data-type="index">
 
      <header class="am-topbar am-topbar-inverse admin-header">
         <div class="am-topbar-brand">
-            <a href="javascript:;" class="tpl-logo"  style="padding:2px;margin-top: 9px;">
-                 <img src="assets/img/teacherbook_2.png" alt=""  />
+            <a href="javascript:;" class="tpl-logo"  style="width:110px;height:110px;margin: -14px 23px ;padding:1px;"><!-- style="padding:2px;margin-top: 9px;" -->
+                 <img src="assets/img/book_logo.png" alt=""  />
             </a>
         </div>
         <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right" style="padding: 10px;margin-top: 15px;"></div>
-
         <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
- 
         <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
             <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list">
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
@@ -170,13 +237,8 @@
         </div>
     </header>  
      
-     
-     
-     
-     
-    
     <div class="tpl-page-container tpl-page-header-fixed">
-        <div class="tpl-left-nav tpl-left-nav-hover">
+         <div class="tpl-left-nav tpl-left-nav-hover">
             <div class="tpl-left-nav-title">
                 Amaze UI 列表
             </div>
@@ -188,8 +250,6 @@
                             <span>首页</span>
                         </a>
                     </li>
-                    
-                    
                     
                     <li class="tpl-left-nav-item">
                         <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
@@ -222,8 +282,6 @@
                             </li>
                         </ul>
                     </li>
-                    
-                    
                     
                     <li class="tpl-left-nav-item">
                         <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
@@ -298,8 +356,6 @@
                             </li>
                         </ul>
                     </li>
-                    
-                    
                     <li class="tpl-left-nav-item">
                         <a href="login.html" class="nav-link tpl-left-nav-link-list">
                             <i class="am-icon-key"></i>
@@ -308,12 +364,11 @@
                     </li>
                 </ul>
             </div>
-        </div>
+         </div>
 
 		 <div>  
 			  <sitemesh:write property='body' />
 		 </div>  
-		 
 	</div>
 
 	<script src="assets/js/echarts.js" type="text/javascript" charset="utf-8"></script>
@@ -332,5 +387,9 @@
 		window.open("https://stevenyuysy.github.io/Cropper/","newwindow","height=800,width=900,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no"); 
 	}
 	</script>
+	
+	<!-- <script type="text/javascript" src="assets/js/webuploader/jquery.js"></script> -->
+    <script type="text/javascript" src="assets/js/webuploader/webuploader.js"></script>
+    <script type="text/javascript" src="assets/js/webuploader/upload.js"></script>
 </body>
 </html>
