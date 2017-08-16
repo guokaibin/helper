@@ -104,7 +104,7 @@
 					                                   <input type="number" name="amount"  min="0"   required>
 					                              </div>
 					                              <div class="am-u-sm-8">
-						                                    <select id="user-accountsModel" name="accountsModel" required>
+						                                    <select id="user-accountsModel" name="accountsModel" ><!-- required -->
 							                                     <option  value="">请选择结算方式</option>
 																 <option value="0">小时/￥</option>
 																 <option value="1">日/￥</option>
@@ -117,13 +117,13 @@
 					                <div class="am-form-group">
 					                     <label for="user-intro" class="am-u-sm-2 am-form-label am-text-secondary ">技能详情</label>
 					                     <div class="am-u-sm-10 wordCount" id="wordCount">
-					                            <textarea class="" minlength="1" maxlength="64" name="intro" rows="2" id="user-intro" value="${userInfo.intro }" placeholder="此技能有多优秀?比如多少年经验。取得了什么成绩.获得了多少好评。。字数64字以内"  required></textarea>
+					                            <textarea class="" minlength="1" maxlength="64" name="intro" rows="2" id="user-intro" value="${userInfo.intro }" placeholder="此技能有多优秀?比如多少年经验。取得了什么成绩.获得了多少好评。。字数64字以内"  ></textarea><!-- required -->
 					                            <span class="wordwrap"><var class="word">64</var>/64</span>
 					                     </div>
 					               	</div> 
 					                <div  class="am-form-group" >
 					                       <div class="am-u-sm-9 am-u-sm-push-3" >
-					                            <button type="submit" class="am-btn am-btn-primary">发布</button>
+					                            <button type="submit" class="am-btn am-btn-primary" onclick="subMit()">发布</button>
 					                       </div>
 					                </div>
 	    					

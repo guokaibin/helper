@@ -4,27 +4,26 @@ import java.io.Serializable;
 
 import com.helper.util.shiroSessionUtil.SessionUserManager;
 
-public class ImgPathModel  implements Serializable{
+public class PubImgPath implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-
+	
 	private Integer id;
 	
 	private Integer publishId;
 	
-	private Integer imgPath;
+	private String imgPath;
 	
 	private String username;
 	
-	private Integer status;
+	private int status;
 	
 	protected long createTime; // 创建日期
 
 	protected String createUser;   
 
-	protected String updateUser;   
-	
-	
+	protected String updateUser;
+
 	public Integer getId() {
 		return id;
 	}
@@ -41,11 +40,11 @@ public class ImgPathModel  implements Serializable{
 		this.publishId = publishId;
 	}
 
-	public Integer getImgPath() {
+	public String getImgPath() {
 		return imgPath;
 	}
 
-	public void setImgPath(Integer imgPath) {
+	public void setImgPath(String imgPath) {
 		this.imgPath = imgPath;
 	}
 
@@ -57,11 +56,11 @@ public class ImgPathModel  implements Serializable{
 		this.username = username;
 	}
 
-	public Integer getStatus() {
+	public int getStatus() {
 		return status;
 	}
 
-	public void setStatus(Integer status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 
@@ -87,6 +86,6 @@ public class ImgPathModel  implements Serializable{
 
 	public void setUpdateUser(String updateUser) {
 		this.updateUser = updateUser;
-	}
+	}   
 	
 }

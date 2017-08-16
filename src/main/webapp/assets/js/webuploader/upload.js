@@ -1,6 +1,9 @@
 (function( $ ){
     // 当domReady的时候开始初始化
     $(function() {
+    	
+    	var isUpload=false;
+    	
         var $wrap = $('#uploader'),
 
             // 图片容器
@@ -155,11 +158,11 @@
             server: BASE_URL+'/uploadIndexImage.do',
             // runtimeOrder: 'flash',
 
-            // accept: {
-            //     title: 'Images',
-            //     extensions: 'gif,jpg,jpeg,bmp,png',
-            //     mimeTypes: 'image/*'
-            // },
+             accept: {
+                 title: 'Images',
+                 extensions: 'gif,jpg,jpeg,bmp,png',
+                 mimeTypes: 'image/*'
+             },
 
             // 禁掉全局的拖拽功能。这样不会出现图片拖进页面的时候，把图片打开。
             disableGlobalDnd: true,
@@ -408,7 +411,7 @@
             } else if ( state === 'confirm' ) {
                 stats = uploader.getStats();
                 if ( stats.uploadFailNum ) {
-                    text = '已成功上传' + stats.successNum+ '张照片至XX相册，'+
+                    text = '已成功上传' + stats.successNum+ '张照片至服务器，'+
                         stats.uploadFailNum + '张照片上传失败，<a class="retry" href="#">重新上传</a>失败图片或<a class="ignore" href="#">忽略</a>'
                 }
 
@@ -425,7 +428,7 @@
 
             $info.html( text );
         }
-
+        
         function setState( val ) {
             var file, stats;
 
@@ -479,6 +482,7 @@
                     stats = uploader.getStats();
                     if ( stats.successNum ) {
                         alert( '上传成功' );
+                        isUpload=true;
                     } else {
                         // 没有成功的图片，重设
                         state = 'done';
@@ -490,6 +494,19 @@
             updateStatus();
         }
 
+        /* -------------------------------------------------------------------------------------------------新加模块，判断是否上传了图片 -----------------------------------------------------------------------------------*/
+        function subMit(){
+            if(isUpload==false){
+            	layer.msg("请上传图片",{time:1500});
+            	return false;
+            }else{
+            	isUpload=false;
+            	return true;
+            }      
+        }    
+        /* 新加模块，判断是否上传了图片 */
+        
+        
         uploader.onUploadProgress = function( file, percentage ) {
             var $li = $('#'+file.id),
                 $percent = $li.find('.progress span');

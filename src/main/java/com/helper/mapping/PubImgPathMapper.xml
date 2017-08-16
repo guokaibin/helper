@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.helper.dao.PubImgPathMapper" >
+    
+<insert id="addPubImgPath" parameterType="com.helper.model.PubImgPath" useGeneratedKeys="true" keyProperty="id" >
+    <selectKey resultType="Integer" keyProperty="id" order="AFTER">  
+        SELECT LAST_INSERT_ID()   
+    </selectKey>  
+    insert into t_pubImgPath(imgPath,username,status,createUser,createTime) 
+    			      values(#{imgPath},#{username},#{status},#{createUser},#{createTime})
+</insert>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>
