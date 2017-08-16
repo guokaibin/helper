@@ -1,11 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"  pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+<c:set var="ctx" value="${pageContext.request.contextPath}" scope="request"></c:set>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="utf-8">
 <head>
-	<title>VENUS</title>
- 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="后台主页">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VENUS</title>
+    
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!-- seting icon -->
+    <link rel="icon" type="image/png" href="assets/img/book_logo.png">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+  	<meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+  	<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+ 	<meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+  	<meta name="msapplication-TileColor" content="#0e90d2">
  	
 </head>
 <body>
@@ -131,6 +156,9 @@
 	          numItem.text(max - $(this).val().length);
 	        });
 	    }
+	</script>
+	<script>
+		var BASE_URL = '${ctx}';
 	</script>
 </body>
 
