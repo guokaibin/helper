@@ -7,31 +7,14 @@
 <html lang="utf-8">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="后台主页">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VENUS</title>
-    
-    <!-- Set render engine for 360 browser -->
-    <meta name="renderer" content="webkit">
-    <!-- No Baidu Siteapp-->
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <!-- seting icon -->
-    <link rel="icon" type="image/png" href="assets/img/book_logo.png">
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-  	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-  	<meta name="apple-mobile-web-app-title" content="Amaze UI"/>
-  	<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
- 	<meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
-  	<meta name="msapplication-TileColor" content="#0e90d2">
- 	
+  
+ 	<link rel="stylesheet" href="assets/css/amazeui.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/skillDataSourceCss/amazeui.areaselect.css" />
 </head>
 <body>
 
@@ -77,12 +60,11 @@
 							        </div>
 	    					 </div>
 	    					
-	    					   <div class="am-form-group"  >
+	    					   		<div class="am-form-group"  >
 					            		  <label for="user-reservationSkill" class="am-u-sm-2 am-form-label am-text-secondary">预约技能</label>
 					                      <div class="am-u-sm-10">
 					                      		  <input id="area-input-1" type="text" name="area3" placeholder="请选择技能">
 					                    		  <input type="hidden" name="area3Value">
-					                              <!-- <input type="text" id="user-reservationSkill" class="js-pattern-mobile" placeholder="选择你可以赚钱的技能" required/> -->
 					                      </div>
 								  	</div>
 					                <div  class="am-form-group">
@@ -126,7 +108,6 @@
 					                            <button type="submit" class="am-btn am-btn-primary" onclick="subMit()">发布</button>
 					                       </div>
 					                </div>
-	    					
     					</form>
     				</div>	
     			</div>		
@@ -134,9 +115,11 @@
           </div>
 	</div>
 		
-	<script type="text/javascript" src="assets/js/webuploader/jquery.js"></script>
-    <script type="text/javascript" src="assets/js/webuploader/webuploader.js"></script>
-    <script type="text/javascript" src="assets/js/webuploader/upload.js"></script>
+	<script src="assets/js/webuploader/jquery.js"					 type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/webuploader/webuploader.js"				 type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/webuploader/upload.js"					 type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/skillDataSource/demo.js"                  type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/skillDataSource/amazeui.areaselect.js"    type="text/javascript" charset="utf-8"></script>
  	<script>
 	 	$(function(){
 	 		var wordCount = $("#wordCount"),

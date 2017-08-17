@@ -114,6 +114,7 @@
 		    -webkit-transform: translateZ(0);
 		}
     </style> 
+    <link rel="stylesheet" type="text/css" href="assets/css/skillDataSource/amazeui.areaselect.css" />
 </head>
 
 <body data-type="index">
@@ -387,9 +388,11 @@
 	</script>
 	
 	<!-- <script type="text/javascript" src="assets/js/webuploader/jquery.js"></script> -->
-    <script type="text/javascript" src="assets/js/webuploader/webuploader.js"></script>
-    <script type="text/javascript" src="assets/js/webuploader/upload.js"></script>
+    <script src="assets/js/webuploader/webuploader.js"				 type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/webuploader/upload.js"					 type="text/javascript" charset="utf-8"></script>
     
+    <script src="assets/js/skillDataSource/demo.js"                type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/skillDataSource/amazeui.areaselect.js"  type="text/javascript" charset="utf-8"></script>
     <script>
 		var BASE_URL = '${ctx}';
 	</script>

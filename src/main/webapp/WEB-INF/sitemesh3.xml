@@ -11,7 +11,9 @@
       <!-- 指明满足“/exclude.jsp*”的页面，将被排除，不被装饰 -->
       <mapping path="/index.jsp" exclue="true" />
       <mapping path="/login.jsp" exclue="true" />
-      <mapping path="/login.do"  exclue="true" />   
+      <mapping path="/register.jsp" exclue="true" />
+      <mapping path="/login.do"  exclue="true" />
+      <mapping path="/register.do" exclue="true" />   
       <mapping path="/loginpage.do" exclue="true"/>
       <mapping path="/admin_form_webUploaderView.do" exclue="true"/>
       <mapping path="/admin_form_webUploaderView.jsp" exclue="true" />

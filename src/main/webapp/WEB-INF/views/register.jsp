@@ -5,114 +5,256 @@
 <html lang="utf-8">
 
 <head>
-	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="后台主页">
+    <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
- 	<link rel="stylesheet" href="helper_Static/bootstrap/css/bootstrap.min.css">
- 	<link rel="stylesheet" href="helper_Static/bootstrap/utilcss/ie10-viewport-bug-workaround.css" > 
- 	<script src="helper_Static/jquery/jquery-2.1.0.js" type="text/javascript"></script>
- 	<script src="helper_Static/jquery/drag.js" type="text/javascript"></script> 
     <title>register</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="assets/img/book_logo.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+  	<meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+  	<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+ 	<meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+  	<meta name="msapplication-TileColor" content="#0e90d2">
+    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="assets/css/common.min.css">
+    <link rel="stylesheet" href="assets/css/other.min.css">
     <style>
-        .end-block {
-           margin-top: 30px;
-        }
-        .footer {
-            padding-top: 19px;
-            color: #777;
-            border-top: 1px solid #e5e5e5;
-        }
-        
-		#drag{ 
-		    position: relative;
-		    background-color: #e8e8e8;
-		    width: 290;
-		    height: 34px;
-		    line-height: 34px;
-		    text-align: center;
-		}
-		
-		#drag .handler{
-		    position: absolute;
-		    top: 0px;
-		    left: 0px;
-		    width: 40px;
-		    height: 32px;
-		    border: 1px solid #ccc;
-		    cursor: move;
-		}
-		
-		.handler_bg{
-		    background: #fff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo0ZDhlNWY5My05NmI0LTRlNWQtOGFjYi03ZTY4OGYyMTU2ZTYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTEyNTVEMURGMkVFMTFFNEI5NDBCMjQ2M0ExMDQ1OUYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTEyNTVEMUNGMkVFMTFFNEI5NDBCMjQ2M0ExMDQ1OUYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2MTc5NzNmZS02OTQxLTQyOTYtYTIwNi02NDI2YTNkOWU5YmUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NGQ4ZTVmOTMtOTZiNC00ZTVkLThhY2ItN2U2ODhmMjE1NmU2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+YiRG4AAAALFJREFUeNpi/P//PwMlgImBQkA9A+bOnfsIiBOxKcInh+yCaCDuByoswaIOpxwjciACFegBqZ1AvBSIS5OTk/8TkmNEjwWgQiUgtQuIjwAxUF3yX3xyGIEIFLwHpKyAWB+I1xGSwxULIGf9A7mQkBwTlhBXAFLHgPgqEAcTkmNCU6AL9d8WII4HOvk3ITkWJAXWUMlOoGQHmsE45ViQ2KuBuASoYC4Wf+OUYxz6mQkgwAAN9mIrUReCXgAAAABJRU5ErkJggg==") no-repeat center;
-		}
-		
-		.handler_ok_bg{
-		    background: #fff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo0ZDhlNWY5My05NmI0LTRlNWQtOGFjYi03ZTY4OGYyMTU2ZTYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDlBRDI3NjVGMkQ2MTFFNEI5NDBCMjQ2M0ExMDQ1OUYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDlBRDI3NjRGMkQ2MTFFNEI5NDBCMjQ2M0ExMDQ1OUYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDphNWEzMWNhMC1hYmViLTQxNWEtYTEwZS04Y2U5NzRlN2Q4YTEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NGQ4ZTVmOTMtOTZiNC00ZTVkLThhY2ItN2U2ODhmMjE1NmU2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+k+sHwwAAASZJREFUeNpi/P//PwMyKD8uZw+kUoDYEYgloMIvgHg/EM/ptHx0EFk9I8wAoEZ+IDUPiIMY8IN1QJwENOgj3ACo5gNAbMBAHLgAxA4gQ5igAnNJ0MwAVTsX7IKyY7L2UNuJAf+AmAmJ78AEDTBiwGYg5gbifCSxFCZoaBMCy4A4GOjnH0D6DpK4IxNSVIHAfSDOAeLraJrjgJp/AwPbHMhejiQnwYRmUzNQ4VQgDQqXK0ia/0I17wJiPmQNTNBEAgMlQIWiQA2vgWw7QppBekGxsAjIiEUSBNnsBDWEAY9mEFgMMgBk00E0iZtA7AHEctDQ58MRuA6wlLgGFMoMpIG1QFeGwAIxGZo8GUhIysmwQGSAZgwHaEZhICIzOaBkJkqyM0CAAQDGx279Jf50AAAAAABJRU5ErkJggg==") no-repeat center;
-		}
-		
-		#drag .drag_bg{
-		    background-color: #7ac23c;
-		    height: 34px;
-		    width: 0px;
-		}
-		
-		#drag .drag_text{
-		    position: absolute;
-		    top: 0px;
-		    width: 290px;
-		    -moz-user-select: none;
-		    -webkit-user-select: none;
-		    user-select: none;
-		    -o-user-select:none;
-		    -ms-user-select:none; 
-		}   
+    	.login-container{width:100%;height:100%;margin-top:150px;background:url(assets/img/login-bg.jpg);position:relative}
+    	.register-container{width:100%;height:100%;background:url(assets/img/login-bg.jpg)}.register-container .register-box{width:442px;height:auto;margin:122px auto 0}
     </style>
-    <script>
-    $(document).ready(function () {
-        $('#drag').drag();
-    })
-    </script>
+ 
     	
 </head>
-<body>
-    <div class="container">
-        <div class="page-header">
-            <div class="row">
-                <div class="col-md-10">
-                    <h1>ReportSys<small>&nbsp;&nbsp;&nbsp;welcome to reportSys</small></h1>
+<body class="register-container">
+    <div class="layout">
+    <!--===========layout-header================-->
+    <div class="layout-header am-hide-sm-only">
+      <!--topbar start-->
+      <div class="topbar">
+        <div class="container">
+          <div class="am-g">
+            <div class="am-u-md-3">
+              <div class="topbar-left">
+                <i class="am-icon-globe"></i>
+                <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-primary am-dropdown-toggle" data-am-dropdown-toggle>Language <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">
+                    <li><a href="#">English</a></li>
+                    <li class="am-divider"></li>
+                    <li><a href="#">Chinese</a></li>
+                  </ul>
                 </div>
+              </div>
             </div>
+            <div class="am-u-md-9">
+              <div class="topbar-right am-text-right am-fr">
+                Follow us
+                <i class="am-icon-facebook"></i>
+                <i class="am-icon-twitter"></i>
+                <i class="am-icon-google-plus"></i>
+                <i class="am-icon-pinterest"></i>
+                <i class="am-icon-instagram"></i>
+                <i class="am-icon-linkedin"></i>
+                <i class="am-icon-youtube-play"></i>
+                <i class="am-icon-rss"></i>
+                <a href="./login.html">登录</a>
+                <a href="./register.html">注册</a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="jumbotron" style="height: 600px" border="">
-	        <form class="form-signin" action="submitEmail.do" method="post">
-	          <h4>&nbsp;设置用户名>></h4>
-	            <div align="center" style="margin-top: 100px">
-	                <div class="row" style="height: 50px;">
-	                    <div class="form-group col-md-4 col-md-offset-4">
-	                        <label for="inputEmail" class="sr-only">用户名</label>
-	                        <input type="email" id="inputEmail" class="form-control center-block" placeholder="Email" name="userEmail" required autofocus>
-	                    </div>
-	                </div>
-	                <div class="row" style="height:50px">
-	                	<div class="form-group col-md-4 col-md-offset-4">
-	                		<div class="row">
-  								<div class="col-md-2"><h5>验证</h5></div>
-  								<div class="col-md-10"><div id="drag"></div></div> 
-	                    	</div>
-	                    </div>
-	                </div>
-	                <div class="row">
-	                    <div class="col-md-4 col-md-offset-4">
-	                        <button class="btn btn-default btn-sm  btn-block" type="submit">下一步</button>
-	                    </div>
-	                </div>
-	            </div>
-	        </form>
-        </div>
-        <footer class="footer">
-            <p>&copy; 2016 Company, Inc.版权所有人:郭开斌</p>
-    	</footer>
+      </div>
+      <!--topbar end-->
+
+      <div class="header-box" data-am-sticky>
+        <!--header start-->
+          <div class="container">
+            <div class="header">
+              <div class="am-g">
+                <div class="am-u-lg-2 am-u-sm-12">
+                  <div class="logo">
+                    <a href=""><img src="assets/img/book_logo.png" class="am-fr" alt="" style="width:83px;height:83px;;margin: -24px 23px ;padding:1px;"  /></a>
+                  </div>
+                </div>
+                <div class="am-u-md-10">
+                  <div class="header-right am-fr">
+                    <div class="header-contact">
+                      <div class="header_contacts--item">
+  											<div class="contact_mini">
+  												<i style="color:#7c6aa6" class="contact-icon am-icon-phone"></i>
+  												<strong>13767412438</strong>
+  												<span>周一~周五, 8:00 - 20:00</span>
+  											</div>
+  										</div>
+                      <div class="header_contacts--item">
+  											<div class="contact_mini">
+  												<i style="color:#7c6aa6" class="contact-icon am-icon-envelope-o"></i>
+  												<strong>15570353396@163.com</strong>
+  												<span>随时欢迎您的来信！</span>
+  											</div>
+  										</div>
+                      <div class="header_contacts--item">
+  											<div class="contact_mini">
+  												<i style="color:#7c6aa6" class="contact-icon am-icon-map-marker"></i>
+  												<strong>天使大厦,</strong>
+  												<span>海淀区海淀大街27</span>
+  											</div>
+  										</div>
+                    </div>
+                    <a href="html/contact.html" class="contact-btn">
+                      <button type="button" class="am-btn am-btn-secondary am-radius">联系我们</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!--header end-->
+			<hr>
+      </div>
+
     </div>
-	
+  
+
+
+
+    <!--===========layout-container================-->
+    <div class="register-box">
+      <form action="" class="am-form" data-am-validator>
+        <fieldset>
+          <legend>注册用户<p class="register-info">注册即表示您已同意我们的&nbsp;&nbsp;<a href="">服务条款</a></p></legend>
+
+          <div class="am-form-group">
+            <div class="am-g">
+              <div class="am-u-md-2 am-padding-0 am-text-right">
+                <label for="doc-vld-name-2" class="register-name">用户名</label>
+              </div>
+              <div class="am-u-md-10">
+                <input type="text" id="doc-vld-name-2" minlength="3"
+                       placeholder="输入用户名（至少 3 个字符）" required/>
+              </div>
+            </div>
+          </div>
+
+		  <div class="am-form-group">
+            <div class="am-g">
+              <div class="am-u-md-2 am-padding-0 am-text-right">
+                <label for="doc-vld-name-2" class="register-mobile" id="mobile">手机</label>
+              </div>
+              <div class="am-u-md-10">
+                <input type="text" id="doc-vld-name-2" minlength="3" placeholder="请输入手机号码" required/>
+              </div>
+            </div>
+          </div>
+
+		  <div class="am-form-group">
+            <div class="am-g">
+              <div class="am-u-md-2 am-padding-0 am-text-right">
+                <label for="doc-vld-name-2" class="register-phone">验证码</label>
+              </div>
+              <div class="am-u-md-10">
+              	 
+				    <div class="am-input-group">
+				      <input type="text" class="am-form-field" id="doc-vld-name-2" minlength="3" placeholder="请输入验证码" required>
+				      <span class="am-input-group-btn">
+				        <input class="obtain  am-btn am-btn-default" id ="generate_code" type="button" value="获取验证码" />
+				      </span>
+				    </div>
+				 
+              </div>
+            </div>
+          </div>
+
+
+          <div class="am-form-group">
+            <div class="am-g">
+              <div class="am-u-md-2 am-padding-0 am-text-right">
+                <label for="doc-vld-pwd-1" class="register-pwd">密码</label>
+              </div>
+              <div class="am-u-md-10">
+                <input type="password" id="doc-vld-pwd-1" placeholder="6 位数字的银行卡密码" pattern="^\d{6}$" required/>
+              </div>
+            </div>
+          </div>
+
+          <div class="am-form-group">
+            <div class="am-g">
+              <div class="am-u-md-2 am-padding-0 am-text-right">
+                <label for="doc-vld-pwd-2">确认密码</label>
+              </div>
+              <div class="am-u-md-10">
+                <input type="password" id="doc-vld-pwd-2" placeholder="请与上面输入的值一致" data-equal-to="#doc-vld-pwd-1" required/>
+              </div>
+            </div>
+          </div>
+
+          <div class="am-g">
+            <div class="am-u-md-10">
+              <button class="am-btn am-btn-secondary" type="submit">注册</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+  </div>
+	<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/amazeui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">  
+	  $(function(){  
+	    $("#generate_code").click(function(){  
+	      var disabled = $("#generate_code").attr("disabled");  
+	      if(disabled){  
+	        return false;  
+	      }  
+	      /* if($("#mobile").val() == "" || isNaN($("#mobile").val()) || $("#mobile").val().length != 11 ){  
+	        alert("请填写正确的手机号！");  
+	        return false;  
+	      }  */ 
+	      
+	      $.ajax({  
+	        async:false,  
+	        type: "GET",  
+	        url: "register.do",  
+	        data: {mobile:$("#mobile").val()},  
+	        dataType: "json",  
+	        async:false,  
+	        success:function(data){  
+	          console.log(data);  
+	          settime();  
+	        },  
+	        error:function(err){  
+	          console.log(err);  
+	        }  
+	      });   
+	      
+	    });  
+	    var countdown=60;  
+	    var _generate_code = $("#generate_code");  
+	    function settime() {  
+	      if (countdown == 0) {  
+	        _generate_code.attr("disabled",false);  
+	        _generate_code.val("获取验证码");  
+	        countdown = 60;  
+	        return false;  
+	      } else {  
+	        $("#generate_code").attr("disabled", true);  
+	        _generate_code.val("重新发送(" + countdown + ")");  
+	        countdown--;  
+	      }  
+	      setTimeout(function() {  
+	        settime();  
+	      },1000);  
+	    }  
+	  })  
+	  
+	</script>  
 </body>
 </html>
