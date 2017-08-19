@@ -124,62 +124,6 @@
 										</select>
                                     </div>
                                 </div>
-                                
-                                <div class="am-form-group">
-                                    <label for="user-serviceItems" class="am-u-sm-2 am-form-label">服务项目<small style="color:red">*</small></label>
-                                    <div class="am-u-sm-4">
-                                        <input type="text" id="user-serviceItems" name="serviceItems" minlength="2" maxlength="10" value="${userInfo.serviceItems }"  pattern="[a-zA-Z\u4e00-\u9fa5][a-zA-Z0-9\u4e00-\u9fa5]+" placeholder="必填且不能包含特殊字符" required>
-                                    </div>
-                                    <label for="user-serviceTime" class="am-u-sm-2 am-form-label">服务时间<small style="color:red">*</small></label>
-                                    <div class="am-u-sm-4">
-                                    	<input type="hidden" id="serviceTimeForSelectCheck" value="${userInfo.serviceTime }" />
-                                        <select id="user-serviceTime" name="serviceTime"  required>
-                                         	<option  value="">请选择服务时间</option>
-										  	<option value="1">工作日</option>
-										  	<option value="11">工作日上午</option>
-										  	<option value="12">工作日下午</option>
-										  	<option value="13">工作日晚上</option>
-										  	<option value="2">周末</option>
-										  	<option value="21">周末上午</option>
-										  	<option value="22">周末下午</option>
-										  	<option value="23">周末晚上</option>
-										  	<option value="3">每天</option>
-										  	<option value="31">每天上午</option>
-										  	<option value="32">每天下午</option>
-										  	<option value="33">每天晚上</option>
-										</select>
-                                    </div>
-                                </div>
-                                
-                                <div class="am-form-group">
-                                    <label for="user-servicemodel" class="am-u-sm-2 am-form-label">服务方式<small style="color:red">*</small></label>
-                                    <div class="am-u-sm-4">
-                                    	<input type="hidden" id="serviceModelForSelectCheck" value="${userInfo.serviceModel }" />
-                                        <select id="user-servicemodel" name="serviceModel"  required>
-                                         	<option  value="">请选择服务方式</option>
-										  	<option value="0">远程</option>
-										  	<option value="1">面对面</option>
-										</select>
-                                    </div>
-                                    
-                                    <label  class="am-u-sm-2 am-form-label" >结算<small style="color:red">*</small></label>
-                                    <div class="am-u-sm-4" >
-                                    	<div class="row" >
-                                    		<div class="am-u-sm-6">
-                                    			<input type="number" name="amount"  min="0"  value="${userInfo.amount }" required>
-                                    		</div>
-                                    		<div class="am-u-sm-6">
-                                    			<input type="hidden" id="accountsModelForSelectCheck" value="${userInfo.accountsModel }" />
-	                                    		<select id="user-accountsModel" name="accountsModel" required>
-		                                         	<option  value="">请选择结算方式</option>
-												  	<option value="0">小时/￥</option>
-												  	<option value="1">日/￥</option>
-												  	<option value="2">月/￥</option>
-												</select>
-                                    		</div>
-                                    	</div>
-                                    </div>
-                                </div> 
 
                                 <div class="am-form-group "  id="address1-form">
                                     <label for="user-intro" class="am-u-sm-2 am-form-label">目前在<small style="color:red">*</small></label>

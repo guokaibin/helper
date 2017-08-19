@@ -35,8 +35,7 @@ public class UserInfoController {
 	public String sendUserInfo(HttpServletRequest request,@Param(value="realName") String realName,@Param(value="gender") String gender,@Param(value="birthday") String birthday
 			,@Param(value="age") String age,@Param(value="school") String school,@Param(value="company") String company,@Param(value="career") String career,
 			@Param(value="workingDirection") String workingDirection,@Param(value="hometown") String hometown,@Param(value="QQ") String QQ,
-			@Param(value="specialty") String specialty,@Param(value="level") String level,@Param(value="serviceItems") String serviceItems,@Param(value="serviceTime") String serviceTime,
-			@Param(value="serviceModel") String serviceModel,@Param(value="amount") String amount,@Param(value="accountsModel") String accountsModel,
+			@Param(value="specialty") String specialty,@Param(value="level") String level,
 			@Param(value="prov") String prov,@Param(value="city") String city,@Param(value="district") String district,@Param(value="intro") String intro,@Param(value="userid") String userid){
 		String message = null;
 		 
@@ -55,7 +54,6 @@ public class UserInfoController {
 				return "admin_form_myProfile";
 			}
 		}	
-		
 		
 		if(StringUtils.isEmpty(realName)){
 			message = "真实姓名不能为空";
@@ -224,76 +222,6 @@ public class UserInfoController {
 			return "admin_form_myProfile";
 		}
 		
-		if(StringUtils.isEmpty(serviceItems)){
-			message="服务项目不能为空";
-			request.setAttribute("message", message);
-			return "admin_form_myProfile";
-		}else if(RegexUtil.isContainsSpecialChar(serviceItems)){
-			message="服务项目格式错误,不能包含特殊字符";
-			request.setAttribute("message", message);
-			return "admin_form_myProfile";
-		}else if(!RegexUtil.checkStrLength(serviceItems, 1, 14)){
-			message = "服务项目格式错误,长度超出范围";
-			request.setAttribute("message", message);
-			return "admin_form_myProfile";
-		}
-		
-		if(StringUtils.isEmpty(serviceTime)){
-			message="服务时间段不能为空";
-			request.setAttribute("message", message);
-			return "admin_form_myProfile";
-		}else if(!RegexUtil.isInteger(serviceTime)){
-			message="服务时间段格式错误";
-			request.setAttribute("message", message);
-			return "admin_form_myProfile";
-		}else if(!RegexUtil.checkStrLength(serviceTime, 1, 3)){
-			message = "服务时间段格式错误,长度超出范围";
-			request.setAttribute("message", message);
-			return "admin_form_myProfile";
-		}
-		
-		if(StringUtils.isEmpty(serviceModel)){
-			message = "服务模式不能为空";
-			request.setAttribute("message", message);
-			return "admin_form_myProfile";
-		}else if(!RegexUtil.isInteger(serviceModel)){
-			message = "服务模式格式为空";
-			request.setAttribute("message", message);
-			return "admin_form_myProfile";
-		}else if(!RegexUtil.checkStrLength(serviceModel, 1, 3)){
-			message = "服务模式格式错误,长度超出范围";
-			request.setAttribute("message", message);
-			return "admin_form_myProfile";
-		}
-		
-		if(StringUtils.isEmpty(amount)){
-			message="结算金额不能为空";
-			request.setAttribute("message", message);
-			return "admin_form_myProfile";
-		}else if(!RegexUtil.isInteger(amount)){
-			message = "结算金额格式错误";
-			request.setAttribute("message", message);
-			return "admin_form_myProfile";
-		}else if(!RegexUtil.checkStrLength(amount, 1, 8)){
-			message = "结算金额格式错误,长度超出范围";
-			request.setAttribute("message", message);
-			return "admin_form_myProfile";
-		}
-		
-		if(StringUtils.isEmpty(accountsModel)){
-			message="结算方式不能为空";
-			request.setAttribute("message", message);
-			return "admin_form_myProfile";
-		}else if(!RegexUtil.isInteger(accountsModel)){
-			message = "结算方式格式错误";
-			request.setAttribute("message", message);
-			return "admin_form_myProfile";
-		}else if(!RegexUtil.checkStrLength(accountsModel, 1, 3)){
-			message = "结算方式格式错误,长度超出范围";
-			request.setAttribute("message", message);
-			return "admin_form_myProfile";
-		}
-		 
 		if(StringUtils.isEmpty(prov)||StringUtils.isEmpty(city)||StringUtils.isEmpty(district)){
 			message ="所在地不能空";
 			request.setAttribute("message", message);
@@ -318,10 +246,7 @@ public class UserInfoController {
 				introTrim = intro.trim();
 			}
 		}
-		
-		
-		
-		
+
 		UserInfo userInfo = new UserInfo();
 		userInfo.setUserId(user.getUserId());
 		userInfo.setRealName(realName.trim());
@@ -340,11 +265,6 @@ public class UserInfoController {
 		userInfo.setIntro(introTrim);
 		userInfo.setSpecialty(specialty.trim());
 		userInfo.setLevel(Integer.valueOf(level.trim()).intValue());
-		userInfo.setServiceItems(serviceItems.trim());
-		userInfo.setServiceTime(Integer.valueOf(serviceTime.trim()));
-		userInfo.setServiceModel(Integer.valueOf(serviceModel.trim()));
-		userInfo.setAmount(Integer.valueOf(amount.trim()).intValue());
-		userInfo.setAccountsModel(Integer.valueOf(accountsModel.trim()).intValue());
 		
 		if(StringUtils.isEmpty(userid)){
 			userInfo.setCreateUser(user.getUsername());

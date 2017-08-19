@@ -36,78 +36,101 @@
            	  <div class="tpl-block ">
            	  	<div class="am-g tpl-amazeui-form">
            	  		<div class="am-u-sm-12 ">
-           	  			<form class="am-form am-form-horizontal" action="sendUserInfo.do" id="userInfoform" method="post">
-		                	 <div id="wrapper">
-							        <div id="container">
-							            <!--头部，相册选择和格式选择-->
-							            <div id="uploader">
-							                <div class="queueList">
-							                    <div id="dndArea" class="placeholder">
-							                        <div id="filePicker"></div>
-							                        <p>或将照片拖到这里，单次最多可选300张</p>
-							                    </div>
-							                </div>
-							                <div class="statusBar" style="display:none;">
-							                    <div class="progress">
-							                        <span class="text">0%</span>
-							                        <span class="percentage"></span>
-							                    </div><div class="info"></div>
-							                    <div class="btns">
-							                        <div id="filePicker2"></div><div class="uploadBtn">开始上传</div>
-							                    </div>
-							                </div>
-							            </div>
-							        </div>
-	    					 </div>
-	    					
+           	  			<form class="am-form am-form-horizontal" action="addPublishSkill.do" id="userInfoform" method="post">
+           	  			
+				                	 <div id="wrapper">
+									        <div id="container">
+									            <!--头部，相册选择和格式选择-->
+									            <div id="uploader">
+									                <div class="queueList">
+									                    <div id="dndArea" class="placeholder">
+									                        <div id="filePicker"></div>
+									                        <p>或将照片拖到这里，单次最多可选13张</p>
+									                    </div>
+									                </div>
+									                <div class="statusBar" style="display:none;">
+									                    <div class="progress">
+									                        <span class="text">0%</span>
+									                        <span class="percentage"></span>
+									                    </div><div class="info"></div>
+									                    <div class="btns">
+									                        <div id="filePicker2"></div><div class="uploadBtn">开始上传</div>
+									                    </div>
+									                </div>
+									            </div>
+									        </div>
+			    					 </div>
+			    					 
 	    					   		<div class="am-form-group"  >
 					            		  <label for="user-reservationSkill" class="am-u-sm-2 am-form-label am-text-secondary">预约技能</label>
 					                      <div class="am-u-sm-10">
-					                      		  <input id="area-input-1" type="text" name="area3" placeholder="请选择技能">
+					                      		  <input id="user-reservationSkill" type="text" name="area3" placeholder="请选择技能">
 					                    		  <input type="hidden" name="area3Value">
 					                      </div>
 								  	</div>
+								  	
 					                <div  class="am-form-group">
-					                 	 <label for="user-servicemodel" class="am-u-sm-2 am-form-label am-text-secondary">服务方式</label>
-					                     <div class="am-u-sm-10">
-					                          <input type="hidden" id="serviceModelForSelectCheck" />
-					                          <select id="user-servicemodel" name="serviceModel"  required>
-					                                         	<option  value="">请选择服务方式</option>
-															  	<option value="0">远程</option>
-															  	<option value="1">面对面</option>
-											  </select>
-					                     </div>
+						                 	 <label for="user-servicemodel" class="am-u-sm-2 am-form-label am-text-secondary">服务方式</label>
+						                     <div class="am-u-sm-4">
+						                          <select id="user-servicemodel" name="serviceModel"  required>
+						                                         	<option  value="">请选择服务方式</option>
+																  	<option value="0">远程</option>
+																  	<option value="1">面对面</option>
+												  </select>
+						                     </div>
+						                    
+						                    <label for="user-servicemodel" class="am-u-sm-2 am-form-label am-text-secondary">方便时间段</label>
+						                    <div class="am-u-sm-4">
+						                          <select id="user-servicemodel" name="serviceTime"  required>
+						                                <option  value="">请选择服务时间</option>
+													  	<option value="1">工作日</option>
+													  	<option value="11">工作日上午</option>
+													  	<option value="12">工作日下午</option>
+													  	<option value="13">工作日晚上</option>
+													  	<option value="2">周末</option>
+													  	<option value="21">周末上午</option>
+													  	<option value="22">周末下午</option>
+													  	<option value="23">周末晚上</option>
+													  	<option value="3">每天</option>
+													  	<option value="31">每天上午</option>
+													  	<option value="32">每天下午</option>
+													  	<option value="33">每天晚上</option>
+												  </select>
+						                     </div>
 					                </div>
+					                
 					                <div class="am-form-group ">
 					                     <label  class="am-u-sm-2 am-form-label am-text-secondary" >均价</label>
-					                     <div class="am-u-sm-10" >
-					                          <div class="row am-form-inline " >
-					                              <div class="am-u-sm-4">
-					                                   <input type="number" name="amount"  min="0"   required>
-					                              </div>
-					                              <div class="am-u-sm-8">
-						                                    <select id="user-accountsModel" name="accountsModel" ><!-- required -->
-							                                     <option  value="">请选择结算方式</option>
-																 <option value="0">小时/￥</option>
-																 <option value="1">日/￥</option>
-																 <option value="2">月/￥</option>
-															</select>
-					                               </div>
-					                           </div>
-					                      </div>
+					                     <div class="am-u-sm-4">
+					                              <input type="number" name="amount"  min="0"  value="1" required>
+					                     </div>
+					                     
+					                     <label  class="am-u-sm-2 am-form-label am-text-secondary" >结算方式</label>
+					                     <div class="am-u-sm-4">
+						                      <select id="user-accountsModel" name="accountsModel" >
+							                          <option  value="">请选择结算方式</option>
+													  <option value="0">小时/￥</option>
+													  <option value="1">日/￥</option>
+													  <option value="2">月/￥</option>
+											 </select>
+					                     </div>
 					                </div>  
+					                
 					                <div class="am-form-group">
 					                     <label for="user-intro" class="am-u-sm-2 am-form-label am-text-secondary ">技能详情</label>
 					                     <div class="am-u-sm-10 wordCount" id="wordCount">
-					                            <textarea class="" minlength="1" maxlength="64" name="intro" rows="2" id="user-intro" value="${userInfo.intro }" placeholder="此技能有多优秀?比如多少年经验。取得了什么成绩.获得了多少好评。。字数64字以内"  ></textarea><!-- required -->
+					                            <textarea class="" minlength="1" maxlength="64" name="skillDescription" rows="2" id="user-intro"  placeholder="此技能有多优秀?比如多少年经验。取得了什么成绩.获得了多少好评。。字数64字以内"  ></textarea><!-- required -->
 					                            <span class="wordwrap"><var class="word">64</var>/64</span>
 					                     </div>
 					               	</div> 
+					               	
 					                <div  class="am-form-group" >
 					                       <div class="am-u-sm-9 am-u-sm-push-3" >
-					                            <button type="submit" class="am-btn am-btn-primary" onclick="subMit()">发布</button>
+					                            <button type="submit" class="am-btn am-btn-primary">发布</button>
+					                            <small style="color:red">&nbsp;&nbsp;&nbsp;${message }</small>
 					                       </div>
 					                </div>
+					                
     					</form>
     				</div>	
     			</div>		

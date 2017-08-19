@@ -12,10 +12,22 @@
 
 
 
+<insert id="addPublishSkill" parameterType="com.helper.model.PublishSkill" useGeneratedKeys="true" keyProperty="id" >
+    <selectKey resultType="Integer" keyProperty="id" order="AFTER">  
+        SELECT LAST_INSERT_ID()   
+    </selectKey>  
+    insert into t_publishskill(reserverName,reserverNameType1,reserverNameType2,reserverNameType3,serverType,serverTime,price,countType,skillDescription,status,createUser,createTime,updateUser) 
+    			      values(#{reserverName},#{reserverNameType1},#{reserverNameType2},#{reserverNameType3},#{serverType},#{serverTime},#{price},#{countType},#{skillDescription},#{status},#{createUser},#{createTime},#{updateUser})
+</insert>
 
 
-
-
+<update id="updatePubImgPath" >  
+        UPDATE   
+          t_pubImgPath 
+        SET  
+          publishId =  #{0} 
+        WHERE username = #{1} and publishId is null
+</update>  
 
 
 

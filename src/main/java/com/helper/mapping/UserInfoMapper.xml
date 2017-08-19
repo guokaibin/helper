@@ -6,12 +6,9 @@
     <selectKey resultType="Integer" keyProperty="userInfoId" order="AFTER">  
         SELECT LAST_INSERT_ID()   
     </selectKey>  
-    insert into t_userinfo(userId,realName,gender,birthday,age,hometown,school,company,career,workingDirection,QQ,prov,city,
-    															  district,createUser,createTime,specialty,level,serviceItems,serviceTime,serviceModel,amount,accountsModel) 
-    			 values(#{userId},#{realName},#{gender},#{birthday},#{age},#{hometown},#{school},#{company},#{career},#{workingDirection},#{QQ},#{prov},#{city}
-    															,#{district},#{createUser},#{createTime},#{specialty},#{level},#{serviceItems},#{serviceTime},#{serviceModel},#{amount},#{accountsModel})
+    insert into t_userinfo(userId,realName,gender,birthday,age,hometown,school,company,career,workingDirection,QQ,prov,city,district,createUser,createTime,specialty,level) 
+    			 values(#{userId},#{realName},#{gender},#{birthday},#{age},#{hometown},#{school},#{company},#{career},#{workingDirection},#{QQ},#{prov},#{city},#{district},#{createUser},#{createTime},#{specialty},#{level})
 </insert>
-
 
 <select id="getUserInfo" parameterType="int"  resultType="com.helper.model.UserInfo">
     select * from t_userinfo where userId = #{userid} LIMIT 1
@@ -20,8 +17,7 @@
 <update id="updateUserInfo" parameterType="com.helper.model.UserInfo" >
     update t_userinfo set realName = #{realName} , gender = #{gender}, birthday = #{birthday}, age = #{age}, hometown = #{hometown}, school =#{school}, company = #{company},
     					  career = #{career}, workingDirection = #{workingDirection}, QQ = #{QQ}, prov = #{prov}, city = #{city} , district = #{district}, updateUser = #{updateUser},
-    					  specialty = #{specialty}, level = #{level}, serviceItems =#{serviceItems}, serviceTime = #{serviceTime}, serviceModel = #{serviceModel}, amount = #{amount},
-    					  accountsModel = #{accountsModel} where userId = #{userId}
+    					  specialty = #{specialty}, level = #{level}  where userId = #{userId}
 </update>
 
 </mapper>

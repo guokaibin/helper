@@ -129,10 +129,7 @@ $(document).ready(function () {
                     console.info(resData)
                     return resData;
                 })
-
-
             }
-
         });
     })();
 

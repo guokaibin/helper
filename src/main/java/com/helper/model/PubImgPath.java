@@ -4,6 +4,11 @@ import java.io.Serializable;
 
 import com.helper.util.shiroSessionUtil.SessionUserManager;
 
+/**
+ * 存储发布信息图片地址
+ * @author gkb
+ *
+ */
 public class PubImgPath implements Serializable{
 
 	private static final long serialVersionUID = 1L;
