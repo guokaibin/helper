@@ -35,7 +35,8 @@
         <!-- <property name="successUrl" value="/loginsuccess.jhtml" />  
         <property name="unauthorizedUrl" value="/error.jhtml" />   -->
         <property name="filterChainDefinitions">  
-            <value>  
+            <value>
+                /sendPhoneVerifyCode.do = anon  
              	/register.do  = anon
              	/loginpage.do = anon
              	/login.do = anon

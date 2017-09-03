@@ -121,8 +121,8 @@
 
      <header class="am-topbar am-topbar-inverse admin-header">
         <div class="am-topbar-brand">
-            <a href="javascript:;" class="tpl-logo"  style="width:110px;height:110px;margin: -14px 23px ;padding:1px;"><!-- style="padding:2px;margin-top: 9px;" -->
-                 <img src="assets/img/book_logo.png" alt=""  />
+            <a href="javascript:;" class="tpl-logo"  style="width:65px;height:65px;margin: 4px 23px ;padding:1px;"><!-- style="padding:2px;margin-top: 9px;" -->
+                 <img src="assets/img/logo.ico" alt=""  />
             </a>
         </div>
         <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right" style="padding: 10px;margin-top: 15px;"></div>
@@ -327,11 +327,25 @@
                     </li>
                     
                     <li class="tpl-left-nav-item">
-                        <a href="admin_form_sellSkill.do" class="nav-link tpl-left-nav-link-list">
+                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
                             <i class="am-icon-key"></i>
                             <span>出售技能</span>
                             <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                         </a>
+                        <ul class="tpl-left-nav-sub-menu">
+                            <li>
+                                <a href="admin_form_sellSkill.do">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>出售技能</span>
+                                    <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                                </a>
+                                <a href="admin_form_find.do">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>发现</span>
+                                    <i class="tpl-left-nav-content tpl-badge-success">18</i>
+								</a>
+                            </li>
+                        </ul>
                     </li>
                     
                      <li class="tpl-left-nav-item">

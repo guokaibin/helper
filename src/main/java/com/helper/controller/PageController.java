@@ -56,6 +56,15 @@ public class PageController {
 		return "admin_form_sellSkill";
 	}
 	
+	@RequestMapping(value="admin_form_find.do")
+	public String admin_form_find(){
+		
+		
+		
+		
+		
+		return "admin_form_find";
+	}
 	
 	@Autowired
 	private UserInfoService userInfoService;
@@ -83,7 +92,6 @@ public class PageController {
 	public String admin_from_webUploaderView(){
 		return "admin_form_webUploaderView";
 	}
-	
 
 	public UserInfoService getUserInfoService() {
 		return userInfoService;

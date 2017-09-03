@@ -69,6 +69,10 @@
         <servlet-name>default</servlet-name>
         <url-pattern>*.otf</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.ico</url-pattern>
+  </servlet-mapping>
   
   <!-- sitemesh 装饰模板 -->
   <filter>

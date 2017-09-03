@@ -64,7 +64,7 @@
 	    					   		<div class="am-form-group"  >
 					            		  <label for="user-reservationSkill" class="am-u-sm-2 am-form-label am-text-secondary">预约技能</label>
 					                      <div class="am-u-sm-10">
-					                      		  <input id="user-reservationSkill" type="text" name="area3" placeholder="请选择技能">
+					                      		  <input id="user-reservationSkill" type="text" name="area2" placeholder="请选择技能">
 					                    		  <input type="hidden" name="area3Value">
 					                      </div>
 								  	</div>

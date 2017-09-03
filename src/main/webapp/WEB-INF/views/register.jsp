@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"  pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<c:set var="ctx" value="${pageContext.request.contextPath}" scope="request"></c:set>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="utf-8">
 
@@ -34,122 +34,23 @@
 </head>
 <body class="register-container">
     <div class="layout">
-    <!--===========layout-header================-->
-    <div class="layout-header am-hide-sm-only">
-      <!--topbar start-->
-      <div class="topbar">
-        <div class="container">
-          <div class="am-g">
-            <div class="am-u-md-3">
-              <div class="topbar-left">
-                <i class="am-icon-globe"></i>
-                <div class="am-dropdown" data-am-dropdown>
-                  <button class="am-btn am-btn-primary am-dropdown-toggle" data-am-dropdown-toggle>Language <span class="am-icon-caret-down"></span></button>
-                  <ul class="am-dropdown-content">
-                    <li><a href="#">English</a></li>
-                    <li class="am-divider"></li>
-                    <li><a href="#">Chinese</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="am-u-md-9">
-              <div class="topbar-right am-text-right am-fr">
-                Follow us
-                <i class="am-icon-facebook"></i>
-                <i class="am-icon-twitter"></i>
-                <i class="am-icon-google-plus"></i>
-                <i class="am-icon-pinterest"></i>
-                <i class="am-icon-instagram"></i>
-                <i class="am-icon-linkedin"></i>
-                <i class="am-icon-youtube-play"></i>
-                <i class="am-icon-rss"></i>
-                <a href="./login.html">登录</a>
-                <a href="./register.html">注册</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--topbar end-->
-
-      <div class="header-box" data-am-sticky>
-        <!--header start-->
-          <div class="container">
-            <div class="header">
-              <div class="am-g">
-                <div class="am-u-lg-2 am-u-sm-12">
-                  <div class="logo">
-                    <a href=""><img src="assets/img/book_logo.png" class="am-fr" alt="" style="width:83px;height:83px;;margin: -24px 23px ;padding:1px;"  /></a>
-                  </div>
-                </div>
-                <div class="am-u-md-10">
-                  <div class="header-right am-fr">
-                    <div class="header-contact">
-                      <div class="header_contacts--item">
-  											<div class="contact_mini">
-  												<i style="color:#7c6aa6" class="contact-icon am-icon-phone"></i>
-  												<strong>13767412438</strong>
-  												<span>周一~周五, 8:00 - 20:00</span>
-  											</div>
-  										</div>
-                      <div class="header_contacts--item">
-  											<div class="contact_mini">
-  												<i style="color:#7c6aa6" class="contact-icon am-icon-envelope-o"></i>
-  												<strong>15570353396@163.com</strong>
-  												<span>随时欢迎您的来信！</span>
-  											</div>
-  										</div>
-                      <div class="header_contacts--item">
-  											<div class="contact_mini">
-  												<i style="color:#7c6aa6" class="contact-icon am-icon-map-marker"></i>
-  												<strong>天使大厦,</strong>
-  												<span>海淀区海淀大街27</span>
-  											</div>
-  										</div>
-                    </div>
-                    <a href="html/contact.html" class="contact-btn">
-                      <button type="button" class="am-btn am-btn-secondary am-radius">联系我们</button>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        <!--header end-->
-			<hr>
-      </div>
-
-    </div>
-  
-
-
-
-    <!--===========layout-container================-->
+    
     <div class="register-box">
-      <form action="" class="am-form" data-am-validator>
+      <form action="registerUser.do" method="post" class="am-form">
         <fieldset>
           <legend>注册用户<p class="register-info">注册即表示您已同意我们的&nbsp;&nbsp;<a href="">服务条款</a></p></legend>
 
-          <div class="am-form-group">
-            <div class="am-g">
-              <div class="am-u-md-2 am-padding-0 am-text-right">
-                <label for="doc-vld-name-2" class="register-name">用户名</label>
-              </div>
-              <div class="am-u-md-10">
-                <input type="text" id="doc-vld-name-2" minlength="3"
-                       placeholder="输入用户名（至少 3 个字符）" required/>
-              </div>
-            </div>
-          </div>
+			  <div class="login-font">
+					 <span style="color:red;" id="message">${error}</span>
+			  </div>
 
 		  <div class="am-form-group">
             <div class="am-g">
               <div class="am-u-md-2 am-padding-0 am-text-right">
-                <label for="doc-vld-name-2" class="register-mobile" id="mobile">手机</label>
+                <label for="doc-vld-name-2" class="register-mobile" >手机</label>
               </div>
               <div class="am-u-md-10">
-                <input type="text" id="doc-vld-name-2" minlength="3" placeholder="请输入手机号码" required/>
+                <input type="text"   minlength="3" placeholder="请输入手机号码" id="username" name="username" required/>
               </div>
             </div>
           </div>
@@ -160,26 +61,37 @@
                 <label for="doc-vld-name-2" class="register-phone">验证码</label>
               </div>
               <div class="am-u-md-10">
-              	 
-				    <div class="am-input-group">
-				      <input type="text" class="am-form-field" id="doc-vld-name-2" minlength="3" placeholder="请输入验证码" required>
-				      <span class="am-input-group-btn">
-				        <input class="obtain  am-btn am-btn-default" id ="generate_code" type="button" value="获取验证码" />
-				      </span>
-				    </div>
-				 
+              	<div class="row">
+              		<div class="am-u-md-6 am-padding-0 am-text-right">
+              			<input type="text" id="code" class="txt" name="verifycode" required />
+              		</div>
+              		<div class="am-u-md-6">
+              			<button class="am-btn am-btn-success"   id="J_getCode">获取验证码</button>
+						<button class="am-btn am-btn-default"   id="J_resetCode" disabled="disabled" style="display:none;"><span id="J_second">60</span>s重新获取</button>
+              		</div>
+              	</div>
               </div>
             </div>
           </div>
 
-
+		  <div class="am-form-group">
+            <div class="am-g">
+              <div class="am-u-md-2 am-padding-0 am-text-right">
+                <label for="doc-vld-name-2" class="register-name">用户名</label>
+              </div>
+              <div class="am-u-md-10">
+                <input type="text" id="doc-vld-name-2" minlength="3"  placeholder="输入用户名" name="name" required/>
+              </div>
+            </div>
+          </div> 
+          	
           <div class="am-form-group">
             <div class="am-g">
               <div class="am-u-md-2 am-padding-0 am-text-right">
                 <label for="doc-vld-pwd-1" class="register-pwd">密码</label>
               </div>
               <div class="am-u-md-10">
-                <input type="password" id="doc-vld-pwd-1" placeholder="6 位数字的银行卡密码" pattern="^\d{6}$" required/>
+                <input type="password" id="doc-vld-pwd-1" placeholder="请输入密码" pattern="^\d{6}$" required/>
               </div>
             </div>
           </div>
@@ -196,9 +108,12 @@
           </div>
 
           <div class="am-g">
-            <div class="am-u-md-10">
+            <div class="am-u-md-6">
               <button class="am-btn am-btn-secondary" type="submit">注册</button>
             </div>
+            <div class="am-u-md-6  am-text-right">
+			  		<small><a href="">已有账号，去登录</a></small>
+			</div>
           </div>
         </fieldset>
       </form>
@@ -207,54 +122,83 @@
   </div>
 	<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/js/amazeui.min.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">  
+    <script>
+		var BASE_URL = '${ctx}';
+	</script>
+    <script type="text/javascript">
 	  $(function(){  
-	    $("#generate_code").click(function(){  
-	      var disabled = $("#generate_code").attr("disabled");  
-	      if(disabled){  
-	        return false;  
-	      }  
-	      /* if($("#mobile").val() == "" || isNaN($("#mobile").val()) || $("#mobile").val().length != 11 ){  
-	        alert("请填写正确的手机号！");  
-	        return false;  
-	      }  */ 
-	      
-	      $.ajax({  
-	        async:false,  
-	        type: "GET",  
-	        url: "register.do",  
-	        data: {mobile:$("#mobile").val()},  
-	        dataType: "json",  
-	        async:false,  
-	        success:function(data){  
-	          console.log(data);  
-	          settime();  
-	        },  
-	        error:function(err){  
-	          console.log(err);  
-	        }  
-	      });   
-	      
-	    });  
-	    var countdown=60;  
-	    var _generate_code = $("#generate_code");  
-	    function settime() {  
-	      if (countdown == 0) {  
-	        _generate_code.attr("disabled",false);  
-	        _generate_code.val("获取验证码");  
-	        countdown = 60;  
-	        return false;  
-	      } else {  
-	        $("#generate_code").attr("disabled", true);  
-	        _generate_code.val("重新发送(" + countdown + ")");  
-	        countdown--;  
-	      }  
-	      setTimeout(function() {  
-	        settime();  
-	      },1000);  
-	    }  
-	  })  
+	    $("#J_getCode").click(function(){  
+	    	var a = $("#username").val();
+	    	alert(a)
+	    	checkPhone(); //验证手机号码
+			if(isPhone){
+				resetCode(); //倒计时
+			    $.ajax({  
+			        async:false,
+			        type: "GET",
+			        url: BASE_URL+"/sendPhoneVerifyCode.do" ,  
+			        data: "username="+ $("#username").val() ,   
+			        dataType: "text",  	
+			        success:function(data){  
+			          console.log(data);  
+			        },  
+			        error:function(err){  
+			          console.log(err); 
+			          
+			        }  
+			    }); 
+			}else{
+				$('#username').focus();
+				return;
+			}
+	    
+	   });  
+	})  
 	  
+	var isPhone = 1;
+	function getCode(e){
+		checkPhone(); //验证手机号码
+		if(isPhone){
+			resetCode(); //倒计时
+		}else{
+			$('#username').focus();
+		}
+	}
+	//验证手机号码
+	function checkPhone(){
+		var phone = $('#username').val();
+		var pattern = /^1[0-9]{10}$/;
+		isPhone = 1;
+		if(phone == '') {
+			alert('请输入手机号码');
+			isPhone = 0;
+			return;
+		}
+		if(!pattern.test(phone)){
+			alert('请输入正确的手机号码');
+			isPhone = 0;
+			return;
+		}
+	}
+	//倒计时
+	function resetCode(){
+		$('#J_getCode').hide();
+		$('#J_second').html('60');
+		$('#J_resetCode').show();
+		var second = 5;
+		var timer = null;
+		timer = setInterval(function(){
+			second -= 1;
+			if(second >0 ){
+				$('#J_second').html(second);
+			}else{
+				clearInterval(timer);
+				$('#J_getCode').show();
+				$('#J_resetCode').hide();
+			}
+		},1000);
+	}
 	</script>  
+	
 </body>
 </html>
