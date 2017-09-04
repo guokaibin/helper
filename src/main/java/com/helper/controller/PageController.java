@@ -5,20 +5,16 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.log4j.Logger;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.mgt.ValidatingSession;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.helper.model.User;
-import com.helper.model.UserInfo;
-import com.helper.service.UserInfoService;
 import com.helper.util.shiroSessionUtil.SessionUserManager;
 
 @Controller
 public class PageController {
 
-	private static Logger log = Logger.getLogger(RegisterController.class);
+	private static Logger log = Logger.getLogger(PageController.class);
 	
 	@RequestMapping(value="/loginsuccess.do")
 	public String loginsuccess(){
@@ -66,8 +62,6 @@ public class PageController {
 		return "admin_form_find";
 	}
 	
-	@Autowired
-	private UserInfoService userInfoService;
 	
 	//进入我的资料
 	@RequestMapping(value="admin_form_myProfile.do",method=RequestMethod.GET)
@@ -76,13 +70,13 @@ public class PageController {
 		if(session instanceof ValidatingSession && !((ValidatingSession)session).isValid()) {  
 		    return "redirect:loginpage.do";  
 		 }
-		User user = (User)session.getAttribute("currentUser");
+		/*User user = (User)session.getAttribute("currentUser");
 		if(user==null){
 			return "redirect:loginpage.do";
 		}
 			
 		UserInfo userInfo = userInfoService.getUserInfo(user.getUserId());
-		request.setAttribute("userInfo", userInfo);	
+		request.setAttribute("userInfo", userInfo);	*/
 		
 		
 			return "admin_form_myProfile";
@@ -93,13 +87,6 @@ public class PageController {
 		return "admin_form_webUploaderView";
 	}
 
-	public UserInfoService getUserInfoService() {
-		return userInfoService;
-	}
-
-	public void setUserInfoService(UserInfoService userInfoService) {
-		this.userInfoService = userInfoService;
-	}
-	
+ 
 	
 }

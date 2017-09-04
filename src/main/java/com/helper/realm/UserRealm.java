@@ -7,7 +7,6 @@ import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authc.UnknownAccountException;
-import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.session.InvalidSessionException;
@@ -17,13 +16,13 @@ import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.helper.model.User;
-import com.helper.service.LoginService;
+import com.helper.model.UserModel;
+import com.helper.service.UserService;
 
 public class UserRealm extends AuthorizingRealm{
 
 	@Autowired
-	private LoginService loginService;
+	private UserService userService;
 	
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection arg0) {
@@ -36,7 +35,7 @@ public class UserRealm extends AuthorizingRealm{
 		
 		String username = (String) arg0.getPrincipal();  
 
-        User user = loginService.findByUsername(username); 
+        UserModel user = userService.findByUsername(username); 
         
         if(user != null){ 
         	

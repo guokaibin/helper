@@ -19,5 +19,13 @@ public class AppConfig {
     //验证短信验证码地址：网易云
 	final public static String VERIFY_CODE_URL = "https://api.netease.im/sms/verifycode.action";
 	
+	//七牛上传图片accessKey
+	public static final String accessKey = "CTxzTRjtfg0cYzbpKUvLJnIswQQK1DsEz04ZVJmH";
+	//七牛上传图片secretKey
+	public static final String secretKey = "_MaxW0H-jccNexOZGFctLUAVmZVBqXs7N3C7Wodh";
+	//七牛上传图片头像标识桶
+	public static final String bucket = "avatar";
+	
+	
 	
 }

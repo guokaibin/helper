@@ -25,15 +25,69 @@
     <link rel="stylesheet" href="assets/css/amazeui.min.css" />
     <link rel="stylesheet" href="assets/css/common.min.css">
     <link rel="stylesheet" href="assets/css/other.min.css">
-    <style>
-    	.login-container{width:100%;height:100%;margin-top:150px;background:url(assets/img/login-bg.jpg);position:relative}
-    	.register-container{width:100%;height:100%;background:url(assets/img/login-bg.jpg)}.register-container .register-box{width:442px;height:auto;margin:122px auto 0}
-    </style>
- 
+   
+ 	<style>
+ 		::-webkit-input-placeholder { /* WebKit browsers */ 
+		font-size:12px;
+		} 
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+		font-size:12px;
+		} 
+		::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+		font-size:12px;
+		} 
+		:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+		font-size:12px;
+		}
+ 	</style>
     	
 </head>
 <body class="register-container">
     <div class="layout">
+    
+    
+    	<!-- <div class="container" style="border-bottom:solid 1px; #000">
+            <div class="header" >
+              <div class="am-g">
+                <div class="am-u-lg-2 am-u-sm-12">
+                  <div class="logo" style="border:1px">
+                    <a href=""><img src="assets/img/20170904185431.png" alt="" /></a>
+                  </div>
+                </div>
+                <div class="am-u-md-10">
+                  <div class="header-right am-fr">
+                    <div class="header-contact">
+                      <div class="header_contacts--item">
+  											<div class="contact_mini">
+  												<i style="color:#7c6aa6" class="contact-icon am-icon-phone"></i>
+  												<strong>0 (855) 233-5385</strong>
+  												<span>周一~周五, 8:00 - 20:00</span>
+  											</div>
+  										</div>
+                      <div class="header_contacts--item">
+  											<div class="contact_mini">
+  												<i style="color:#7c6aa6" class="contact-icon am-icon-envelope-o"></i>
+  												<strong>cn@yunshipei.com</strong>
+  												<span>随时欢迎您的来信！</span>
+  											</div>
+  										</div>
+                      <div class="header_contacts--item">
+  											<div class="contact_mini">
+  												<i style="color:#7c6aa6" class="contact-icon am-icon-map-marker"></i>
+  												<strong>天使大厦,</strong>
+  												<span>海淀区海淀大街27</span>
+  											</div>
+  										</div>
+                    </div>
+                    <a href="html/contact.html" class="contact-btn">
+                      <button type="button" class="am-btn am-btn-secondary am-radius">联系我们</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+  
     
     <div class="register-box">
       <form action="registerUser.do" method="post" class="am-form">
@@ -43,44 +97,14 @@
 			  <div class="login-font">
 					 <span style="color:red;" id="message">${error}</span>
 			  </div>
-
+		  
 		  <div class="am-form-group">
             <div class="am-g">
               <div class="am-u-md-2 am-padding-0 am-text-right">
-                <label for="doc-vld-name-2" class="register-mobile" >手机</label>
+                <label for="doc-vld-name" class="register-name">用户名</label>
               </div>
               <div class="am-u-md-10">
-                <input type="text"   minlength="3" placeholder="请输入手机号码" id="username" name="username" required/>
-              </div>
-            </div>
-          </div>
-
-		  <div class="am-form-group">
-            <div class="am-g">
-              <div class="am-u-md-2 am-padding-0 am-text-right">
-                <label for="doc-vld-name-2" class="register-phone">验证码</label>
-              </div>
-              <div class="am-u-md-10">
-              	<div class="row">
-              		<div class="am-u-md-6 am-padding-0 am-text-right">
-              			<input type="text" id="code" class="txt" name="verifycode" required />
-              		</div>
-              		<div class="am-u-md-6">
-              			<button class="am-btn am-btn-success"   id="J_getCode">获取验证码</button>
-						<button class="am-btn am-btn-default"   id="J_resetCode" disabled="disabled" style="display:none;"><span id="J_second">60</span>s重新获取</button>
-              		</div>
-              	</div>
-              </div>
-            </div>
-          </div>
-
-		  <div class="am-form-group">
-            <div class="am-g">
-              <div class="am-u-md-2 am-padding-0 am-text-right">
-                <label for="doc-vld-name-2" class="register-name">用户名</label>
-              </div>
-              <div class="am-u-md-10">
-                <input type="text" id="doc-vld-name-2" minlength="3"  placeholder="输入用户名" name="name" required/>
+                <input type="text" id="doc-vld-name" minlength="4"  placeholder="支持中文,英文,数字,下划线等字符组合,4-20字符"  name="name" required/>
               </div>
             </div>
           </div> 
@@ -88,10 +112,10 @@
           <div class="am-form-group">
             <div class="am-g">
               <div class="am-u-md-2 am-padding-0 am-text-right">
-                <label for="doc-vld-pwd-1" class="register-pwd">密码</label>
+                <label for="doc-vld-pwd" class="register-pwd">密码</label>
               </div>
               <div class="am-u-md-10">
-                <input type="password" id="doc-vld-pwd-1" placeholder="请输入密码" pattern="^\d{6}$" required/>
+                <input type="password" id="doc-vld-pwd" placeholder="建议字母,数字,和符号两种及以上的组合,6-20字符" pattern="^\d{6}$" required/>
               </div>
             </div>
           </div>
@@ -106,6 +130,37 @@
               </div>
             </div>
           </div>
+		  
+		  
+		  <div class="am-form-group">
+            <div class="am-g">
+              <div class="am-u-md-2 am-padding-0 am-text-right">
+                <label for="username" class="register-mobile" >手机号</label>
+              </div>
+              <div class="am-u-md-10">
+                <input type="text"   minlength="3" placeholder="请输入手机号码" id="username" name="username" required/>
+              </div>
+            </div>
+          </div>
+
+		  <div class="am-form-group">
+            <div class="am-g">
+              <div class="am-u-md-2 am-padding-0 am-text-right">
+                <label for="code" class="register-phone" style="font-size:14px;">短信验证码</label>
+              </div>
+              <div class="am-u-md-10">
+              	<div class="row">
+              		<div class="am-u-md-6 am-padding-0 am-text-right">
+              			<input type="text" id="code" class="txt" name="verifycode" placeholder="请输入短信验证码" required />
+              		</div>
+              		<div class="am-u-md-6">
+              			<button class="am-btn am-btn-success"   id="J_getCode">获取验证码</button>
+						<button class="am-btn am-btn-default"   id="J_resetCode" disabled="disabled" style="display:none;"><span id="J_second">60</span>s重新获取</button>
+              		</div>
+              	</div>
+              </div>
+            </div>
+          </div>
 
           <div class="am-g">
             <div class="am-u-md-6">
@@ -116,6 +171,7 @@
 			</div>
           </div>
         </fieldset>
+        
       </form>
     </div>
 

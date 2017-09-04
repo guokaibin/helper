@@ -6,9 +6,10 @@ import java.util.List;
 
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.SimpleHash;
+import org.springframework.stereotype.Component;
 
 
-
+@Component
 public class UserModel  implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -59,9 +60,7 @@ public class UserModel  implements Serializable{
 	
 	private String updateUser; 
 	
-	private int status;
-	
-	private Boolean locked = Boolean.FALSE;
+	private int locked;
 	
 	private String code;
 	
@@ -158,14 +157,6 @@ public class UserModel  implements Serializable{
 		this.userEmail = userEmail;
 	}
 
- 
-	public int getStatus() {
-		return status;
-	}
-
-	public void setStatus(int status) {
-		this.status = status;
-	}
 
 	public String getUsername() {
 		return username;
@@ -183,11 +174,11 @@ public class UserModel  implements Serializable{
 		this.password = password;
 	}
 
-	public Boolean getLocked() {
+	public int getLocked() {
 		return locked;
 	}
 
-	public void setLocked(Boolean locked) {
+	public void setLocked(int locked) {
 		this.locked = locked;
 	}
 

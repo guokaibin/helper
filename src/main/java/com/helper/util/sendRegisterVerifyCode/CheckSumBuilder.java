@@ -1,4 +1,4 @@
-package com.helper.util.sendRegisterPhoneMessage;
+package com.helper.util.sendRegisterVerifyCode;
 
 import java.security.MessageDigest;
 

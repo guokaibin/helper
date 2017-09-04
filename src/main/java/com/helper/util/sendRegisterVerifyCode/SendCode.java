@@ -1,4 +1,4 @@
-package com.helper.util.sendRegisterPhoneMessage;
+package com.helper.util.sendRegisterVerifyCode;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -91,7 +91,7 @@ public class SendCode {
     
     
     //验证手机验证码是否过期，10分钟内有效
-    public static String verifycode(){
+    public static String verifycode(String mobile,String code){
     	DefaultHttpClient httpClient = new DefaultHttpClient();
         HttpPost httpPost = new HttpPost(AppConfig.VERIFY_CODE_URL);
         String curTime = String.valueOf((new Date()).getTime() / 1000L);
@@ -105,8 +105,8 @@ public class SendCode {
         httpPost.addHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
 
         List<NameValuePair> nvps = new ArrayList<NameValuePair>();
-        nvps.add(new BasicNameValuePair("mobile", AppConfig.MOBILE));
-        nvps.add(new BasicNameValuePair("code", "101273"));
+        nvps.add(new BasicNameValuePair("mobile", mobile));
+        nvps.add(new BasicNameValuePair("code", code));
 
         try {
 			httpPost.setEntity(new UrlEncodedFormEntity(nvps, "utf-8"));
@@ -234,23 +234,6 @@ public class SendCode {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
-    public static void main(String[] args) throws Exception {
-
-    	System.out.println(SendCode.verifycode());;
-
-    }
+  
 }

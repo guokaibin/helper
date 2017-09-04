@@ -7,13 +7,11 @@ import org.apache.shiro.session.Session;
 import org.apache.shiro.session.mgt.ValidatingSession;
 import org.apache.shiro.subject.Subject;
 
-import com.alibaba.druid.util.StringUtils;
-import com.helper.controller.RegisterController;
-import com.helper.model.User;
+import com.helper.model.UserModel;
 
 public class SessionUserManager {
 
-	 private static Logger log = Logger.getLogger(RegisterController.class);
+	 private static Logger log = Logger.getLogger(SessionUserManager.class);
 	 
 	 public static void setSession(Object key, Object value){  
 	        Session session = getSession();  
@@ -40,13 +38,13 @@ public class SessionUserManager {
 	} 
 	
 	
-	 public static User getUserbySession(){
-		 User user = (User)getSession().getAttribute("currentUser");
+	 public static UserModel getUserbySession(){
+		 UserModel user = (UserModel)getSession().getAttribute("currentUser");
 		 return user;
 	 }
 	 
 	 public static String getUsernamebySession(){
-		 User user = (User)getSession().getAttribute("currentUser");
+		 UserModel user = (UserModel)getSession().getAttribute("currentUser");
 		 return user.getUsername();
 	 }
 	 

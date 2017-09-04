@@ -21,9 +21,9 @@ public class Constants {
 		  int hashIterations = 3;  
 		  SimpleHash hash = new SimpleHash(algorithmName, password,  salt1 + salt2, hashIterations);  
 		  String encodedPassword = hash.toHex();  
-		  System.out.println(encodedPassword);  
-		  System.out.println(salt2);  
-		  
+		  System.out.println(encodedPassword.length());  
+		  System.out.println(salt2.length());  
+		  System.out.println(String.valueOf(System.currentTimeMillis()).toString().length());
 		  
 //		   String username1 = "liu"; //用户名及salt1  
 //		    String password1 = "202cb962ac59075b964b07152d234b70"; //加密后的密码  
