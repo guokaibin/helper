@@ -36,9 +36,7 @@ import com.helper.util.sendRegisterVerifyCode.SendCode;
 public class UserController {
 	
 	private static Logger log = Logger.getLogger(UserController.class);
-	
-	@Autowired
-	private UserModel userModel;
+ 
 	
 	@Autowired
 	private UserService userService;
@@ -73,7 +71,7 @@ public class UserController {
 			request.setAttribute("message", message);
 			return "register";
 		}
-		
+		UserModel userModel = new UserModel();
 		userModel.setName(name);
 		userModel.setUsername(username);
 		userModel.setPassword(encodedPassword(username,password));
@@ -81,9 +79,11 @@ public class UserController {
 		userModel.setCreateUser(username);
 		userModel.setCreateTime(System.currentTimeMillis());
 		userModel.setUpdateUser(username);
-		userModel.setLocked(1);
+		userModel.setLocked(0);
 		
-		userService.addUser(userModel);
+		int result = userService.addUser(userModel);
+		if(result==1)
+			return "home";
 		return null;
 	}
 	
@@ -146,16 +146,13 @@ public class UserController {
 		 return salt;
 	}
 	
+	public static void main(String[] args) {
+		UserController u = new UserController();
+		System.out.println(u.encodedPassword("13767412438","123456")); 
+	}
 	
 	
-
-	public UserModel getUserModel() {
-		return userModel;
-	}
-
-	public void setUserModel(UserModel userModel) {
-		this.userModel = userModel;
-	}
+ 
 
 	public UserService getUserService() {
 		return userService;

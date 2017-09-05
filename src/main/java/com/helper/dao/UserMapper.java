@@ -8,12 +8,13 @@ import com.helper.model.UserModel;
 @Repository
 public interface UserMapper {
 	
+	public int addrUserModel(UserModel userModel); 
 	
 	public UserModel findByUsername(String userName);
 	
  
 	
-	public int addrUserModel(UserModel userModel); 
+	
 	
 }
 	

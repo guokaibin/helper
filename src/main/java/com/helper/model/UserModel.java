@@ -6,10 +6,11 @@ import java.util.List;
 
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.SimpleHash;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 
-@Component
+@ComponentScan
 public class UserModel  implements Serializable{
 
 	private static final long serialVersionUID = 1L;

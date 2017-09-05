@@ -115,7 +115,7 @@
                 <label for="doc-vld-pwd" class="register-pwd">密码</label>
               </div>
               <div class="am-u-md-10">
-                <input type="password" id="doc-vld-pwd" placeholder="建议字母,数字,和符号两种及以上的组合,6-20字符" pattern="^\d{6}$" required/>
+                <input type="password" id="doc-vld-pwd" name="password" placeholder="建议字母,数字,和符号两种及以上的组合,6-20字符" pattern="^\d{6}$" required/>
               </div>
             </div>
           </div>

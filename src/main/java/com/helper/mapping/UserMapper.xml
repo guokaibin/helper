@@ -2,6 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.helper.dao.UserMapper" >
     
+    
+ <insert id="addrUserModel" parameterType="com.helper.model.UserModel" useGeneratedKeys="true" keyProperty="id" >
+    <selectKey resultType="Integer" keyProperty="id" order="AFTER">  
+        SELECT LAST_INSERT_ID()   
+    </selectKey>  
+    insert into t_users(name,username,password,salt,createUser,createTime,updateUser,locked) 
+    values(#{name},#{username},#{password},#{salt},#{createUser},#{createTime},#{updateUser},#{locked})
+</insert>   
+    
+    
+    
+    
 <!-- <insert id="insertRegisterUser" parameterType="com.helper.model.User" useGeneratedKeys="true" keyProperty="userId" >
     <selectKey resultType="Integer" keyProperty="userId" order="AFTER">  
         SELECT LAST_INSERT_ID()   
