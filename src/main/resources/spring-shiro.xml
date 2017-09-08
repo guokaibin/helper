@@ -25,24 +25,24 @@
     </bean>  
 
     <bean id="logout" class="org.apache.shiro.web.filter.authc.LogoutFilter"> 
-         <property name="redirectUrl" value="/loginPage.do" />   
+         <property name="redirectUrl" value="/loginPage" />   
     </bean> 
     
     <!-- Shiro Filter -->  
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">  
         <property name="securityManager" ref="securityManager" />  
-        <property name="loginUrl" value="/loginPage.do" />  
+        <property name="loginUrl" value="/loginPage" />  
         <!-- <property name="successUrl" value="/loginsuccess.jhtml" />  
         <property name="unauthorizedUrl" value="/error.jhtml" />   -->
         <property name="filterChainDefinitions">  
             <value>
-                /sendPhoneVerifyCode.do = anon  
-             	/registerUser.do  = anon
-             	/loginPage.do = anon
+                /sendPhoneVerifyCode = anon  
+             	/registerUser  = anon
+             	/loginPage  = anon
              	/registerPage.do = anon
-             	/login.do = anon
+             	/loginUser = anon
                 /favicon_6.png = anon
-                /logout.do = logout    
+                /logout = logout    
                 /** = authc  
             </value>  
         </property>  

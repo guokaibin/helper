@@ -14,7 +14,7 @@ public class Constants {
 
 	public static void main(String[] args) {  
 		  String algorithmName = "md5";  
-		  String username = "15570353396@163.com";  
+		  String username = "13767412438";  
 		  String password = "111111";  
 		  String salt1 = username;  
 		  String salt2 = new SecureRandomNumberGenerator().nextBytes().toHex();  

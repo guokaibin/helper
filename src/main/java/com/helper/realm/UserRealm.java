@@ -35,7 +35,7 @@ public class UserRealm extends AuthorizingRealm{
 		
 		String username = (String) arg0.getPrincipal();  
 
-        UserModel user = userService.findByUsername(username); 
+        UserModel user = userService.findUserByUsername(username); 
         
         if(user != null){ 
         	

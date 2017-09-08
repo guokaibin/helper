@@ -36,10 +36,10 @@
 				<i>Log In </i> or <span style="color:red;">${error}</span>
 			</div>
 			<div class="am-u-sm-10 login-am-center">
-				<form class="am-form" action="login.do" method="post">
+				<form class="am-form" action="loginUser" method="post">
 					<fieldset>
 						<div class="am-form-group"><!--  -->
-							<input name="username" type="email" class="" id="doc-ipt-email-1" placeholder="输入电子邮件">
+							<input name="username" type="text" class="" id="doc-ipt-email-1" placeholder="输入电子邮件">
 						</div>
 						<div class="am-form-group"><!--  -->
 							<input name="password" type="password" class="" id="doc-ipt-pwd-1" placeholder="设置个密码吧">

@@ -95,7 +95,7 @@
   </filter>  
   <filter-mapping>  
 	    <filter-name>shiroFilter</filter-name>  
-	    <url-pattern>*.do</url-pattern>  
+	    <url-pattern>/*</url-pattern>  
   </filter-mapping>
   
   <servlet>
@@ -110,7 +110,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>rest</servlet-name>
-    <url-pattern>*.do</url-pattern>
+    <url-pattern>/*</url-pattern>
   </servlet-mapping>
   
   <!-- 字符编码 -->
@@ -142,6 +142,6 @@
   	<!--配置 无法找到页面时的跳转页面-->
 	<error-page>
 		<error-code>404</error-code>
-		<location>/errorpage.do</location>
+		<location>/errorPage.do</location>
 	</error-page>
 </web-app>

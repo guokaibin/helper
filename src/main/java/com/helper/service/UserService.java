@@ -6,5 +6,5 @@ public interface UserService {
 
 	public int addUser(UserModel userModel);
 
-	public UserModel findByUsername(String username);
+	public UserModel findUserByUsername(String username);
 }

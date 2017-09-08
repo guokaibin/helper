@@ -20,5 +20,10 @@ public class PageController {
 		return "login";
 	}
  
+	@RequestMapping(value="/errorPage.do")
+	public String errorPage(){
+		return "404";
+	}
+ 
 	
 }

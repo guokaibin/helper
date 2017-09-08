@@ -19,9 +19,8 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public UserModel findByUsername(String username) {
-		// TODO Auto-generated method stub
-		return null;
+	public UserModel findUserByUsername(String username) {
+		return userMapper.findUserByUsername(username);
 	}
 
 	

@@ -3,24 +3,21 @@
 <mapper namespace="com.helper.dao.UserMapper" >
     
     
- <insert id="addrUserModel" parameterType="com.helper.model.UserModel" useGeneratedKeys="true" keyProperty="id" >
-    <selectKey resultType="Integer" keyProperty="id" order="AFTER">  
-        SELECT LAST_INSERT_ID()   
-    </selectKey>  
-    insert into t_users(name,username,password,salt,createUser,createTime,updateUser,locked) 
-    values(#{name},#{username},#{password},#{salt},#{createUser},#{createTime},#{updateUser},#{locked})
-</insert>   
+ 	<insert id="addrUserModel" parameterType="com.helper.model.UserModel" useGeneratedKeys="true" keyProperty="id" >
+	    <selectKey resultType="Integer" keyProperty="id" order="AFTER">  
+	        SELECT LAST_INSERT_ID()   
+	    </selectKey>  
+	    insert into t_users(name,username,password,salt,createUser,createTime,updateUser,locked) 
+	    values(#{name},#{username},#{password},#{salt},#{createUser},#{createTime},#{updateUser},#{locked})
+	</insert>   
+    
+    <select id="findUserByUsername" resultType="com.helper.model.UserModel">
+    	SELECT * from t_users  where username=#{username} and locked=0
+	</select>
+ 	
     
     
-    
-    
-<!-- <insert id="insertRegisterUser" parameterType="com.helper.model.User" useGeneratedKeys="true" keyProperty="userId" >
-    <selectKey resultType="Integer" keyProperty="userId" order="AFTER">  
-        SELECT LAST_INSERT_ID()   
-    </selectKey>  
-    insert into t_user(code,userEmail,authTime,createUser,createTime,updateUser,status) 
-    values(#{code},#{userEmail},#{authTime},#{createUser},#{createTime},#{updateUser},#{status})
-</insert>
+<!--  
 
 <update id="updateActivation" >
      <![CDATA[  update t_user SET `status` = '1' where userEmail = #{0} and code =0 #{1}  and  DATE_FORMAT(authTime,'%Y-%m-%d %h-%S-%i') >= DATE_FORMAT(NOW(),'%Y-%m-%d %h-%S-%i')  ]]> 
@@ -34,9 +31,6 @@
     SELECT * from t_user u where u.userEmail=#{email}  and u.`password`=${password};
 </select>
 
-<select id="findByUsername" resultType="com.helper.model.User">
-    SELECT * from t_user  where username=#{username}
-</select>
 
 <update id="updateUserAvatra">
     update t_user SET avatarUrl = #{0}   where username = #{1}  

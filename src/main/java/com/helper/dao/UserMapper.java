@@ -10,7 +10,7 @@ public interface UserMapper {
 	
 	public int addrUserModel(UserModel userModel); 
 	
-	public UserModel findByUsername(String userName);
+	public UserModel findUserByUsername(String userName);
 	
  
 	

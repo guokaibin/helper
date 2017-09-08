@@ -95,7 +95,7 @@ public class UserController {
 	
 	
 	
-	@RequestMapping(value="/login.do",method = RequestMethod.POST)
+	@RequestMapping(value="/loginUser",method = RequestMethod.POST)
 	public String loginUser(HttpServletRequest request,@Param(value="username") String username,@Param(value="password") String password){
 		 String error = null;
 		 if(StringUtils.isEmpty(username.trim())||StringUtils.isEmpty(password.trim())){
@@ -124,7 +124,8 @@ public class UserController {
 	         return "login";  
 	     }  
 	         
-		 return "redirect:home.do";
+//		 return "redirect:home";
+		 return "home";
 	}
 	
 	
