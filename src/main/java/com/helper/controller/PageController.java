@@ -9,21 +9,30 @@ public class PageController {
 
 	private static Logger log = Logger.getLogger(PageController.class);
 	
-	@RequestMapping(value="/registerPage.do")
+	@RequestMapping(value="/index")
+	public String index(){
+		return "index";
+	}
+	
+	@RequestMapping(value="/registerPage")
 	public String loginsuccess(){
 		return "register";
 	}
-	
  
-	@RequestMapping(value="/loginPage.do")
+	@RequestMapping(value="/loginPage")
 	public String loginPage(){
 		return "login";
 	}
  
-	@RequestMapping(value="/errorPage.do")
+	@RequestMapping(value="/errorPage")
 	public String errorPage(){
 		return "404";
 	}
  
+	@RequestMapping(value="/myInfoPage")
+	public String userInfoPage(){
+		return "myInfo";
+	}
+	
 	
 }

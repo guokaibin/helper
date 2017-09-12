@@ -1,5 +1,8 @@
 package com.helper.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.annotations.Param;
@@ -47,16 +50,22 @@ public class UserController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value="sendPhoneVerifyCode.do",method=RequestMethod.GET)
-	public String sendPhoneVerifyCode(@Param(value="username") String username){
-		return SendCode.sendSMSCode(username);
+	@RequestMapping(value="sendPhoneVerifyCode",method=RequestMethod.POST)
+	public Map<String,Object> sendPhoneVerifyCode(HttpServletRequest request,String username){
+		Map<String,Object> resultMap = new HashMap<String,Object>();
+		if(!RegexUtil.isMobile(username)){
+			resultMap.put("result", "请输入正确的手机号码");
+		}
+		
+		SendCode.sendSMSCode(username);
+		return resultMap;
 	}
 	
 	
 	
 	
 	//注册用户
-	@RequestMapping(value="registerUser.do",method=RequestMethod.POST)
+	@RequestMapping(value="registerUser",method=RequestMethod.POST)
 	public String registerUser(HttpServletRequest request,@Param(value="name") String name,@Param(value="username") String username,@Param(value="password") String password,@Param(value="verifycode") String verifycode){
 		
 		String message = "";
@@ -79,6 +88,7 @@ public class UserController {
 		userModel.setCreateUser(username);
 		userModel.setCreateTime(System.currentTimeMillis());
 		userModel.setUpdateUser(username);
+		userModel.setAvatarUrl("http://oub18pmk0.bkt.clouddn.com/user06.png");
 		userModel.setLocked(0);
 		
 		int result = userService.addUser(userModel);

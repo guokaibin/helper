@@ -40,8 +40,8 @@
                 </div>
                 <div class="col-md-offset-2"  >
                     <ul class="nav nav-pills pull-right end-block">
-                        <li role="presentation"><a href="loginPage.do">登陆</a></li>
-                        <li role="presentation"><a href="registerPage.do">注册</a></li>
+                        <li role="presentation"><a href="loginPage">登陆</a></li>
+                        <li role="presentation"><a href="registerPage">注册</a></li>
                     </ul>
                 </div>
             </div>

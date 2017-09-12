@@ -17,57 +17,51 @@ public class UserModel  implements Serializable{
 	
 	private Integer id;
 	
-	private String name; 
+	private String name; //用户名
 	
-	private String username;
+	private String username; //手机号码，也是登录名
 	
-	private String password;
+	private String password; //密码
 	
-	private String salt;
+	private String salt; //盐
 	
-	private Integer age;
+	private Integer age; //年龄
 	
-	private Integer gender;
+	private Integer gender; //性别
 	
-	private String school;
+	private String school; //学校
 	
-	private String career;
+	private String career; //职业
 	
-	private String company;
+	private String company; //公司
 	
-	private String workingDirection;
+	private String hometown; //籍贯
 	
-	private String hometown;
+	private String prov; //省份
 	
-	private String prov;
+	private String city; //城市
 	
-	private String city;
+	private String district; //区县
 	
-	private String district;
+	private String intro; //简介
 	
-	private String intro;
+	private String hobby;  //爱好
 	
-	private String hobby;
+	private Integer level; //等级
 	
-	private Integer level;
+	private String email; //邮箱
 	
-	private String email;
+	private String avatarUrl; //头像地址
 	
-	private String avatarUrl;
-	
-	private String createUser;
+	private String createUser; 
 	
 	private long createTime;
 	
 	private String updateUser; 
 	
-	private int locked;
+	private int locked; //是否锁定
 	
-	private String code;
-	
-	private String userEmail;
-	
-	private String ipAddress;
+	private String ipAddress; //登录ip地址
 	
 	private List<Long> roleIds; //拥有的角色列表
 	
@@ -140,22 +134,6 @@ public class UserModel  implements Serializable{
 
 	public void setUpdateUser(String updateUser) {
 		this.updateUser = updateUser;
-	}
-
-	public String getCode() {
-		return code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getUserEmail() {
-		return userEmail;
-	}
-
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
 	}
 
 
@@ -256,13 +234,6 @@ public class UserModel  implements Serializable{
 		this.company = company;
 	}
 
-	public String getWorkingDirection() {
-		return workingDirection;
-	}
-
-	public void setWorkingDirection(String workingDirection) {
-		this.workingDirection = workingDirection;
-	}
 
 	public String getHometown() {
 		return hometown;

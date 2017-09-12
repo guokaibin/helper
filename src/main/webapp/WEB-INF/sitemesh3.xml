@@ -13,8 +13,8 @@
       <mapping path="/index.jsp" exclue="true" />
       <mapping path="/login.jsp" exclue="true" />
       <mapping path="/register.jsp" exclue="true" />
-      <mapping path="/registerPage.do" exclue="true" />   
-      <mapping path="/loginPage.do" exclue="true"/>
+      <mapping path="/registerPage" exclue="true" />   
+      <mapping path="/loginPage" exclue="true"/>
       
       <mapping path="/admin_form_webUploaderView.do" exclue="true"/>
       <mapping path="/admin_form_webUploaderView.jsp" exclue="true" />

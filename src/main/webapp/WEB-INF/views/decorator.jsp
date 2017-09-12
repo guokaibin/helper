@@ -223,12 +223,12 @@
 
                 <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                     <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                        <span class="tpl-header-list-user-nick">您好,${sessionScope.currentUser.name}</span><span class="tpl-header-list-user-ico"> <img src="${sessionScope.currentUser.avatarUrl}" width="40" height="40"></span>
+                        <span class="tpl-header-list-user-nick">您好,${sessionScope.currentUser.name}</span><span class="tpl-header-list-user-ico"> <img src="${sessionScope.currentUser.avatarUrl}"></span>
                     </a>
                     <ul class="am-dropdown-content">
-                        <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
+                        <li><a href="myInfoPage"><span class="am-icon-bell-o"></span> 资料</a></li>
                         <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
-                        <li><a href="logout.do"><span class="am-icon-power-off"></span> 退出</a></li>
+                        <li><a href="logout"><span class="am-icon-power-off"></span> 退出</a></li>
                     </ul>
                 </li>
                 <li><a href="###" class="tpl-header-list-link"><span class="am-icon-sign-out tpl-header-list-ico-out-size"></span></a></li>
@@ -237,7 +237,7 @@
     </header>  
      
     <div class="tpl-page-container tpl-page-header-fixed">
-         <div class="tpl-left-nav tpl-left-nav-hover">
+         <!-- <div class="tpl-left-nav tpl-left-nav-hover">
             <div class="tpl-left-nav-title">
                 Amaze UI 列表
             </div>
@@ -377,7 +377,7 @@
                     </li>
                 </ul>
             </div>
-         </div>
+         </div> -->
 
 		 <div>  
 			  <sitemesh:write property='body' />

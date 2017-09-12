@@ -84,6 +84,11 @@
       <url-pattern>/*</url-pattern>
   </filter-mapping>
   
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
   <!-- shiro过滤器 -->
   <filter>  
 	    <filter-name>shiroFilter</filter-name>  
@@ -110,7 +115,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>rest</servlet-name>
-    <url-pattern>/*</url-pattern>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
   
   <!-- 字符编码 -->
@@ -134,14 +139,11 @@
     <session-timeout>30</session-timeout>
   </session-config>
   
-  <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>index.html</welcome-file>
-  </welcome-file-list>
+
   
   	<!--配置 无法找到页面时的跳转页面-->
 	<error-page>
 		<error-code>404</error-code>
-		<location>/errorPage.do</location>
+		<location>/errorPage</location>
 	</error-page>
 </web-app>

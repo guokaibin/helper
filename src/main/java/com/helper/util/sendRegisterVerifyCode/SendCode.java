@@ -50,7 +50,7 @@ public class SendCode {
          * 3.params是根据你模板里面有几个参数，那里面的参数也是jsonArray格式
          */
         nvps.add(new BasicNameValuePair("templateid", AppConfig.TEMPLATEID));
-        nvps.add(new BasicNameValuePair("mobile", AppConfig.MOBILE));
+        nvps.add(new BasicNameValuePair("mobile", mobile));
         nvps.add(new BasicNameValuePair("codeLen", AppConfig.CODELEN));
 
         try {

@@ -32,16 +32,21 @@
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">  
         <property name="securityManager" ref="securityManager" />  
         <property name="loginUrl" value="/loginPage" />  
-        <!-- <property name="successUrl" value="/loginsuccess.jhtml" />  
-        <property name="unauthorizedUrl" value="/error.jhtml" />   -->
+        <!-- <property name="successUrl" value="/home" />   -->
+        <!-- <property name="unauthorizedUrl" value="/error.jhtml" /> -->
+        <property name="unauthorizedUrl" value="/index" />
         <property name="filterChainDefinitions">  
             <value>
+                / = anon
+                /assets/** = anon
+                /helper_Static/** = anon
                 /sendPhoneVerifyCode = anon  
              	/registerUser  = anon
              	/loginPage  = anon
-             	/registerPage.do = anon
+             	/registerPage = anon
              	/loginUser = anon
                 /favicon_6.png = anon
+                /index = anon
                 /logout = logout    
                 /** = authc  
             </value>  
