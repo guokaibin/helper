@@ -6,9 +6,8 @@
 <head>
 	<title>VENUS</title>
  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- 	<link rel="stylesheet" href="assets/css/amazeui.min.css"/> 
+ 	<link rel="stylesheet" href="assets/css/amazeui.min.css"/>
  	<link rel="stylesheet" href="assets/css/amazeui.address.min.css"/>
-	<script src="assets/js/address.min.js"></script>
 </head>
 <body>
 
@@ -171,8 +170,8 @@
             </div>
 		</div>
 		
-		<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script> 
-		<script src="assets/js/amazeui.min.js" type="text/javascript" charset="utf-8"></script>  
+	    <script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/amazeui.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="assets/js/address.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$(function() {

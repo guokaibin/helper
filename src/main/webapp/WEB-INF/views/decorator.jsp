@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="assets/css/amazeui.min.css" />
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="stylesheet" href="assets/css/amazeui.address.min.css"/> 
+    <link rel="stylesheet" href="assets/css/amazeui.address.min.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/webuploader/style.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/webuploader/webuploader.css" />
       <style type="text/css">
@@ -237,7 +237,7 @@
     </header>  
      
     <div class="tpl-page-container tpl-page-header-fixed">
-         <!-- <div class="tpl-left-nav tpl-left-nav-hover">
+          <div class="tpl-left-nav tpl-left-nav-hover">
             <div class="tpl-left-nav-title">
                 Amaze UI 列表
             </div>
@@ -377,7 +377,7 @@
                     </li>
                 </ul>
             </div>
-         </div> -->
+         </div>  
 
 		 <div>  
 			  <sitemesh:write property='body' />
@@ -385,12 +385,11 @@
 	</div>
 
 	<script src="assets/js/echarts.js" type="text/javascript" charset="utf-8"></script>
-    <script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+ 	<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/js/amazeui.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/js/iscroll.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
-    <!-- 地址信息js -->
-	<script src="assets/js/address.js" type="text/javascript" charset="utf-8"></script>  
+  
 	
 	<script src="assets/js/iscroll-zoom.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="assets/js/hammer.min.js" type="text/javascript" charset="utf-8"></script>
@@ -410,5 +409,9 @@
     <script>
 		var BASE_URL = '${ctx}';
 	</script>
+	
+	
+	  <!-- 地址信息js -->
+	<!-- <script src="assets/js/address.js" type="text/javascript" charset="utf-8"></script>   -->
 </body>
 </html>
